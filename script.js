@@ -62,7 +62,7 @@ function carregarCarta(id) {
     musica.src = musicaAtual.arquivo;
     musica.load();
 
-    capaAlbum.src = "img/logo.jpg";
+    capaAlbum.src = "img/LOGO.jpg";
 
     nome.innerText = musicaAtual.nome;
     artista.innerText = musicaAtual.artista;
