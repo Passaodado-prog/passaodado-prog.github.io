@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hitster Personal</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="capa">
+
+    <img id="capaAlbum" src="" alt="Capa da Música">
+
+</div>
+
+<h1 id="titulo">EDIÇÃO ESPECIAL</h1>
+
+<p class="carta">Carta #001</p>
+
+<button id="play">
+▶ TOCAR MÚSICA
+</button>
+
+<div class="player">
+
+<input
+type="range"
+id="progresso"
+value="0"
+min="0"
+max="100">
+
+<div class="tempo">
+
+<span id="inicio">00:00</span>
+
+<span id="fim">00:00</span>
+
+</div>
+
+</div>
+
+<div class="controles">
+
+<button id="pause">
+⏸ Pausar
+</button>
+
+<button id="resume">
+▶ Continuar
+</button>
+
+</div>
+
+<button id="revelar">
+
+👁 Revelar Resposta
+
+</button>
+<button id="scanner">
+📷 Escanear Próxima Carta
+</button>
+
+
+<div id="resposta">
+
+<h2 id="nome"></h2>
+
+<p id="artista"></p>
+
+<p id="ano"></p>
+
+</div>
+
+
+<audio id="musica" src="audio/001.mp3"></audio>
+
+<!-- TELA DO SCANNER -->
+
+<div id="scannerTela" class="scanner-tela">
+
+    <div class="scanner-box">
+
+        <h2>📷 Escaneie a próxima carta</h2>
+
+        <div id="reader"></div>
+
+        <button id="fecharScanner">
+            ✖ Cancelar
+        </button>
+
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/html5-qrcode"></script>
+<script src="musicas.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
