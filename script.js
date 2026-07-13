@@ -27,6 +27,9 @@ const scannerTela = document.getElementById("scannerTela");
 const botaoScanner = document.getElementById("scanner");
 const fecharScanner = document.getElementById("fecharScanner");
 const reader = document.getElementById("reader");
+const telaInicial = document.getElementById("telaInicial");
+const jogo = document.getElementById("jogo");
+const iniciarJogo = document.getElementById("iniciarJogo");
 
 // =========================
 // CONFIGURAÇÃO INICIAL
@@ -215,11 +218,15 @@ function converter(segundos) {
 // CARREGAR PRIMEIRA CARTA
 // =========================
 
-const parametros = new URLSearchParams(window.location.search);
+iniciarJogo.onclick = () => {
 
-const cartaInicial = parametros.get("id") || "001";
+    telaInicial.style.display = "none";
 
-carregarCarta(cartaInicial);
+    jogo.style.display = "block";
+
+    botaoScanner.click();
+
+};
 
 // =========================
 // SCANNER
