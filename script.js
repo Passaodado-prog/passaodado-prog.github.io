@@ -219,13 +219,13 @@ function converter(segundos) {
 // CARREGAR PRIMEIRA CARTA
 // =========================
 
-iniciarJogo.onclick = () => {
+iniciarJogo.onclick = async () => {
 
     telaInicial.style.display = "none";
 
     jogo.style.display = "block";
 
-    botaoScanner.click();
+    await abrirScanner();
 
 };
 
@@ -233,7 +233,7 @@ iniciarJogo.onclick = () => {
 // SCANNER
 // =========================
 
-botaoScanner.onclick = async () => {
+async function abrirScanner() {
 
     scannerTela.style.display = "flex";
 
@@ -267,6 +267,8 @@ const codigo = textoLido.trim().toUpperCase();
 
 carregarCarta(codigo);
 
+play.click();
+
                 });
 
             }
@@ -284,6 +286,8 @@ carregarCarta(codigo);
     }
 
 };
+
+botaoScanner.onclick = abrirScanner;
 
 // =========================
 // FECHAR SCANNER
