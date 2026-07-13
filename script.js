@@ -46,10 +46,10 @@ let scanner = null;
 
 function carregarCarta(id) {
 
-    alert("carregarCarta recebeu: [" + id + "]");
-    console.log("Recebido:", id);
+    
+    
 
-console.log(musicas);
+
 
 musicaAtual = musicas.find(m => m.codigo === id || m.id == id);
 
@@ -62,10 +62,11 @@ musicaAtual = musicas.find(m => m.codigo === id || m.id == id);
     }
 
     musica.pause();
-    musica.currentTime = 0;
+musica.currentTime = 0;
+musica.src = musicaAtual.arquivo;
+musica.load();
 
-    musica.src = musicaAtual.arquivo;
-    musica.load();
+musica.volume = 1;
 
     capaAlbum.src = "img/capa-oficial.jpg";
 
@@ -245,22 +246,16 @@ botaoScanner.onclick = async () => {
 
             (textoLido) => {
 
-                console.log("QR:", textoLido);
 
                 scanner.stop().then(() => {
 
                     scannerTela.style.display = "none";
 
-                    alert("QR lido: " + textoLido);
+                    
 
 const codigo = textoLido.trim().toUpperCase();
 
-alert(
-"QR: " +
-JSON.stringify(codigo) +
-"\nTamanho: " +
-codigo.length
-);
+
 
 carregarCarta(codigo);
 
@@ -272,9 +267,11 @@ carregarCarta(codigo);
 
     } catch (erro) {
 
-        console.error(erro);
+    alert("Não foi possível abrir a câmera.");
 
-        alert("Erro ao abrir a câmera:\n\n" + erro);
+
+
+        
 
     }
 
@@ -291,6 +288,8 @@ fecharScanner.onclick = async () => {
         try {
 
             await scanner.stop();
+            await scanner.clear();
+scanner = null;
 
         } catch (e) {}
 
