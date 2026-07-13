@@ -46,7 +46,12 @@ let scanner = null;
 
 function carregarCarta(id) {
 
-    musicaAtual = musicas.find(m => m.id == id || m.codigo == id);
+    alert("carregarCarta recebeu: [" + id + "]");
+    console.log("Recebido:", id);
+
+console.log(musicas);
+
+musicaAtual = musicas.find(m => m.codigo === id || m.id == id);
 
     if (!musicaAtual) {
 
@@ -248,7 +253,16 @@ botaoScanner.onclick = async () => {
 
                     alert("QR lido: " + textoLido);
 
-carregarCarta(textoLido.trim());
+const codigo = textoLido.trim().toUpperCase();
+
+alert(
+"QR: " +
+JSON.stringify(codigo) +
+"\nTamanho: " +
+codigo.length
+);
+
+carregarCarta(codigo);
 
                 });
 
