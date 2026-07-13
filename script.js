@@ -242,32 +242,41 @@ botaoScanner.onclick = async () => {
 
                 console.log("QR:", textoLido);
 
-            },
+                scanner.stop().then(() => {
 
-            () => {}
+                    scannerTela.style.display = "none";
+
+                    carregarCarta(textoLido);
+
+                });
+
+            }
 
         );
 
     } catch (erro) {
 
-    console.error(erro);
+        console.error(erro);
 
-    alert(JSON.stringify(erro));
-
-}
+        alert("Erro ao abrir a câmera:\n\n" + erro);
 
     }
 
+};
+
+// =========================
+// FECHAR SCANNER
+// =========================
 
 fecharScanner.onclick = async () => {
 
-    if (scanner){
+    if (scanner) {
 
-        try{
+        try {
 
             await scanner.stop();
 
-        }catch(e){}
+        } catch (e) {}
 
     }
 
