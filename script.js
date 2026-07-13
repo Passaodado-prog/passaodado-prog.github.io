@@ -30,6 +30,7 @@ const reader = document.getElementById("reader");
 const telaInicial = document.getElementById("telaInicial");
 const jogo = document.getElementById("jogo");
 const iniciarJogo = document.getElementById("iniciarJogo");
+console.log(iniciarJogo);
 
 // =========================
 // CONFIGURAÇÃO INICIAL
