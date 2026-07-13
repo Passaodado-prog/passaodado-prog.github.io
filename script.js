@@ -217,7 +217,7 @@ function converter(segundos) {
 
 const parametros = new URLSearchParams(window.location.search);
 
-const cartaInicial = parametros.get("id") || "POP001";
+const cartaInicial = parametros.get("id") || "001";
 
 carregarCarta(cartaInicial);
 
