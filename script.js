@@ -246,7 +246,9 @@ botaoScanner.onclick = async () => {
 
                     scannerTela.style.display = "none";
 
-                    carregarCarta(textoLido);
+                    alert("QR lido: " + textoLido);
+
+carregarCarta(textoLido.trim());
 
                 });
 
