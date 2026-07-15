@@ -263,11 +263,11 @@ async function abrirScanner() {
 
 const codigo = textoLido.trim().toUpperCase();
 
-alert("QR lido: " + codigo);
+
 
 carregarCarta(codigo);
 
-alert("Musica encontrada: " + (musicaAtual ? musicaAtual.nome : "NENHUMA"));
+
 
 play.click();
 
