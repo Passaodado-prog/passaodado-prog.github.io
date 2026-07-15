@@ -912,5 +912,5 @@ const musicas = [
     artista: "Falamansa",
     ano: 2000,
     arquivo: "audio/109.mp3",
-}
+},
 ];
