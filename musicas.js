@@ -347,7 +347,7 @@ const musicas = [
     nome: "Ain't No Mountain High Enough",
     artista: "Marvin Gaye x Tammi Terrell",
     ano: 1967,
-    arquivo: "audio/039.mp3",
+    arquivo: "audio/048-39.mp3",
 },
 {
     id: 40,
@@ -363,7 +363,7 @@ const musicas = [
     nome: "Árvore",
     artista: "Edson Gomes",
     ano: 1992,
-    arquivo: "audio/041.mp3",
+    arquivo: "audio/046-41.mp3",
 },
 {
     id: 42,
@@ -371,7 +371,7 @@ const musicas = [
     nome: "Bilu, Bilu",
     artista: "Pablo",
     ano: 2014,
-    arquivo: "audio/042.mp3",
+    arquivo: "audio/050-42.mp3",
 },
 {
     id: 43,
@@ -379,7 +379,7 @@ const musicas = [
     nome: "Black or White",
     artista: "Michael Jackson",
     ano: 1991,
-    arquivo: "audio/043.mp3",
+    arquivo: "audio/051-43.mp3",
 },
 {
     id: 44,
@@ -387,7 +387,7 @@ const musicas = [
     nome: "Borboletas",
     artista: "Victor & Leo",
     ano: 2008,
-    arquivo: "audio/044.mp3",
+    arquivo: "audio/052-44.mp3",
 },
 {
     id: 45,
@@ -395,7 +395,7 @@ const musicas = [
     nome: "Camelo",
     artista: "Edson Gomes",
     ano: 1997,
-    arquivo: "audio/045.mp3",
+    arquivo: "audio/053-45.mp3",
 },
 {
     id: 46,
@@ -403,7 +403,7 @@ const musicas = [
     nome: "Exagerado",
     artista: "Cazuza",
     ano: 1985,
-    arquivo: "audio/046.mp3",
+    arquivo: "audio/054-46.mp3",
 },
 {
     id: 47,
@@ -411,7 +411,7 @@ const musicas = [
     nome: "The Twist",
     artista: "Chubby Checker",
     ano: 1960,
-    arquivo: "audio/047.mp3",
+    arquivo: "audio/055-47.mp3",
 },
 {
     id: 48,
@@ -427,7 +427,7 @@ const musicas = [
     nome: "Como eu quero",
     artista: "Kid Abelha",
     ano: 1984,
-    arquivo: "audio/049.mp3",
+    arquivo: "audio/040-49.mp3",
 },
 {
     id: 50,
@@ -435,7 +435,7 @@ const musicas = [
     nome: "Dancing Queen",
     artista: "ABBA",
     ano: 1976,
-    arquivo: "audio/050.mp3",
+    arquivo: "audio/041-50.mp3",
 },
 {
     id: 51,
@@ -443,7 +443,7 @@ const musicas = [
     nome: "Diga Sim pra Mim",
     artista: "Desejo de Menina",
     ano: 2008,
-    arquivo: "audio/051.mp3",
+    arquivo: "audio/042-51.mp3",
 },
 {
     id: 52,
@@ -451,7 +451,7 @@ const musicas = [
     nome: "Do Lado de Cá",
     artista: "Chimarruts",
     ano: 2010,
-    arquivo: "audio/052.mp3",
+    arquivo: "audio/043-52.mp3",
 },
 {
     id: 53,
@@ -459,7 +459,7 @@ const musicas = [
     nome: "Don't Matter",
     artista: "Akon",
     ano: 2007,
-    arquivo: "audio/053.mp3",
+    arquivo: "audio/044-53.mp3",
 },
 {
     id: 54,
@@ -467,7 +467,7 @@ const musicas = [
     nome: "Coração",
     artista: "Dorgival Dantas",
     ano: 2005,
-    arquivo: "audio/054.mp3",
+    arquivo: "audio/045-54.mp3",
 },
 {
     id: 55,
@@ -475,7 +475,7 @@ const musicas = [
     nome: "É o Amor",
     artista: "Zezé Di Camargo & Luciano",
     ano: 1991,
-    arquivo: "audio/055.mp3",
+    arquivo: "audio/047-55.mp3",
 },
 
 {
@@ -588,7 +588,7 @@ const musicas = [
     nome: "La Belle De Jour",
     artista: "Alceu Valença",
     ano: 1992,
-    arquivo: "audio/069.mp3",
+    arquivo: "audio/049-69.mp3",
 },
 {
     id: 70,
@@ -775,7 +775,7 @@ const musicas = [
     nome: "Pássaro De Fogo",
     artista: "Paula Fernandes",
     ano: 2009,
-    arquivo: "audio/092.mp3",
+    arquivo: "audio/094-92.mp3",
 },
 {
     id: 93,
@@ -783,7 +783,7 @@ const musicas = [
     nome: "Perdido De Amor",
     artista: "Edson Gomes",
     ano: 1997,
-    arquivo: "audio/093.mp3",
+    arquivo: "audio/092-93.mp3",
 },
 {
     id: 94,
@@ -791,7 +791,7 @@ const musicas = [
     nome: "Perfume",
     artista: "Belo",
     ano: 2008,
-    arquivo: "audio/094.mp3",
+    arquivo: "audio/093-94.mp3",
 },
 {
     id: 95,
@@ -839,7 +839,7 @@ const musicas = [
     nome: "Tá Vendo Aquela Lua",
     artista: "Exalta Samba",
     ano: 2010,
-    arquivo: "audio/100.mp3",
+    arquivo: "audio/106-100.mp3",
 },
 {
     id: 101,
@@ -847,7 +847,7 @@ const musicas = [
     nome: "Tempos modernos",
     artista: "Lulu Santos",
     ano: 1982,
-    arquivo: "audio/101.mp3",
+    arquivo: "audio/100-101.mp3",
 },
 {
     id: 102,
@@ -855,7 +855,7 @@ const musicas = [
     nome: "Best of My Love",
     artista: "The Emotions",
     ano: 1977,
-    arquivo: "audio/102.mp3",
+    arquivo: "audio/101-102.mp3",
 },
 {
     id: 103,
@@ -863,7 +863,7 @@ const musicas = [
     nome: "I Don't Wanna Lose You",
     artista: "Tina Turner",
     ano: 1989,
-    arquivo: "audio/103.mp3",
+    arquivo: "audio/102-103.mp3",
 },
 {
     id: 104,
@@ -871,7 +871,7 @@ const musicas = [
     nome: "Toma Conta De Mim",
     artista: "Limão com Mel",
     ano: 2002,
-    arquivo: "audio/104.mp3",
+    arquivo: "audio/103-104.mp3",
 },
 {
     id: 105,
@@ -879,7 +879,7 @@ const musicas = [
     nome: "Treasure",
     artista: "Bruno Mars",
     ano: 2012,
-    arquivo: "audio/105.mp3",
+    arquivo: "audio/104-105.mp3",
 },
 {
     id: 106,
@@ -887,7 +887,7 @@ const musicas = [
     nome: "True Love",
     artista: "SOJA",
     ano: 2006,
-    arquivo: "audio/106.mp3",
+    arquivo: "audio/105-106.mp3",
 },
 {
     id: 107,
