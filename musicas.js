@@ -1176,6 +1176,30 @@ const musicas = [
     artista: "Tribalista",
     ano: 2002,
     arquivo: "audio/142.mp3",
+},
+{
+    id: 143,
+    codigo: "143",
+    nome: "Ainda Gosto Dela",
+    artista: "Skank",
+    ano: 2008,
+    arquivo: "audio/143.mp3",
+},
+{
+    id: 144,
+    codigo: "144",
+    nome: "Vamos Fugir",
+    artista: "Skank",
+    ano: 2004,
+    arquivo: "audio/143.mp3",
+},
+{
+    id: 145,
+    codigo: "145",
+    nome: "Poderosa",
+    artista: "Banda Brasil",
+    ano: 1993,
+    arquivo: "audio/145.mp3",
 }
 
 ];
