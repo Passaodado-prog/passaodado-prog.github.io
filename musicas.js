@@ -642,9 +642,9 @@ const musicas = [
 {
     id: 76,
     codigo: "076",
-    nome: "Marrom Bombom",
-    artista: "Os Morenos",
-    ano: null,
+    nome: "Saudades do Tempo",
+    artista: "Maneva",
+    ano: 2009,
     arquivo: "audio/076.mp3",
 },
 {
