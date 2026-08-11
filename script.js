@@ -68,18 +68,26 @@ function tocarMusica() {
 // TEMPORIZADOR (15s)
 // =========================
 temporizador.onclick = () => {
+    // Se não tiver música ou já estiver contando, não faz nada
     if (!musicaAtual || intervaloTemporizador) return;
 
     tempoRestante = 15;
-    musica.currentTime = 0;
-    tocarMusica();
+    
+    // ATUALIZAÇÃO: Removido musica.currentTime = 0; 
+    // Assim a música continua tocando de onde está.
+    
+    // Se a música estiver pausada quando apertar o tempo, ele força a tocar.
+    if (musica.paused) {
+        tocarMusica();
+    }
 
-    temporizador.innerHTML = "⏱ " + tempoRestante;
+    temporizador.innerHTML = "⏱ " + tempoRestante + "s";
+    temporizador.disabled = true; 
     pararTempo.classList.remove("oculto");
 
     intervaloTemporizador = setInterval(() => {
         tempoRestante--;
-        temporizador.innerHTML = "⏱ " + tempoRestante;
+        temporizador.innerHTML = "⏱ " + tempoRestante + "s";
 
         if (tempoRestante <= 0) {
             finalizarTemporizador();
@@ -97,17 +105,17 @@ function finalizarTemporizador() {
         intervaloTemporizador = null;
     }
 
+    // ATUALIZAÇÃO: Pausa a música, mas não zera o progresso (removemos musica.currentTime = 0;)
     musica.pause();
-    musica.currentTime = 0;
 
-    progresso.value = 0;
-    inicio.innerText = "00:00";
-
-    play.classList.remove("oculto");
+    // Ajusta os botões do player para o estado de "Pausado"
+    play.classList.add("oculto");
     pause.classList.add("oculto");
-    resume.classList.add("oculto");
+    resume.classList.remove("oculto"); // Mostra "Continuar"
 
+    // Reseta visual dos botões de tempo
     temporizador.innerHTML = "⏱ TEMPO";
+    temporizador.disabled = false;
     pararTempo.classList.add("oculto");
     tempoRestante = 15;
 }
@@ -123,7 +131,6 @@ function carregarCarta(id) {
         return;
     }
 
-    // CORRIGIDO: Expressão de busca arrumada
     musicaAtual = musicas.find(
         m => m.codigo === id || m.id == id
     );
@@ -150,15 +157,13 @@ function carregarCarta(id) {
 
     resposta.style.display = "none";
 
-    play.innerHTML = "▶ TOCAR MÚSICA";
-    play.classList.remove("oculto");
-    pause.classList.add("oculto");
-    resume.classList.add("oculto");
-    revelar.classList.add("oculto");
-
+    // ATUALIZAÇÃO: Substituí os ajustes de botões pelo inicio imediato
     progresso.value = 0;
     inicio.innerText = "00:00";
     fim.innerText = "00:00";
+    
+    // Toca a música automaticamente assim que carregar
+    tocarMusica();
 }
 
 // =========================
