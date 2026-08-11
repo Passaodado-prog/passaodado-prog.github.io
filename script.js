@@ -282,4 +282,17 @@ fecharScanner.onclick = async () => {
         }
     }
     scannerTela.style.display = "none";
+
+// =========================
+// EFEITO SONORO (BEEP PERSONALIZADO)
+// =========================
+const somBeep = new Audio("audio/beep.mp3"); // Caminho do seu arquivo de áudio
+
+function tocarBeep() {
+    somBeep.currentTime = 0; // Volta para o início para garantir a reprodução imediata
+    somBeep.play().catch(erro => {
+        console.warn("Erro ao reproduzir o arquivo de beep:", erro);
+    });
+}
+
 };
