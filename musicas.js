@@ -2224,6 +2224,14 @@ const musicas = [
     artista: "Kiko Chicabana",
     ano: 2009,
     arquivo: "audio/273.mp3",
+},
+{
+    id: 274,
+    codigo: "274",
+    nome: "BB (garupa de moto amarela)",
+    artista: "Tim Bernardes",
+    ano: 2022,
+    arquivo: "audio/274.mp3",
 }
 
 ];
