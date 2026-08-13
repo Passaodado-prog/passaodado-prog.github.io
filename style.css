@@ -374,4 +374,18 @@ pointer-events:none;
     font-weight: bold;
 }
 
+.autoria {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #c4b5fd; /* Mesma cor de destaque da carta */
+    letter-spacing: 0.5px;
+}
+
+.autoria strong {
+    color: #ffffff;
+    font-weight: bold;
+}
+
 }
