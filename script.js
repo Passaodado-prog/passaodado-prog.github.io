@@ -908,7 +908,7 @@ function iniciarNovaRodada() {
   };
   indiceEquipeInicial = (indiceEquipeInicial + 1) % equipesAtivas.length;
 
-  musica.src = musicaAtual.arquivo;
+  musica.src = window.somNaMesaMediaUrl(musicaAtual.arquivo);
   musica.load();
   musica.volume = 1;
   capaAlbum.src = "img/capa-oficial.jpg";

@@ -93,7 +93,7 @@
   function resolverUrlMidia(caminho) {
     const caminhoLimpo = String(caminho || "").trim().replace(/\\/g, "/");
     if (!caminhoLimpo) throw new Error("O catalogo nao informou o caminho do arquivo.");
-    return new URL(caminhoLimpo, document.baseURI).href;
+    return typeof window.somNaMesaMediaUrl === "function" ? window.somNaMesaMediaUrl(caminhoLimpo) : new URL(caminhoLimpo, document.baseURI).href;
   }
 
   function mensagemErroMidia(elemento, faixa, tipo) {
@@ -289,7 +289,7 @@
     const statusCatalogo = $("karaokeCatalogoStatus");
     if (!totalFaixas) {
       statusCatalogo.classList.remove("is-ready");
-      statusCatalogo.textContent = "Ainda não há faixas válidas no catálogo do Karaokê. Adicione vídeos autorizados em karaoke/videos/ ou instrumentais com letra sincronizada em karaoke/audio/, e registre-os em karaoke.js. Os outros modos continuam funcionando normalmente.";
+      statusCatalogo.textContent = "Ainda não há faixas válidas no catálogo do Karaokê. Adicione vídeos autorizados em karaoke/videos/ e registre-os em karaoke.js. Os outros modos continuam funcionando normalmente.";
     } else {
       statusCatalogo.classList.add("is-ready");
       statusCatalogo.textContent = `${totalFaixas} faixa(s) válida(s) cadastrada(s). Cada música será usada no máximo uma vez nesta partida.`;
@@ -415,8 +415,8 @@
     faixasUsadas.add(String(faixa.id));
     $("karaokeTituloFaixa").textContent = faixa.titulo;
     $("karaokeArtistaFaixa").textContent = `${faixa.artista || "Artista não informado"} · Cantor(a): ${cantorAtual.participanteNome}${formato === "equipes" ? ` (${cantorAtual.equipeNome})` : ""}`;
-    $("karaokeFormatoFaixa").textContent = faixa.tipo === "video" ? "VÍDEO KARAOKÊ" : "INSTRUMENTAL";
-    $("karaokeMediaMensagem").textContent = faixa.tipo === "video" ? "Use o vídeo com a letra embutida. Ao terminar, encerre a apresentação para avaliar." : "Cante acompanhando as frases destacadas. Ao terminar, encerre a apresentação para avaliar.";
+    $("karaokeFormatoFaixa").textContent = "VÍDEO KARAOKÊ";
+    $("karaokeMediaMensagem").textContent = "Use o vídeo com a letra embutida. Ao terminar, encerre a apresentação para avaliar.";
     video.pause();
     audio.pause();
     video.removeAttribute("src");
@@ -436,7 +436,7 @@
         audio.preload = "metadata";
         audio.src = urlMidia;
         audio.load();
-        $("karaokeMediaMensagem").textContent = `Carregando instrumental: ${faixa.arquivo}. Quando estiver pronto, toque em ▶.`;
+        $("karaokeMediaMensagem").textContent = `Carregando vídeo: ${faixa.arquivo}. Quando estiver pronto, toque em ▶.`;
       }
     } catch (erro) {
       console.error("[SOM NA MESA Karaoke] Caminho de mídia inválido:", erro);
