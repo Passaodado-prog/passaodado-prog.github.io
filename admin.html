@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17132b">
+  <title>Gerenciar catálogo | SOM NA MESA</title>
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="ui-dialogs.css">
+</head>
+<body>
+  <main class="admin-shell">
+    <header class="admin-header">
+      <div>
+        <p class="eyebrow">FERRAMENTA ESTÁTICA</p>
+        <h1>Gerenciar catálogo</h1>
+        <p class="lead">Classifique várias músicas de uma vez, organize gêneros e prepare novas faixas para publicar pelo GitHub.</p>
+      </div>
+      <a class="back-link" href="index.html">← Voltar ao jogo</a>
+    </header>
+
+    <section class="notice" role="note">
+      <strong>Modo manual, sem backend.</strong>
+      As alterações ficam como rascunho neste navegador até você exportar os arquivos. Esta página não grava diretamente no GitHub, não envia MP3 permanentemente para o site e não possui autenticação real.
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat"><span>Músicas no catálogo</span><strong id="totalMusicas">—</strong></div>
+      <div class="stat"><span>Gêneros editáveis</span><strong id="totalGeneros">—</strong></div>
+      <div class="stat"><span>Músicas sem gênero</span><strong id="totalSemGenero">—</strong></div>
+    </section>
+
+    <section class="panel">
+      <h2>1. Criar e gerenciar gêneros</h2>
+      <form id="formNovaCategoria" class="inline-form">
+        <label class="field grow">
+          <span>Nome do gênero</span>
+          <input id="novaCategoriaNome" type="text" placeholder="Ex.: Rock, Forró, MPB" maxlength="40" required>
+        </label>
+        <button class="button primary" type="submit">+ Criar gênero</button>
+      </form>
+      <p class="hint">Gêneros novos aparecem na seleção do jogo depois que você exportar categorias.js e publicar a atualização.</p>
+      <div class="genre-management">
+        <h3>Categorias cadastradas</h3>
+        <p class="hint">Geral e Anos 70 (quando configurado) são temas automáticos e protegidos: aparecem aqui para consulta e não podem ser excluídos. Pagode e Samba são gêneros-base. A exclusão de um gênero criado manualmente remove apenas a categoria e suas associações; as músicas e os MP3 permanecem.</p>
+        <div id="listaGeneros" class="genre-list" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>2. Classificar músicas em lote</h2>
+      <p class="section-intro">Selecione um gênero para classificar músicas em lote ou escolha Geral para consultar todo o catálogo. Temas automáticos são apenas para consulta; não permitem adicionar ou remover músicas do tema.</p>
+      <div class="toolbar">
+        <label class="field">
+          <span>Gênero ou tema que deseja visualizar</span>
+          <select id="categoriaSelecionada"></select>
+        </label>
+        <label class="field grow">
+          <span>Buscar por título, artista ou código</span>
+          <input id="buscaMusica" type="search" placeholder="Ex.: Evidências ou 060">
+        </label>
+        <label class="field filter-field">
+          <span>Mostrar</span>
+          <select id="filtroClassificacao">
+            <option value="todas">Todas as músicas</option>
+            <option value="sem-genero">Sem nenhum gênero</option>
+            <option value="fora-do-genero">Fora do gênero escolhido</option>
+            <option value="neste-genero">Já neste gênero</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="bulk-toolbar">
+        <label class="select-visible"><input id="selecionarVisiveis" type="checkbox"> Selecionar todas as exibidas</label>
+        <span id="resumoSelecao" class="selection-count">0 selecionadas</span>
+        <button id="limparSelecao" class="button secondary" type="button">Limpar seleção</button>
+      </div>
+      <div class="bulk-actions">
+        <button id="adicionarSelecionadas" class="button primary" type="button">+ Adicionar selecionadas ao gênero</button>
+        <button id="removerSelecionadas" class="button danger" type="button">− Remover selecionadas do gênero</button>
+      </div>
+      <div id="resumoCategoria" class="category-summary"></div>
+      <div id="listaMusicas" class="song-list"></div>
+      <p id="mensagemAdmin" class="hint" aria-live="polite"></p>
+    </section>
+
+    <section class="panel">
+      <div id="editarMusicaWrap" class="edit-song-wrap" hidden>
+        <div class="edit-song-heading">
+          <div>
+            <h3>Editar música existente</h3>
+            <p class="hint">Altere título, artista, ano e gêneros. O código da carta e o caminho do MP3 serão preservados.</p>
+          </div>
+          <span id="editarMusicaCodigo" class="song-code"></span>
+        </div>
+        <form id="formEditarMusica" class="song-form">
+          <label class="field">
+            <span>Título</span>
+            <input id="editarMusicaNome" type="text" required maxlength="180">
+          </label>
+          <label class="field">
+            <span>Artista</span>
+            <input id="editarMusicaArtista" type="text" required maxlength="180">
+          </label>
+          <label class="field">
+            <span>Ano (opcional)</span>
+            <input id="editarMusicaAno" type="number" min="1900" max="2100" placeholder="Ex.: 2024">
+          </label>
+          <label class="field">
+            <span>Caminho do áudio (somente leitura)</span>
+            <input id="editarMusicaArquivo" type="text" readonly>
+          </label>
+          <fieldset class="genre-picker">
+            <legend>Gêneros desta música</legend>
+            <p class="hint">Marque todos os gêneros que se aplicam. Geral e Anos 70 são automáticos.</p>
+            <div id="editarMusicaGeneros" class="genre-checkbox-grid"></div>
+          </fieldset>
+          <div class="form-actions">
+            <button class="button primary" type="submit">Salvar alterações no rascunho</button>
+            <button id="cancelarEdicaoMusica" class="button secondary" type="button">Cancelar edição</button>
+          </div>
+          <p id="editarMusicaStatus" class="hint" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <h2>3. Cadastro e edição de músicas</h2>
+      <p class="section-intro">Edite uma música existente pela lista acima ou cadastre uma nova faixa. O código de uma música existente e o caminho do seu áudio são preservados durante a edição.</p>
+      <form id="formNovaMusica" class="song-form">
+        <label class="field">
+          <span>Título</span>
+          <input id="novaMusicaNome" type="text" required maxlength="180" placeholder="Nome da música">
+        </label>
+        <label class="field">
+          <span>Artista</span>
+          <input id="novaMusicaArtista" type="text" required maxlength="180" placeholder="Nome do artista">
+        </label>
+        <label class="field">
+          <span>Ano (opcional)</span>
+          <input id="novaMusicaAno" type="number" min="1900" max="2100" placeholder="Ex.: 2024">
+        </label>
+        <label class="field">
+          <span>Arquivo MP3 no computador (opcional)</span>
+          <input id="novoArquivoAudio" type="file" accept=".mp3,audio/mpeg">
+        </label>
+
+        <fieldset class="genre-picker">
+          <legend>Gêneros desta música (opcional)</legend>
+          <p class="hint">Uma música pode pertencer a vários gêneros. Geral e Anos 70 são temas automáticos e não precisam ser marcados aqui.</p>
+          <div id="novaMusicaGeneros" class="genre-checkbox-grid"></div>
+        </fieldset>
+
+        <div id="audioPreviewWrap" class="audio-preview" hidden>
+          <span class="preview-label">Prévia do áudio selecionado</span>
+          <audio id="audioPreview" controls preload="metadata"></audio>
+        </div>
+
+        <div class="form-actions">
+          <button class="button primary" type="submit">Adicionar ao rascunho</button>
+          <button id="baixarNovoAudio" class="button secondary" type="button" disabled>Baixar MP3 com nome correto</button>
+        </div>
+        <p id="novaMusicaStatus" class="hint">Fluxo recomendado: preencha os dados, selecione o MP3, adicione ao rascunho e depois baixe o arquivo renomeado. Coloque esse MP3 na pasta audio do projeto.</p>
+      </form>
+    </section>
+
+    <section class="panel karaoke-admin-panel">
+      <div class="karaoke-admin-heading">
+        <div>
+          <p class="eyebrow">TERCEIRO MODO DE JOGO</p>
+          <h2>4. Catálogo do Karaokê — cadastrar vídeos</h2>
+          <p class="section-intro">Cadastre o título, o cantor, o ano e o vídeo de karaokê. O painel gera o nome do arquivo e prepara o cadastro para exportar em karaoke.js.</p>
+        </div>
+        <span id="karaokeAdminTotal" class="karaoke-admin-count">0 vídeos</span>
+      </div>
+
+      <div class="notice karaoke-admin-notice" role="note">
+        <strong>Importante: o GitHub Pages é estático.</strong>
+        Este painel não envia o vídeo diretamente para o GitHub. Ele baixa o vídeo com o nome correto e prepara o arquivo karaoke.js. Depois, copie o vídeo baixado para <code>karaoke/videos/</code> no VS Code e exporte/substitua <code>karaoke.js</code>. Recomendado: MP4 H.264. Arquivos grandes podem ultrapassar os limites do GitHub.
+      </div>
+
+      <div id="karaokeAdminConflict" class="karaoke-admin-conflict" hidden role="alert">
+        <strong>O rascunho do Karaokê pertence a outra versão de karaoke.js.</strong>
+        <p id="karaokeAdminConflictText">Por segurança, ele não foi carregado.</p>
+        <div class="form-actions">
+          <button id="karaokeAdminBackupConflict" class="button secondary" type="button">Baixar backup do rascunho</button>
+          <button id="karaokeAdminDiscardConflict" class="button danger" type="button">Descartar rascunho antigo</button>
+        </div>
+      </div>
+
+      <form id="formKaraokeVideo" class="song-form karaoke-video-form">
+        <label class="field">
+          <span>Nome da música</span>
+          <input id="karaokeVideoTitulo" type="text" maxlength="180" placeholder="Ex.: Evidências" required>
+        </label>
+        <label class="field">
+          <span>Cantor / artista</span>
+          <input id="karaokeVideoArtista" type="text" maxlength="180" placeholder="Ex.: Chitãozinho & Xororó" required>
+        </label>
+        <label class="field">
+          <span>Ano de lançamento (opcional)</span>
+          <input id="karaokeVideoAno" type="number" min="1900" max="2100" placeholder="Ex.: 1990">
+        </label>
+        <label class="field">
+          <span>Arquivo de vídeo (MP4 recomendado)</span>
+          <input id="karaokeVideoArquivo" type="file" accept="video/mp4,video/webm,video/quicktime,.mp4,.webm,.m4v,.mov" required>
+        </label>
+
+        <div id="karaokeVideoPreviewWrap" class="karaoke-video-preview" hidden>
+          <div class="karaoke-video-preview-heading">
+            <span class="preview-label">Prévia do vídeo selecionado</span>
+            <span id="karaokeVideoDuracao" class="karaoke-duration-label">Duração: lendo...</span>
+          </div>
+          <video id="karaokeVideoPreview" controls playsinline preload="metadata"></video>
+          <p id="karaokeVideoArquivoInfo" class="hint"></p>
+        </div>
+
+        <div class="form-actions karaoke-video-actions">
+          <button id="karaokeVideoPreparar" class="button primary" type="submit">Preparar cadastro</button>
+          <button id="karaokeVideoBaixar" class="button secondary" type="button" disabled>Baixar vídeo e concluir cadastro</button>
+          <button id="karaokeVideoCancelarPreparacao" class="button danger" type="button" hidden>Cancelar preparação</button>
+          <button id="karaokeVideoCancelarEdicao" class="button secondary" type="button" hidden>Cancelar edição</button>
+        </div>
+        <p id="karaokeVideoStatus" class="hint" aria-live="polite">Selecione um vídeo, confira a prévia e clique em Preparar cadastro. O arquivo só entra no catálogo depois de você solicitar o download com o nome correto.</p>
+      </form>
+
+      <div class="karaoke-catalog-toolbar">
+        <label class="field grow">
+          <span>Buscar vídeo cadastrado</span>
+          <input id="karaokeVideoBusca" type="search" placeholder="Pesquisar por música, cantor ou ano">
+        </label>
+        <button id="karaokeVideoExportar" class="button primary" type="button">⬇ Exportar karaoke.js</button>
+      </div>
+      <div id="karaokeVideoLista" class="karaoke-video-list" aria-live="polite"></div>
+      <p id="karaokeVideoExportStatus" class="hint" aria-live="polite"></p>
+    </section>
+
+    <section class="panel">
+      <h2>5. Exportar para o projeto</h2>
+      <p class="hint">Exporte e confira os arquivos antes de substituir os originais. O download não publica automaticamente no GitHub.</p>
+      <div class="export-grid">
+        <button id="exportarCategorias" class="button primary" type="button">⬇ Exportar categorias.js</button>
+        <button id="exportarMusicas" class="button primary" type="button">⬇ Exportar musicas.js</button>
+        <button id="limparRascunho" class="button danger" type="button">Descartar rascunho deste navegador</button>
+      </div>
+      <p id="statusExportacao" class="hint" aria-live="polite"></p>
+    </section>
+
+    <footer class="admin-footer">
+      <a href="index.html">← Voltar ao SOM NA MESA</a>
+    </footer>
+  </main>
+
+  <section id="draftConflictOverlay" class="draft-conflict-overlay" hidden role="alertdialog" aria-modal="true" aria-labelledby="draftConflictTitle">
+    <div class="draft-conflict-dialog">
+      <p class="eyebrow">PROTEÇÃO DE DADOS</p>
+      <h2 id="draftConflictTitle">O rascunho é de outra versão do catálogo</h2>
+      <p id="draftConflictMessage" class="draft-conflict-message"></p>
+      <p class="hint">Nenhuma alteração foi aplicada. Para evitar perda de dados, o painel está bloqueado até você escolher como proceder.</p>
+      <div class="draft-conflict-actions">
+        <button id="baixarRascunhoPendente" class="button secondary" type="button">Baixar cópia do rascunho antigo</button>
+        <button id="descartarRascunhoPendente" class="button danger" type="button">Descartar rascunho e usar arquivos atuais</button>
+      </div>
+      <p id="draftConflictBackupStatus" class="hint" aria-live="polite"></p>
+      <p class="hint">Se você quiser recuperar mudanças antigas, baixe a cópia e compare-a manualmente antes de descartar. Não substitua os arquivos atuais sem conferir.</p>
+    </div>
+  </section>
+
+  <script src="musicas.js"></script>
+  <script src="categorias.js"></script>
+  <script src="karaoke.js"></script>
+  <script src="ui-dialogs.js"></script>
+  <script src="admin.js"></script>
+  <script src="admin-karaoke.js"></script>
+</body>
+</html>

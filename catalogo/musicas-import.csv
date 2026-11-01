@@ -1,0 +1,275 @@
+id,codigo,nome,artista,ano,audio_key,ativa
+1,001,LET IT BE,BEATLES,1970,audio/001.mp3,true
+2,002,LE FREAK,CHIC,1978,audio/002.mp3,true
+3,003,Killing Me Softly With His Song,ROBERTA FLACK,1973,audio/003.mp3,true
+4,004,Isn't She Lovely,Stevie Wonder,1976,audio/004.mp3,true
+5,005,INFINITA HIGHWAY,ENGENHEIROS DO HAWAII,2004,audio/005.mp3,true
+6,006,IMAGINE,JOHN LENNON,1971,audio/006.mp3,true
+7,007,I'm Coming Out,DIANA ROSS,1980,audio/007.mp3,true
+8,008,Have You Ever Seen The Rain,Creedence Clearwater Revival,1973,audio/008.mp3,true
+9,009,Gonna Make You Sweat,C+C Music Factory,1991,audio/009.mp3,true
+10,010,Footloose,Kenny Loggins,1984,audio/010.mp3,true
+11,011,Get Down On It,Kool & The Gang,1981,audio/011.mp3,true
+12,012,NUMB,LINKIN PARK,2003,audio/012.mp3,true
+13,013,Play That Funky Music,Wild Cherry,1976,audio/013.mp3,true
+14,014,A PAZ,GILBERTO GIL,1994,audio/014.mp3,true
+15,015,APENAS MAIS UMA DE AMOR,LULU SANTOS,2000,audio/015.mp3,true
+16,016,AS QUATRO ESTAÇÕES,SANDY & JUNIOR,2007,audio/016.mp3,true
+17,017,BEAT IT,MICHAEL JACKSON,1982,audio/017.mp3,true
+18,018,If You Leave Me Now,CHICAGO,1976,audio/018.mp3,true
+19,019,Eye of the Tiger,SURVIVOR,1982,audio/019.mp3,true
+20,020,All Out Of Love,Air Supply,1980,audio/020.mp3,true
+21,021,Celebration,Kool & The Gang,1980,audio/021.mp3,true
+22,022,Funkytown,Lipps Inc.,1980,audio/022.mp3,true
+23,023,Livin' On A Prayer,Bon Jovi,1986,audio/023.mp3,true
+24,024,Malandragem,Cassia Eller,1994,audio/024.mp3,true
+25,025,Me Chama,Lobão,2000,audio/025.mp3,true
+26,026,Os Cegos do Castelo,Nando Reis,1997,audio/026.mp3,true
+27,027,Pescador de Ilusões,O Rappa,2005,audio/027.mp3,true
+28,028,Primeiros Erros,Capital Inicial,2000,audio/028.mp3,true
+29,029,Rocket Man,Elton John,1972,audio/029.mp3,true
+30,030,Sailing,Christopher Cross,1980,audio/030.mp3,true
+31,031,September,"Earth, Wind & Fire",1978,audio/031.mp3,true
+32,032,Starman,David Bowie,1972,audio/032.mp3,true
+33,033,Stayin' Alive,Bee Gees,1977,audio/033.mp3,true
+34,034,Take On Me,a-ha,1985,audio/034.mp3,true
+35,035,I Wanna Dance With Somebody,Whitney Houston,1987,audio/035.mp3,true
+36,036,You Give Love a Bad Name,Bon Jovi,1986,audio/036.mp3,true
+37,037,You Should Be Dancing,Bee Gees,1976,audio/037.mp3,true
+38,038,What's Up,4 Non Blondes,1993,audio/038.mp3,true
+39,039,Ain't No Mountain High Enough,Marvin Gaye x Tammi Terrell,1967,audio/048.mp3,true
+40,040,Anunciação,Alceu Valença,1983,audio/040.mp3,true
+41,041,Árvore,Edson Gomes,1992,audio/046-41.mp3,true
+42,042,"Bilu, Bilu",Pablo,2014,audio/050-42.mp3,true
+43,043,Black or White,Michael Jackson,1991,audio/051-43.mp3,true
+44,044,Borboletas,Victor & Leo,2008,audio/052-44.mp3,true
+45,045,Camelo,Edson Gomes,1997,audio/053-45.mp3,true
+46,046,Exagerado,Cazuza,1985,audio/054-46.mp3,true
+47,047,The Twist,Chubby Checker,1960,audio/055-47.mp3,true
+48,048,Easy,Commodores,1977,audio/039.mp3,true
+49,049,Como eu quero,Kid Abelha,1984,audio/040-49.mp3,true
+50,050,Dancing Queen,ABBA,1976,audio/041-50.mp3,true
+51,051,Diga Sim pra Mim,Desejo de Menina,2008,audio/042-51.mp3,true
+52,052,Do Lado de Cá,Chimarruts,2010,audio/043-52.mp3,true
+53,053,Don't Matter,Akon,2007,audio/044-53.mp3,true
+54,054,Coração,Dorgival Dantas,2005,audio/045-54.mp3,true
+55,055,É o Amor,Zezé Di Camargo & Luciano,1991,audio/047-55.mp3,true
+56,056,ENDOIDECEU MEU CORAÇÃO,João Gomes,,audio/056.mp3,true
+57,057,Esse Cara Sou Eu,Roberto Carlos,2012,audio/057.mp3,true
+58,058,Eu Só Quero um Xodó,Dominguinhos,,audio/058.mp3,true
+59,059,Eu Tenho Medo,Zé Vaqueiro,2020,audio/059.mp3,true
+60,060,Evidências,Chitãozinho & Xororó,1990,audio/060.mp3,true
+61,061,Fico Assim Sem Você,Claudinho & Buchecha,,audio/061.mp3,true
+62,062,Dreams,Fleetwood Mac,1977,audio/062.mp3,true
+63,063,Garota Nota 100,MC Marcinho,1998,audio/063.mp3,true
+64,064,Give It Up,KC and the Sunshine Band,,audio/064.mp3,true
+65,065,Gostava Tanto De Você,Tim Maia,1973,audio/065.mp3,true
+66,066,Flashdance What A Feeling,Irene Cara,1983,audio/066.mp3,true
+67,067,Is This Love,Bob Marley,1978,audio/067.mp3,true
+68,068,Please Don't Go,KC & The Sunshine Band,,audio/068.mp3,true
+69,069,La Belle De Jour,Alceu Valença,1992,audio/049-69.mp3,true
+70,070,Tempo perdido,Legião Urbana,1986,audio/070.mp3,true
+71,071,Linda Bela,Elias Monkbel,2019,audio/071.mp3,true
+72,072,Lonely,Akon,,audio/072.mp3,true
+73,073,Mágica,Calcinha Preta,2004,audio/073.mp3,true
+74,074,Malandrinha,Edson Gomes,1998,audio/074.mp3,true
+75,075,Manchete dos Jornais,Calcinha Preta,2003,audio/075.mp3,true
+76,076,Saudades do Tempo,Maneva,2009,audio/076.mp3,true
+77,077,Me Namora,Edu Ribeiro,2004,audio/077.mp3,true
+78,078,Metamorfose Ambulante,Raul Seixas,1973,audio/078.mp3,true
+79,079,Meu Erro,Os Paralamas Do Sucesso,1984,audio/079.mp3,true
+80,080,Meu Mel,Zé Vaqueiro,2020,audio/080.mp3,true
+81,081,Meu Pedaço de Pecado,João Gomes,2021,audio/081.mp3,true
+82,082,Over My Shoulder,Mike + The Mechanics,1995,audio/082.mp3,true
+83,083,Monalisa,Jorge Vercillo,2003,audio/083.mp3,true
+84,084,Morango do Nordeste,Karametade,2000,audio/084.mp3,true
+85,085,Morena Tropicana,Alceu Valença,1982,audio/085.mp3,true
+86,086,Night Fever,Bee Gees,1978,audio/086.mp3,true
+87,087,No Dia em Que Eu Saí de Casa,Zezé Di Camargo & Luciano,1995,audio/087.mp3,true
+88,088,"No Woman, No Cry",Bob Marley,1974,audio/088.mp3,true
+89,089,O Astronauta de Marmore,Nenhum de Nós,1989,audio/089.mp3,true
+90,090,O Descobridor Dos Sete Mares,Tim Maia,1983,audio/090.mp3,true
+91,091,Oh Chuva,Planta E Raiz,2000,audio/091.mp3,true
+92,092,Pássaro De Fogo,Paula Fernandes,2009,audio/094-92.mp3,true
+93,093,Perdido De Amor,Edson Gomes,1997,audio/092-93.mp3,true
+94,094,Perfume,Belo,2008,audio/093-94.mp3,true
+95,095,Quero Te Encontrar,Claudinho & Buchecha,1997,audio/095.mp3,true
+96,096,Right Here Waiting,Richard Marx,1989,audio/096.mp3,true
+97,097,Sinônimos,Chitãozinho & Xororó,2004,audio/097.mp3,true
+98,098,I'm a Believer,Smash Mouth,2001,audio/098.mp3,true
+99,099,Só Love,Claudinho & Buchecha,1998,audio/099.mp3,true
+100,100,Tá Vendo Aquela Lua,Exalta Samba,2010,audio/106-100.mp3,true
+101,101,Tempos modernos,Lulu Santos,1982,audio/100-101.mp3,true
+102,102,Best of My Love,The Emotions,1977,audio/101-102.mp3,true
+103,103,I Don't Wanna Lose You,Tina Turner,1989,audio/102-103.mp3,true
+104,104,Toma Conta De Mim,Limão com Mel,2002,audio/103-104.mp3,true
+105,105,Treasure,Bruno Mars,2012,audio/104-105.mp3,true
+106,106,True Love,SOJA,2006,audio/105-106.mp3,true
+107,107,Vou Deixar,Skank,2003,audio/107.mp3,true
+108,108,Wonderwall,Oasis,1995,audio/108.mp3,true
+109,109,Xote dos Milagres,Falamansa,2000,audio/109.mp3,true
+110,110,Deixe-me ir,1Kilo,2017,audio/110.mp3,true
+111,111,Anna Júlia,LOS HERMANOS,1999,audio/111.mp3,true
+112,112,Apenas Mais Uma De Amor,Lulu Santos,1992,audio/112.mp3,true
+113,113,Burguesinha,Seu Jorge,2007,audio/113.mp3,true
+114,114,Céu Azul,Charlie Brown Jr,2011,audio/114.mp3,true
+115,115,Coisas Que Eu Sei,Danni Carlos,2007,audio/115.mp3,true
+116,116,"Dias De Luta, Dias De Gloria",Charlie Brown Jr.,2005,audio/116.mp3,true
+117,117,Sina,Djavan,1982,audio/117.mp3,true
+118,118,Equalize,Pitty,2003,audio/118.mp3,true
+119,119,Eu Amo Você,Tim Maia,1970,audio/119.mp3,true
+120,120,Eu Sei,Papas Da Língua,2002,audio/120.mp3,true
+121,121,Borbulhas de Amor,Fagner,1991,audio/121.mp3,true
+122,122,Felicidade,Seu Jorge,2015,audio/122.mp3,true
+123,123,João e Maria,Chico Buarque,1977,audio/123.mp3,true
+124,124,Lágrimas E Chuva,Kid Abelha,1985,audio/124.mp3,true
+125,125,Lanterna Dos Afogados,Os Paralamas Do Sucesso,1989,audio/125.mp3,true
+126,126,Linha do Equador,Djavan,1992,audio/126.mp3,true
+127,127,Na Linha do Tempo,Victor & Leo,2013,audio/127.mp3,true
+128,128,Naquela Mesa,Nelson Gonçalves,1972,audio/128.mp3,true
+129,129,Nem um Dia,Djavan,1996,audio/129.mp3,true
+130,130,Pela Luz dos Olhos Teus,Miucha,1977,audio/130.mp3,true
+131,131,Vagalumes (part. Ivo Mozart),Pollo,2012,audio/131.mp3,true
+132,132,Por Você (Acústica),Barão Vermelho,1998,audio/132.mp3,true
+133,133,Sem Radar,LS Jack,2003,audio/133.mp3,true
+134,134,SENHOR DO TEMPO,Charlie Brown Jr.,2005,audio/134.mp3,true
+135,135,Será que é amor,Arlindo Cruz,2003,audio/135.mp3,true
+136,136,Acima do Sol,Skank,2001,audio/136.mp3,true
+137,137,Só Hoje,Jota Quest,2002,audio/137.mp3,true
+138,138,Só Os Loucos Sabem,Charlie Brown Jr.,2009,audio/138.mp3,true
+139,139,Enquanto Houver Sol,Titãs,2003,audio/139.mp3,true
+140,140,Tive Razão,Seu Jorge,2004,audio/140.mp3,true
+141,141,Várias Queixas,Gilsons,2019,audio/141.mp3,true
+142,142,Velha Infância,Tribalista,2002,audio/142.mp3,true
+143,143,Ainda Gosto Dela,Skank,2008,audio/143.mp3,true
+144,144,Vamos Fugir,Skank,2004,audio/143.mp3,true
+145,145,Poderosa,Banda Brasil,1993,audio/145.mp3,true
+146,146,A Beleza É Você Menina,Bebeto,1974,audio/146.mp3,true
+147,147,Someone Like You,Adele,2011,audio/147.mp3,true
+148,148,Don't Matter,Akon,2007,audio/148.mp3,true
+149,149,If I Ain't Got You,Alicia Keys,2004,audio/149.mp3,true
+150,150,No One,Alicia Keys,2007,audio/150.mp3,true
+151,151,As Long As You Love Me,Backstreet Boys,1997,audio/151.mp3,true
+152,152,Everybody,Backstreet Boys,1997,audio/152.mp3,true
+153,153,I Want It That Way,Backstreet Boys,1999,audio/153.mp3,true
+154,154,Say Goodbye,Chris Brown,2006,audio/154.mp3,true
+155,155,With You,Chris Brown,2007,audio/155.mp3,true
+156,156,Boogie Wonderland,"Earth, Wind & Fire",1979,audio/156.mp3,true
+157,157,Amor,Emmanuell Cortess,2024,audio/157.mp3,true
+158,158,Tema de Não Quero Ver Você Triste,Erasmo Carlos Ft. Marisa Monte,2007,audio/158.mp3,true
+159,159,Jeito Sexy,Fat Family,1998,audio/159.mp3,true
+160,160,I'm Yours,Jason Mraz,2008,audio/160.mp3,true
+161,161,Baby,Justin Bieber,2010,audio/161.mp3,true
+162,162,That Girl,Justin Timberlake,2013,audio/162.mp3,true
+163,163,Folded,Kehlani,2025,audio/163.mp3,true
+164,164,Me Gustas Tú,Manu Chao,2001,audio/164.mp3,true
+165,165,We Belong Together,Mariah Carey,2005,audio/165.mp3,true
+166,166,Amor I Love You,Marisa Monte,2000,audio/166.mp3,true
+167,167,Sugar,Maroon 5,2015,audio/167.mp3,true
+168,168,I Want You Back,NSYNC,1996,audio/168.mp3,true
+169,169,Umbrella ft. JAY-Z,Rihanna,2007,audio/169.mp3,true
+170,170,MAKE UP YOU MIND,TATYANA ALI,1995,audio/170.mp3,true
+171,171,Can We Talk,Tevin Campbell,1993,audio/171.mp3,true
+172,172,"Hey, Soul Sister",Train,2009,audio/172.mp3,true
+173,173,Burn,Usher,2004,audio/173.mp3,true
+174,174,U Got It Bad,Usher,2001,audio/174.mp3,true
+175,175,A Thousand Miles,Vanessa Carlton,2002,audio/175.mp3,true
+176,176,A Desconhecida,Fernando Mendes,1972,audio/176.mp3,true
+177,177,A Dor Desse Amor,KLB,2000,audio/177.mp3,true
+178,178,A Força do Amor,Roupa Nova,1987,audio/178.mp3,true
+179,179,A Lenda,Sandy e Junior,2000,audio/179.mp3,true
+180,180,A Lua Q Eu T Dei,Ivete Sangalo,2001,audio/180.mp3,true
+181,181,A Natureza das Coisas,Flavio José,2004,audio/181.mp3,true
+182,182,A Praia,Mastruz com Leite,2004,audio/182.mp3,true
+183,183,When We Were Young,Adele,2015,audio/183.mp3,true
+184,184,Adoro amar você,DANIEL,1998,audio/184.mp3,true
+185,185,Alma Gêmea,Fábio Jr.,1994,audio/185.mp3,true
+186,186,Amado,Vanessa da Mata,2007,audio/186.mp3,true
+187,187,Menininha Meu Amor,Amado Batista,1985,audio/187.mp3,true
+188,188,Princesa,Amado Batista,1991,audio/188.mp3,true
+189,189,serenata,amado batista,1978,audio/189.mp3,true
+190,190,"Amor, Amor, Amor",Reginaldo Rossi,1980,audio/190.mp3,true
+191,191,Aonde Quer Que Eu Vá,Os Paralamas Do Sucesso,2000,audio/191.mp3,true
+192,192,Apenas Um Rapaz,Belchior,1976,audio/192.mp3,true
+193,193,Verdadeiro Amor,Banda Magníficos,1996,audio/193.mp3,true
+194,194,Beautiful Boy,John Lennon,1980,audio/194.mp3,true
+195,195,Stand By Me,Ben E. King,1962,audio/195.mp3,true
+196,196,Back At One,Brian McKnight,1999,audio/196.mp3,true
+197,197,Caça e Caçador,Fábio Jr.,1998,audio/197.mp3,true
+198,198,Melhor eu ir_Ligando os Fatos_Sonho de Amor_Deixa eu te querer,Churrasquinho do Menos é Mais,2019,audio/198.mp3,true
+199,199,1 Minuto,D'Black e Negra Li,2008,audio/199.mp3,true
+200,200,Deixo,Ivete Sangalo,2007,audio/200.mp3,true
+201,201,Diga pra Mim,Zezo,2021,audio/201.mp3,true
+202,202,Eu Te Devoro,Djavan,1998,audio/202.mp3,true
+203,203,Pétala,Djavan,1982,audio/203.mp3,true
+204,204,Samurai,Djavan,1982,audio/204.mp3,true
+205,205,Te Faço Um Cafuné,Dominguinhos e Mestrinho,2017,audio/205.mp3,true
+206,206,Coração,Dorgival Dantas,2005,audio/206.mp3,true
+207,207,"Tarde Demais tchau, tchau..",Dorgival Dantas,2014,audio/207.mp3,true
+208,208,Ela Não Está Aqui,KLB,2000,audio/208.mp3,true
+209,209,Ela só quer paz,Projota,2016,audio/209.mp3,true
+210,210,Can't Help Falling In Love,Elvis Presley,1961,audio/210.mp3,true
+211,211,Era Uma Vez...,Sandy e Junior,1997,audio/211.mp3,true
+212,212,Esperando na janela,Gilberto Gil,2000,audio/212.mp3,true
+213,213,Espumas ao Vento,Flavio José,1997,audio/213.mp3,true
+214,214,Estou apaixonado,João Paulo & Daniel,1996,audio/214.mp3,true
+215,215,Estou Em Suas Mãos,KLB,2000,audio/215.mp3,true
+216,216,Eu Queria Dizer Que Te Amo Numa Canção,Zezo,2000,audio/216.mp3,true
+217,217,Só Você,Fábio Jr.,1997,audio/217.mp3,true
+218,218,Deslizes,Fagner,1987,audio/218.mp3,true
+219,219,Fim De Tarde,Fat Family,2001,audio/219.mp3,true
+220,220,Final Feliz,Jorge Vercillo,2000,audio/220.mp3,true
+221,221,All Of Me,John Legend,2013,audio/221.mp3,true
+222,222,Sensível Demais,Jorge Vercillo,2007,audio/222.mp3,true
+223,223,Ela Une Todas As Coisas,Jorge Vercillo,2007,audio/223.mp3,true
+224,224,Just the Two of Us,Bill Withers e Grover Washington Jr,1980,audio/224.mp3,true
+225,225,Mirrors,Justin Timberlake,2013,audio/225.mp3,true
+226,226,Lembrança De Um Beijo,Santanna O Cantador,2003,audio/226.mp3,true
+227,227,Maluco Beleza,Raul Seixas,1977,audio/227.mp3,true
+228,228,Estranho,Marília Mendonça,2018,audio/228.mp3,true
+229,229,Te Amo Demais,Marília Mendonça,2022,audio/229.mp3,true
+230,230,Minha Doce Estrela,Nando Cordel,1991,audio/230.mp3,true
+231,231,Morango do Nordeste,Lairton e Seus,1999,audio/231.mp3,true
+232,232,Muito Estranho,KLB,2000,audio/232.mp3,true
+233,233,Naquela Mesa,Zezo,2004,audio/233.mp3,true
+234,234,O Xote das Meninas,Luiz Gonzaga,1953,audio/234.mp3,true
+235,235,Planeta de Cores,Forrozão Tropykalia,2004,audio/235.mp3,true
+236,236,Porque Brigamos,DIANA,1972,audio/236.mp3,true
+237,237,Quando A Chuva Passar,Ivete Sangalo,2005,audio/237.mp3,true
+238,238,Que Nem Maré,Jorge Vercillo,2002,audio/238.mp3,true
+239,239,Levo Comigo,Restart,2009,audio/239.mp3,true
+240,240,Lady Laura,Roberto Carlos,1978,audio/240.mp3,true
+241,241,Rolling In The Deep,Adele,2010,audio/241.mp3,true
+242,242,Retratos e Canções,Sandra De Sá,1986,audio/242.mp3,true
+243,243,Solidão (Áudio Oficial),Sandra De Sá,,audio/243.mp3,true
+244,244,Solidão,Sandra De Sá,1986,audio/244.mp3,true
+245,245,"Say You, Say Me",Lionel Richie,1986,audio/245.mp3,true
+246,246,Se Ainda Existe Amor,Balthazar,1975,audio/246.mp3,true
+247,247,Sendo Assim,Genival Santos,1976,audio/247.mp3,true
+248,248,Seresteiro das Noites,Amado Batista,1985,audio/248.mp3,true
+249,249,Seu Olhar Não Mente,Flavio José,2000,audio/249.mp3,true
+250,250,Sintonia,Moraes Moreira,1986,audio/250.mp3,true
+251,251,Somewhere over the Rainbow,Israel IZ Kamakawiwo'ole,1990,audio/251.mp3,true
+252,252,Me Espera,Sorriso Maroto,2000,audio/252.mp3,true
+253,253,Telefone Fora de Área,Banda Magníficos,2008,audio/253.mp3,true
+254,254,Tente Outra Vez,Raul Seixas,1975,audio/254.mp3,true
+255,255,Amei Te Ver,TIAGO IORC,2015,audio/255.mp3,true
+256,256,Coisa Linda,TIAGO IORC,2015,audio/256.mp3,true
+257,257,Ela Partiu,Tim Maia,1976,audio/257.mp3,true
+258,258,Tudo Que Você Quiser,Luan Santana,2013,audio/258.mp3,true
+259,259,Última Canção,Paulo Sergio,1968,audio/259.mp3,true
+260,260,Um Sonho de Amor,Limão Com Mel,1994,audio/260.mp3,true
+261,261,O Sol,Vitor Kley,2017,audio/261.mp3,true
+262,262,Você Endoideceu Meu Coração,Nando Cordel,1986,audio/262.mp3,true
+263,263,We Are The World,U.S.A. for Africa,1985,audio/263.mp3,true
+264,264,Telegrama,Zeca Baleiro,2002,audio/264.mp3,true
+265,265,Its Not Unusual,Tom Jones,1965,audio/265.mp3,true
+266,266,My Heart Will Go On,Celine Dion,1997,audio/266.mp3,true
+267,267,Billie Jean,Michael Jackson,1983,audio/267.mp3,true
+268,268,Sozinho,Caetano Veloso,1998,audio/268.mp3,true
+269,269,Everybody Wants To Rule The World ,Tears For Fears,1985,audio/269.mp3,true
+270,270,Adventure of a Lifetime ,Coldplay,2015,audio/270.mp3,true
+271,271,O AMOR DA SUA VIDA ,Kiko Chicabana,2014,audio/271.mp3,true
+272,272,Eu Quero Só Você ,Kiko Chicabana,2010,audio/272.mp3,true
+273,273,Pega-Pega,Kiko Chicabana,2009,audio/273.mp3,true
+274,274,BB (garupa de moto amarela),Tim Bernardes,2022,audio/274.mp3,true

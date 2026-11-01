@@ -1,86 +1,570 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hitster Personal</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17132b">
+  <title>SOM NA MESA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="ui-dialogs.css">
 </head>
-
 <body>
+  <main class="app-shell">
+    <section id="telaInicial" class="card screen">
+      <div class="capa capa-inicial">
+        <img src="img/capa-oficial.jpg" alt="Logo do SOM NA MESA">
+      </div>
+      <p class="eyebrow">JOGO MUSICAL</p>
+      <h1>SOM NA MESA</h1>
+      <p class="subtitulo">Reviva os maiores sucessos da música.</p>
+      <button id="iniciarJogo" class="btn btn-primary btn-large">▶ JOGAR</button>
+    </section>
 
-    <div id="telaInicial" class="card">
-        <div class="capa">
-            <img src="img/capa-oficial.jpg" alt="Logo do Jogo">
-        </div>
-
-        <h1>SOM NA MESA</h1>
-
-        <p class="subtitulo">Reviva os maiores sucessos da música.</p>
-
-        <button id="iniciarJogo">
-            ▶ INICIAR JOGO
+    <section id="telaModos" class="card screen" hidden>
+      <p class="eyebrow">PRIMEIRA ETAPA</p>
+      <h1>Escolha o modo de jogo</h1>
+      <p class="subtitulo">Escolha como você quer se divertir com as músicas.</p>
+      <div class="mode-grid">
+        <button id="modoCanteDance" class="mode-card" type="button">
+          <span class="mode-icon" aria-hidden="true">🎤💃</span>
+          <strong>Cante e Dance</strong>
+          <span class="mode-description">Cante corretamente um trecho no tempo escolhido, conquiste Discos de Ouro e desafie as outras equipes.</span>
+          <span class="mode-action">ESCOLHER MODO <span aria-hidden="true">→</span></span>
         </button>
-    </div>
+        <button id="modoDesafioMusical" class="mode-card mode-card-challenge" type="button">
+          <span class="mode-icon" aria-hidden="true">🎧🧠</span>
+          <strong>Desafio Musical</strong>
+          <span class="mode-description">Cante, descubra o título, identifique o artista ou acerte o ano. Cada música pode render pontos para várias equipes.</span>
+          <span class="mode-action">ESCOLHER MODO <span aria-hidden="true">→</span></span>
+        </button>
+        <button id="modoKaraoke" class="mode-card mode-card-karaoke" type="button">
+          <span class="mode-icon" aria-hidden="true">🎤🎶</span>
+          <strong>Karaokê</strong>
+          <span class="mode-description">Cante com vídeos de karaokê, receba notas de 1 a 3 jurados e acompanhe o placar individual ou por equipes.</span>
+          <span class="mode-action">ESCOLHER MODO <span aria-hidden="true">→</span></span>
+        </button>
+      </div>
+      <button id="voltarTelaInicial" class="btn btn-secondary">← Voltar ao início</button>
+    </section>
 
-    <div id="jogo" style="display:none;">
-        <div class="card">
-            <div class="capa">
-                <img id="capaAlbum" src="" alt="Capa da Música">
-            </div>
+    <section id="telaEquipes" class="card screen" hidden>
+      <p id="etapaSetupEquipes" class="eyebrow">SEGUNDA ETAPA</p>
+      <h1 id="tituloSetupEquipes">Monte as equipes</h1>
+      <p id="subtituloSetupEquipes" class="subtitulo">Dê um nome a cada equipe e cadastre os participantes. Cada equipe começa com três campos, mas você pode adicionar mais pessoas para acomodar todo mundo.</p>
+      <div id="avisoRevancheSetup" class="rematch-setup-notice" hidden role="status"></div>
 
-            <h1 id="titulo">EDIÇÃO ESPECIAL</h1>
-            <p class="carta">Carta #001</p>
-
-            <button id="play">▶ TOCAR MÚSICA</button>
-
-            <div class="player">
-                <input type="range" id="progresso" value="0" min="0" max="100">
-                <div class="tempo">
-                    <span id="inicio">00:00</span>
-                    <span id="fim">00:00</span>
-                </div>
-            </div>
-
-            <div class="controles">
-                <button id="pause">⏸ Pausar</button>
-                <button id="resume">▶ Continuar</button>
-                <button id="temporizador">⏱ TEMPO</button>
-                <button id="pararTempo" class="oculto">⏹ PARAR</button>
-            </div>
-
-            <button id="revelar">👁 Revelar Resposta</button>
-            <button id="scanner">📷 Escanear Próxima Carta</button>
-
-            <div id="resposta">
-                <h2 id="nome"></h2>
-                <p id="artista"></p>
-                <p id="ano"></p>
-            </div>
-
-            <audio id="musica" src="audio/001.mp3"></audio>
-
-            <!-- TELA DO SCANNER -->
-            <div id="scannerTela" class="scanner-tela">
-                <div class="scanner-box">
-                    <h2>📷 Escaneie a próxima carta</h2>
-                    <div id="reader"></div>
-                    <button id="fecharScanner">✖ Cancelar</button>
-                </div>
-            </div>
+      <div class="win-target-box">
+        <label class="field team-count-field" for="quantidadeEquipesSetup">
+          <span>1. Quantas equipes vão participar?</span>
+          <select id="quantidadeEquipesSetup" required>
+            <option value="2">2 equipes</option>
+            <option value="3">3 equipes</option>
+            <option value="4">4 equipes</option>
+            <option value="5">5 equipes</option>
+            <option value="6">6 equipes</option>
+            <option value="7">7 equipes</option>
+            <option value="8">8 equipes</option>
+            <option value="9">9 equipes</option>
+            <option value="10">10 equipes</option>
+            <option value="11">11 equipes</option>
+            <option value="12">12 equipes</option>
+          </select>
+        </label>
+        <p class="hint team-count-hint">A quantidade de participantes por equipe pode variar. A meta considera o número de equipes, pois a pontuação pertence à equipe.</p>
+        <label class="field" for="metaPontos">
+          <span>2. Meta de pontos para vencer</span>
+          <input id="metaPontos" type="number" min="1" max="999" step="1" placeholder="Meta calculada pelas equipes" required>
+        </label>
+        <div id="metaPersonalizadaAcoes" class="meta-target-actions" hidden>
+          <button id="alternarMetaManual" class="btn btn-secondary" type="button">✎ Personalizar meta</button>
         </div>
+        <p id="estimativaTempoPartida" class="match-time-estimate" hidden aria-live="polite"></p>
+        <p id="metaPontosHint" class="hint">A meta é sugerida automaticamente conforme o modo e a quantidade de equipes. Você pode personalizar antes de começar.</p>
+      </div>
+
+      <div id="resumoRegrasCanteDance" class="rules-summary">
+        <h2>Resumo das regras — Cante e Dance</h2>
+        <ul>
+          <li><strong>Disco de Ouro = 2 pontos.</strong> A equipe cantora recebe um se cantar corretamente.</li>
+          <li><strong>Vinil Comum = 1 ponto.</strong> A equipe recebe um quando seu voto estiver correto.</li>
+          <li>Se o canto estiver correto, Fã-clube ganha Vinil Comum; as equipes Duvidamos dançam e a equipe cantora define o desafio.</li>
+          <li>Se o canto estiver errado, Duvidamos ganha Vinil Comum; a equipe cantora e as equipes Fã-clube dançam. Um participante sorteado entre as equipes Duvidamos define o desafio.</li>
+          <li>Se todas as equipes passarem, todas dançam e o anfitrião escolhe o desafio. Os votos podem ser alterados antes da confirmação.</li>
+          <li><strong>Meta de vitória:</strong> sugerida automaticamente conforme a quantidade de equipes (1,5 × equipes + 8, arredondado). Você pode personalizar a meta antes de começar.</li>
+        </ul>
+      </div>
+      <div id="resumoRegrasDesafioMusical" class="rules-summary challenge-rules-summary" hidden>
+        <h2>Resumo das regras — Desafio Musical</h2>
+        <ul>
+          <li><strong>Pontos por resposta:</strong> cantar = 3; nome da música = 2; artista = 1; ano exato = 3. Os valores são fixos, sem bônus por erro ou passe.</li>
+          <li><strong>Voto correto = 1 ponto:</strong> cada equipe pode ganhar no máximo 1 ponto de votação por música, separado dos pontos da resposta.</li>
+          <li><strong>Uma tentativa por equipe:</strong> cada equipe escolhe cantar, dizer o título, identificar o artista ou acertar o ano. Se acertar, recebe os pontos fixos do desafio; a música continua para os desafios restantes.</li>
+          <li><strong>Votações:</strong> cada equipe pode ganhar no máximo 1 ponto de votação por música. Depois de acertar um voto, ganha 1 ponto e não vota mais nessa música. Se errar o voto, dança, mas pode tentar votar novamente até acertar.</li>
+          <li><strong>Direito de votar:</strong> quem errar a própria resposta ou passar a música por completo não vota mais nessa música. Quem não teve oportunidade de responder não recebe penalidade.</li>
+          <li>Se os quatro desafios forem resolvidos ou não houver mais equipes aptas a responder, a música termina. Se ninguém acertar nenhum desafio, todas dançam e a música é descartada.</li>
+        </ul>
+      </div>
+
+      <div id="listaEquipesSetup" class="team-setup-list"></div>
+      <div class="setup-actions">
+        <button id="adicionarEquipe" class="btn btn-secondary" type="button">＋ Adicionar equipe</button>
+        <button id="confirmarEquipes" class="btn btn-primary" type="button">Continuar para os temas →</button>
+      </div>
+      <p id="statusEquipesSetup" class="status-message" aria-live="polite"></p>
+      <button id="voltarModos" class="btn btn-secondary">← Voltar aos modos</button>
+    </section>
+
+    <section id="telaTemas" class="card screen" hidden>
+      <p class="eyebrow">TERCEIRA ETAPA</p>
+      <h1>Escolha o tema</h1>
+      <p class="subtitulo">Selecione o estilo musical da sua rodada.</p>
+      <div id="listaTemas" class="theme-grid"></div>
+      <p id="mensagemTemas" class="status-message" aria-live="polite"></p>
+      <button id="voltarEquipes" class="btn btn-secondary">← Voltar às equipes</button>
+    </section>
+
+    <section id="telaDificuldade" class="card screen" hidden>
+      <p class="eyebrow">QUARTA ETAPA</p>
+      <h1>Escolha a dificuldade</h1>
+      <p id="temaEscolhidoTexto" class="subtitulo"></p>
+      <div class="difficulty-grid">
+        <button class="difficulty-card easy" data-segundos="15" type="button">
+          <span class="difficulty-name">FÁCIL</span>
+          <strong>15 s</strong>
+          <span class="difficulty-hint">Trecho de 15 segundos</span>
+        </button>
+        <button class="difficulty-card medium" data-segundos="30" type="button">
+          <span class="difficulty-name">MÉDIO</span>
+          <strong>30 s</strong>
+          <span class="difficulty-hint">Trecho de 30 segundos</span>
+        </button>
+        <button class="difficulty-card hard" data-segundos="45" type="button">
+          <span class="difficulty-name">DIFÍCIL</span>
+          <strong>45 s</strong>
+          <span class="difficulty-hint">Trecho de 45 segundos</span>
+        </button>
+      </div>
+      <p class="small-note">Fácil: 15 segundos · Médio: 30 segundos · Difícil: 45 segundos.</p>
+      <button id="voltarTemas" class="btn btn-secondary">← Voltar aos temas</button>
+    </section>
+
+    <section id="telaEquipeDaVez" class="card screen turn-screen" hidden>
+      <p class="eyebrow" id="etapaEquipeDaVez">ANTES DA RODADA</p>
+      <div class="turn-team-icon" aria-hidden="true">🎯</div>
+      <h1>Equipe da vez</h1>
+      <p class="subtitulo">Esta equipe começa a rodada. Preparem-se antes de revelar a música.</p>
+      <div class="turn-team-card">
+        <span class="turn-team-label">COMEÇA AGORA</span>
+        <h2 id="nomeEquipeDaVez">Equipe 1</h2>
+        <p id="participantesEquipeDaVez">Participantes da equipe</p>
+        <span id="rodadaPrevista" class="round-badge">RODADA 1</span>
+      </div>
+      <p id="instrucaoEquipeDaVez" class="turn-screen-note">Ao continuar, a música será sorteada e começará a tocar.</p>
+      <button id="continuarEquipeDaVez" class="btn btn-primary btn-large" type="button">Continuar — sortear música →</button>
+    </section>
+
+    <section id="jogo" class="card screen game-screen" hidden>
+      <div class="game-topline">
+        <span id="modoAtual" class="pill pill-mode">CANTE E DANCE</span>
+        <span id="temaAtual" class="pill">GERAL</span>
+        <span id="dificuldadeAtual" class="pill pill-muted">FÁCIL · 15 S</span>
+        <span id="metaAtual" class="pill pill-score">META: — PONTOS</span>
+      </div>
+
+      <section class="scoreboard-panel" aria-label="Placar da partida">
+        <div class="scoreboard-compact">
+          <span class="scoreboard-mini-label">PLACAR</span>
+          <span id="rodadaAtual" class="round-badge">RODADA 1</span>
+          <div id="placarResumo" class="scoreboard-summary" aria-label="Pontuação resumida das equipes"></div>
+          <button id="togglePlacar" class="scoreboard-toggle" type="button" aria-expanded="false" aria-controls="placarDetalhado">Ver placar</button>
+        </div>
+        <div id="placarDetalhado" class="scoreboard-details" hidden>
+          <div class="scoreboard-heading">
+            <h2 id="tituloPlacar">Pontuação por equipe</h2>
+            <span class="score-detail-hint">💿 Ouro = 2 · 🎵 Vinil = 1</span>
+          </div>
+          <div id="placarEquipes" class="scoreboard-grid"></div>
+          <section id="ultimaRodadaResumo" class="last-round-summary" hidden aria-live="polite">
+            <h3>Resumo da última rodada</h3>
+            <p id="textoUltimaRodada"></p>
+          </section>
+        </div>
+      </section>
+
+      <section class="round-panel" aria-labelledby="tituloFaseEquipe">
+        <p class="eyebrow">VEZ DA EQUIPE</p>
+        <h2 id="tituloFaseEquipe">Equipe da vez</h2>
+        <p id="instrucaoFaseEquipe" class="round-instruction">A equipe pode cantar ou passar a música.</p>
+        <div id="acoesEquipe" class="team-actions">
+          <button id="cantarMusica" class="btn btn-primary" type="button">🎤 Vamos cantar</button>
+          <button id="pularMusica" class="btn btn-secondary" type="button">⏭ Passar a música</button>
+        </div>
+
+        <section id="painelDesafioMusical" class="challenge-mode-panel" hidden aria-label="Desafio Musical">
+          <div id="desafioMusicalDecisao">
+            <h3>Escolha uma única tentativa</h3>
+            <p id="desafioMusicalInstrucao" class="hint">Escolha o desafio desta equipe. Se acertar, a música continua para os desafios restantes.</p>
+            <div id="desafiosMusicaisDisponiveis" class="challenge-option-grid">
+              <button class="challenge-option" type="button" data-desafio-musical="cantar"><span class="challenge-option-icon">🎤</span><strong>Cantar um trecho</strong><span>3 pontos</span></button>
+              <button class="challenge-option" type="button" data-desafio-musical="titulo"><span class="challenge-option-icon">🎵</span><strong>Nome da música</strong><span>2 pontos</span></button>
+              <button class="challenge-option" type="button" data-desafio-musical="artista"><span class="challenge-option-icon">🎙️</span><strong>Quem canta?</strong><span>1 ponto</span></button>
+              <button class="challenge-option" type="button" data-desafio-musical="ano"><span class="challenge-option-icon">📅</span><strong>Ano exato</strong><span>3 pontos</span></button>
+            </div>
+            <button id="passarDesafioMusical" class="btn btn-secondary" type="button">⏭ Passar a música por completo</button>
+            <p id="desafioMusicalStatus" class="status-message" aria-live="polite"></p>
+          </div>
+          <div id="desafioMusicalVotacao" class="voting-section" hidden>
+            <h3>As outras equipes votam</h3>
+            <p class="hint">Cada equipe elegível pode ganhar 1 ponto de votação por música. Depois de acertar um voto, não vota mais nessa música. Se errar o voto, dança, mas pode tentar novamente nas próximas respostas. Quem errou a própria resposta ou passou por completo não vota.</p>
+            <div id="listaVotosDesafioMusical" class="vote-grid"></div>
+            <button id="confirmarVotosDesafioMusical" class="btn btn-primary" type="button" disabled>Confirmar votos</button>
+          </div>
+          <div id="desafioMusicalAvaliacao" class="evaluation-section" hidden>
+            <h3 id="tituloAvaliacaoDesafioMusical">A resposta está correta?</h3>
+            <p id="textoAvaliacaoDesafioMusical" class="hint">O anfitrião confirma manualmente a resposta antes de revelar o gabarito.</p>
+            <div class="team-actions">
+              <button id="respostaDesafioCorreta" class="btn btn-success" type="button">✓ Resposta correta</button>
+              <button id="respostaDesafioIncorreta" class="btn btn-danger" type="button">✕ Resposta incorreta</button>
+            </div>
+          </div>
+          <div id="desafioMusicalEncerrado" class="challenge-ended-note" hidden>
+            <h3>Desafios desta música encerrados</h3>
+            <p>As equipes vão cumprir os desafios de dança pendentes antes da próxima música.</p>
+          </div>
+        </section>
+
+        <div id="votacaoEquipes" class="voting-section" hidden>
+          <h3>As outras equipes votam</h3>
+          <p class="hint">As equipes que passaram esta música não votam. Cada equipe elegível escolhe uma opção e pode alterar o voto antes da confirmação final.</p>
+          <div id="listaVotos" class="vote-grid"></div>
+          <button id="confirmarVotos" class="btn btn-primary" type="button" disabled>Confirmar votos e avaliar canto</button>
+        </div>
+
+        <div id="avaliacaoCanto" class="evaluation-section" hidden>
+          <h3>O canto foi correto?</h3>
+          <p class="hint">Depois do trecho, as equipes avaliam o resultado. A confirmação é manual.</p>
+          <div class="team-actions">
+            <button id="cantoCorreto" class="btn btn-success" type="button">✓ Cantou corretamente</button>
+            <button id="cantoIncorreto" class="btn btn-danger" type="button">✕ Não cantou corretamente</button>
+          </div>
+        </div>
+
+        <div id="desafiosDanca" class="dance-section" hidden>
+          <p class="eyebrow">DESAFIO DE DANÇA</p>
+          <h3 id="tituloDesafioDanca">Equipe desafiada</h3>
+          <p id="textoDesafioDanca" class="round-instruction"></p>
+          <div class="dance-leader-box">
+            <span class="dance-leader-label">Quem define a dança</span>
+            <strong id="responsavelDanca"></strong>
+            <span id="ordemResponsavelDanca" class="hint"></span>
+          </div>
+          <p id="instrucaoResponsavelDanca" class="hint">A pessoa indicada define a dança. A ordem dos participantes roda e reinicia depois do último.</p>
+          <button id="desafioCumprido" class="btn btn-primary" type="button">💃 Desafio cumprido — próximo</button>
+        </div>
+
+        <div id="resultadoRodada" class="round-result" hidden>
+          <h3 id="tituloResultadoRodada">Resultado da rodada</h3>
+          <p id="textoResultadoRodada"></p>
+        </div>
+        <div id="avisoVitoria" class="winner-banner" hidden role="status">
+          <p id="textoAvisoVitoria"></p>
+        </div>
+      </section>
+
+      <section class="song-panel">
+        <div class="song-panel-heading">
+          <div>
+            <p class="eyebrow">MÚSICA DA RODADA</p>
+            <h2 id="titulo">Música sorteada</h2>
+            <p id="carta" class="carta">Rodada 1</p>
+          </div>
+          <div class="capa capa-jogo">
+            <img id="capaAlbum" src="img/capa-oficial.jpg" alt="Capa do SOM NA MESA">
+          </div>
+        </div>
+
+        <audio id="musica" preload="metadata"></audio>
+        <div class="player">
+          <input type="range" id="progresso" value="0" min="0" max="100" aria-label="Progresso da música">
+          <div class="tempo"><span id="inicio">00:00</span><span id="fim">00:00</span></div>
+        </div>
+        <div class="control-grid">
+          <button id="play" class="btn btn-primary" type="button">▶ Tocar música</button>
+          <button id="pause" class="btn btn-danger" type="button" hidden>⏸ Pausar</button>
+          <button id="resume" class="btn btn-success" type="button" hidden>▶ Continuar</button>
+        </div>
+        <div class="control-grid secondary-controls">
+          <button id="temporizador" class="btn btn-secondary" type="button">⏱ Iniciar tempo</button>
+          <button id="pararTempo" class="btn btn-danger" type="button" hidden>⏹ Parar tempo</button>
+        </div>
+        <button id="revelar" class="btn btn-outline" type="button">👁 Ver resposta (anfitrião)</button>
+        <p class="score-help">O anfitrião pode consultar o título, o artista e o ano a qualquer momento, inclusive antes de avaliar uma resposta.</p>
+        <div id="resposta" class="answer-panel" hidden>
+          <p class="answer-label">RESPOSTA</p>
+          <h2 id="nome"></h2>
+          <p id="artista"></p>
+          <p id="ano" class="answer-year"></p>
+        </div>
+        <p id="statusAudio" class="status-message" aria-live="polite"></p>
+      </section>
+
+      <div class="game-end-actions">
+        <button id="proximaMusica" class="btn btn-primary btn-large" type="button" hidden>⏭ Próxima música</button>
+        <button id="voltarAoInicio" class="btn btn-secondary" type="button">↩ Voltar ao início</button>
+      </div>
+    </section>
+
+    <section id="telaVitoria" class="card screen winner-screen" hidden aria-labelledby="tituloTelaVitoria">
+      <div class="winner-hero">
+        <p class="eyebrow">FIM DE JOGO</p>
+        <div class="winner-trophy" aria-hidden="true">🏆</div>
+        <h1 id="tituloTelaVitoria">Temos uma equipe campeã!</h1>
+        <p id="mensagemTelaVitoria" class="subtitulo">A meta foi alcançada. Parabéns à equipe vencedora!</p>
+        <div class="winner-highlight">
+          <span id="rotuloEquipeVencedora" class="winner-highlight-label">EQUIPE VENCEDORA</span>
+          <h2 id="nomeEquipeVencedora">Equipe 1</h2>
+          <p id="pontosEquipeVencedora" class="winner-highlight-score">10 pontos · meta alcançada</p>
+        </div>
+      </div>
+
+      <section class="final-ranking-panel" aria-labelledby="tituloClassificacaoFinal">
+        <div class="final-ranking-heading">
+          <div>
+            <p class="eyebrow">RESULTADO DA PARTIDA</p>
+            <h2 id="tituloClassificacaoFinal">Classificação final</h2>
+          </div>
+          <span class="final-ranking-note">Ordenada por pontos</span>
+        </div>
+        <ol id="classificacaoFinal" class="final-ranking-list"></ol>
+      </section>
+
+      <div class="winner-actions">
+        <button id="iniciarDesempate" class="btn btn-secondary" type="button" hidden>⚡ Desempatar</button>
+        <button id="reiniciarMesmasEquipes" class="btn btn-primary btn-large" type="button">🔁 Jogar novamente com as mesmas equipes</button>
+        <button id="voltarInicioVitoria" class="btn btn-secondary" type="button">⌂ Voltar ao início</button>
+      </div>
+    </section>
+
+  </main>
+
+  <section id="modalAcaoPersonalizada" class="rules-modal action-modal" hidden role="dialog" aria-modal="true" aria-labelledby="tituloModalAcao" aria-describedby="mensagemModalAcao">
+    <div class="rules-modal-backdrop" data-fechar-modal-acao="true"></div>
+    <div class="rules-modal-card action-modal-card" role="document">
+      <button id="fecharModalAcao" class="rules-modal-close" type="button" aria-label="Fechar janela de confirmação">×</button>
+      <div id="iconeModalAcao" class="action-modal-icon" aria-hidden="true">⚠️</div>
+      <p id="etiquetaModalAcao" class="eyebrow">CONFIRMAÇÃO</p>
+      <h2 id="tituloModalAcao">Confirmar ação?</h2>
+      <p id="mensagemModalAcao" class="rules-modal-lead"></p>
+      <div id="detalheModalAcao" class="rules-modal-section action-modal-detail" hidden>
+        <h3 id="tituloDetalheModalAcao">O que vai acontecer?</h3>
+        <p id="textoDetalheModalAcao"></p>
+      </div>
+      <div class="rules-modal-actions action-modal-actions">
+        <button id="confirmarModalAcao" class="btn btn-danger btn-large" type="button">Confirmar</button>
+        <button id="cancelarModalAcao" class="btn btn-secondary" type="button">Cancelar</button>
+      </div>
     </div>
+  </section>
 
-    <!-- RODAPÉ FIXO CENTRALIZADO -->
-    <footer class="rodape">
-        Um jogo criado por <strong>Natã Éber</strong>
-    </footer>
+  <section id="modalConfirmarRevanche" class="rules-modal" hidden role="dialog" aria-modal="true" aria-labelledby="tituloConfirmarRevanche">
+    <div class="rules-modal-backdrop" data-cancelar-revanche="true"></div>
+    <div class="rules-modal-card rematch-confirm-card" role="document">
+      <button id="fecharConfirmacaoRevanche" class="rules-modal-close" type="button" aria-label="Fechar confirmação de revanche">×</button>
+      <p class="eyebrow">NOVA PARTIDA</p>
+      <h2 id="tituloConfirmarRevanche">🔁 Preparar revanche?</h2>
+      <p class="rules-modal-lead">Você poderá revisar os nomes das equipes, editar participantes, adicionar ou remover pessoas e alterar a meta antes de começar.</p>
+      <div class="rules-modal-section">
+        <h3>O que será mantido?</h3>
+        <p id="textoMetaRevanche">A meta de pontos atual será mantida como sugestão. A pontuação da partida anterior será zerada quando você confirmar a revanche.</p>
+      </div>
+      <div class="rules-modal-actions">
+        <button id="confirmarAberturaRevanche" class="btn btn-primary btn-large" type="button">Sim, revisar equipes →</button>
+        <button id="cancelarConfirmacaoRevanche" class="btn btn-secondary" type="button">Cancelar</button>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://unpkg.com/html5-qrcode"></script>
-    <script src="musicas.js"></script>
-    <script src="script.js"></script>
+  <section id="modalRegrasModo" class="rules-modal" hidden role="dialog" aria-modal="true" aria-labelledby="tituloRegrasModo">
+    <div class="rules-modal-backdrop" data-fechar-regras="true"></div>
+    <div class="rules-modal-card" role="document">
+      <button id="fecharModalRegras" class="rules-modal-close" type="button" aria-label="Fechar resumo das regras">×</button>
+      <p class="eyebrow">ANTES DE COMEÇAR</p>
+      <h2 id="tituloRegrasModo">🎤 Cante e Dance</h2>
+      <p id="descricaoRegrasModo" class="rules-modal-lead">Cante o trecho no tempo escolhido, aposte no seu palpite e faça as equipes rivais dançarem!</p>
+      <div id="regrasCanteDanceDetalhes">
+      <div class="rule-points-grid">
+        <article class="rule-point-card gold-rule-card"><span class="rule-point-icon">💿</span><strong>Disco de Ouro</strong><b>2 PONTOS</b><span>Cantar corretamente rende um Disco de Ouro.</span></article>
+        <article class="rule-point-card vinyl-rule-card"><span class="rule-point-icon">🎵</span><strong>Vinil Comum</strong><b>1 PONTO</b><span>Acertar o voto rende um Vinil Comum.</span></article>
+      </div>
+      <div class="rules-modal-section">
+        <h3>Se a equipe cantar corretamente</h3>
+        <p>🎤 A equipe cantora ganha 1 Disco de Ouro (2 pontos). 💖 Cada equipe Fã-clube ganha 1 Vinil Comum (1 ponto). 🤨 As equipes que votaram Duvidamos erraram o palpite e dançam; a equipe cantora define o desafio.</p>
+      </div>
+      <div class="rules-modal-section wrong-song-rule">
+        <h3>Se a equipe cantar errado</h3>
+        <p>🤨 Cada equipe Duvidamos ganha 1 Vinil Comum (1 ponto). A equipe cantora e todas as equipes Fã-clube dançam. Um participante é sorteado entre as equipes que acertaram Duvidamos para definir a dança; se ninguém votou Duvidamos, o anfitrião escolhe.</p>
+      </div>
+      <div class="rules-modal-section">
+        <h3>Votos e vitória</h3>
+        <p>Você pode alterar seu voto antes da confirmação final. Equipes que passaram a música não votam naquela rodada. Se todas as equipes passarem, todas dançam e o anfitrião escolhe o desafio. Quem atingir ou ultrapassar a meta vence; se houver empate, haverá uma rodada de desempate apenas entre as equipes empatadas.</p>
+      </div>
+      </div>
+      <div id="regrasDesafioMusicalDetalhes" hidden>
+        <div class="rule-points-grid">
+          <article class="rule-point-card gold-rule-card"><span class="rule-point-icon">🎤</span><strong>Cantar</strong><b>3 PONTOS</b><span>Um trecho cantado corretamente.</span></article>
+          <article class="rule-point-card vinyl-rule-card"><span class="rule-point-icon">🎵</span><strong>Nome da música</strong><b>2 PONTOS</b><span>Acertar o título.</span></article>
+          <article class="rule-point-card vinyl-rule-card"><span class="rule-point-icon">🎙️</span><strong>Artista</strong><b>1 PONTO</b><span>Identificar quem canta.</span></article>
+          <article class="rule-point-card gold-rule-card"><span class="rule-point-icon">📅</span><strong>Ano exato</strong><b>3 PONTOS</b><span>O ano deve corresponder ao catálogo.</span></article>
+          <article class="rule-point-card vinyl-rule-card"><span class="rule-point-icon">🗳️</span><strong>Voto correto</strong><b>1 PONTO</b><span>Fã-clube ou Duvidamos, conforme o resultado.</span></article>
+        </div>
+        <div class="rules-modal-section">
+          <h3>Uma tentativa por equipe</h3>
+          <p>Cada equipe pode tentar uma única vez por música: cantar, identificar o título, o artista ou o ano exato. Se acertar, ganha os pontos do desafio e continua elegível para votar até acertar uma votação. Cada desafio resolvido não pode ser repetido.</p>
+        </div>
+        <div class="rules-modal-section wrong-song-rule">
+          <h3>Se errar ou passar</h3>
+          <p>Se errar a própria resposta, a equipe não ganha os pontos do desafio e perde o direito de votar naquela música. Se passar a música por completo, também não vota. Quem errar somente o voto dança, mas pode votar novamente nas próximas tentativas. Quando acertar um voto, ganha 1 ponto e não vota mais nessa música; não sofrerá novas penalidades de votação nessa música.</p>
+        </div>
+        <div class="rules-modal-section">
+          <h3>Pontos fixos, sem bônus</h3>
+          <p>Os pontos de cada desafio são sempre os mesmos: cantar = 3; título = 2; artista = 1; ano exato = 3. Erros e passes não aumentam a recompensa.</p>
+        </div>
+        <div class="rules-modal-section">
+          <h3>Votações e danças</h3>
+          <p>As equipes elegíveis votam em Fã-clube ou Duvidamos. Cada equipe pode ganhar no máximo 1 ponto de votação por música. Ao acertar um voto, ganha 1 ponto e não vota mais nessa música, ficando protegida de novas penalidades de votação. Se errar o voto, dança, mas pode votar nas próximas tentativas até acertar. Quem errou a própria resposta ou passou por completo não vota mais nessa música. As danças acumuladas são cumpridas quando a música termina.</p>
+        </div>
+        <div class="rules-modal-section">
+          <h3>Como termina a música?</h3>
+          <p>Cada música tem quatro desafios independentes. Quando todos forem resolvidos ou não houver mais equipes aptas a responder, a disputa termina. Se todas as equipes passarem, ou se todas errarem/passarem sem ninguém acertar um desafio, todas dançam e a música é descartada. Se ninguém acertar resposta, o anfitrião escolhe a dança quando não houver voto correto que possa defini-la.</p>
+        </div>
+      </div>
+      <button id="continuarRegrasModo" class="btn btn-primary btn-large" type="button">Entendi — montar equipes →</button>
+    </div>
+  </section>
 
+    <section id="telaKaraokeRegras" class="card screen karaoke-screen" hidden>
+      <p class="eyebrow">TERCEIRO MODO DE JOGO</p>
+      <div class="karaoke-hero-icon" aria-hidden="true">🎤</div>
+      <h1>Karaokê</h1>
+      <p class="subtitulo">Cante, divirta-se e receba notas dos jurados. A avaliação é humana: o aplicativo calcula a média e organiza o placar.</p>
+      <div class="karaoke-rules-grid">
+        <article class="karaoke-rule-card"><span>01</span><h2>Escolha a música</h2><p>Pesquise uma faixa ou deixe o aplicativo sortear uma música que ainda não foi usada.</p></article>
+        <article class="karaoke-rule-card"><span>02</span><h2>Faça sua apresentação</h2><p>Cante acompanhando um vídeo de karaokê com a letra na tela.</p></article>
+        <article class="karaoke-rule-card"><span>03</span><h2>Receba as notas</h2><p>De 1 a 3 jurados dão notas de 0 a 100 e escolhem comentários prontos.</p></article>
+        <article class="karaoke-rule-card"><span>04</span><h2>Veja o resultado</h2><p>O aplicativo calcula a média, mostra a classificação e atualiza o placar.</p></article>
+      </div>
+      <div class="karaoke-score-bands" aria-label="Faixas de avaliação">
+        <div class="karaoke-band karaoke-band-ok"><strong>0–30</strong><span>Foi ok</span></div>
+        <div class="karaoke-band karaoke-band-good"><strong>31–50</strong><span>Foi bom</span></div>
+        <div class="karaoke-band karaoke-band-vgood"><strong>51–70</strong><span>Muito bom</span></div>
+        <div class="karaoke-band karaoke-band-great"><strong>71–90</strong><span>Incrível</span></div>
+        <div class="karaoke-band karaoke-band-amazing"><strong>91–100</strong><span>Espetacular</span></div>
+      </div>
+      <p class="karaoke-note">Cada participante canta a mesma quantidade de músicas. Não há repetição de faixa na mesma partida. A meta de pontos pode ser personalizada, mas a partida só termina quando todos concluírem suas apresentações. O modo não avalia afinação: os jurados avaliam letra, ritmo e apresentação.</p>
+      <div class="setup-actions">
+        <button id="continuarKaraokeRegras" class="btn btn-primary btn-large" type="button">Entendi — configurar Karaokê →</button>
+        <button id="voltarKaraokeModos" class="btn btn-secondary" type="button">← Voltar aos modos</button>
+      </div>
+    </section>
+
+    <section id="telaKaraokeSetup" class="card screen karaoke-screen" hidden>
+      <p class="eyebrow">CONFIGURAÇÃO DO KARAOKÊ</p>
+      <h1>Prepare a partida</h1>
+      <p class="subtitulo">Escolha o formato, a quantidade de jurados e quantas músicas cada pessoa vai cantar.</p>
+      <div id="karaokeCatalogoStatus" class="karaoke-catalog-status" role="status"></div>
+      <div class="karaoke-config-grid">
+        <fieldset class="karaoke-fieldset">
+          <legend>Formato da disputa</legend>
+          <label class="karaoke-choice"><input type="radio" name="karaokeFormato" value="individual" checked><span><strong>Individual</strong><small>Cada cantor tem seu próprio placar.</small></span></label>
+          <label class="karaoke-choice"><input type="radio" name="karaokeFormato" value="equipes"><span><strong>Por equipes</strong><small>A nota entra no placar da equipe do cantor.</small></span></label>
+        </fieldset>
+        <fieldset class="karaoke-fieldset">
+          <legend>Como escolher as músicas?</legend>
+          <label class="karaoke-choice"><input type="radio" name="karaokeSelecao" value="escolher" checked><span><strong>Fácil — escolher música</strong><small>Pesquisar por título ou artista.</small></span></label>
+          <label class="karaoke-choice"><input type="radio" name="karaokeSelecao" value="aleatorio"><span><strong>Desafio — sorteio aleatório</strong><small>O app sorteia uma faixa ainda não usada.</small></span></label>
+        </fieldset>
+        <label class="field"><span>Quantidade de jurados</span><select id="karaokeQuantidadeJurados"><option value="1">1 jurado</option><option value="2">2 jurados</option><option value="3" selected>3 jurados</option></select></label>
+        <label class="field"><span>Músicas por participante</span><input id="karaokeMusicasPorPessoa" type="number" min="1" max="30" value="5" step="1" required><small class="field-help">Todos os participantes terão a mesma quantidade de apresentações.</small></label>
+        <label class="field"><span>Meta de pontos por apresentação</span><input id="karaokeMetaPorApresentacao" type="number" min="1" max="100" value="70" step="1" required><small class="field-help">Ajuste a meta para ficar mais fácil ou mais difícil. O total alvo é calculado automaticamente pelo número de músicas.</small></label>
+      </div>
+      <section id="karaokeSetupIndividual" class="karaoke-participants-panel">
+        <div class="karaoke-section-heading"><div><h2>Participantes</h2><p>Adicione todos que vão cantar.</p></div><button id="karaokeAdicionarPessoa" class="btn btn-secondary" type="button">＋ Adicionar pessoa</button></div>
+        <div id="karaokeListaPessoas" class="karaoke-people-list"></div>
+      </section>
+      <section id="karaokeSetupEquipes" class="karaoke-participants-panel" hidden>
+        <div class="karaoke-section-heading"><div><h2>Equipes e participantes</h2><p>O próximo cantor será de outra equipe sempre que houver alguém disponível.</p></div><button id="karaokeAdicionarEquipe" class="btn btn-secondary" type="button">＋ Adicionar equipe</button></div>
+        <div id="karaokeListaEquipes" class="karaoke-team-list"></div>
+        <p class="karaoke-note">Para manter a disputa justa entre equipes de tamanhos diferentes, o placar final mostra os pontos acumulados e usa a média por apresentação para ordenar a classificação.</p>
+      </section>
+      <section class="karaoke-estimate-card">
+        <div class="karaoke-estimate-icon" aria-hidden="true">⏱</div>
+        <div class="karaoke-estimate-copy"><strong id="karaokeResumoApresentacoes">20 apresentações previstas</strong><p id="karaokeEstimativaTempo">Tempo médio estimado: cerca de 1 hora.</p><small id="karaokeResumoMeta">Meta individual: 350 pontos por participante.</small><small id="karaokeResumoRepertorio">O aplicativo não repetirá músicas durante a partida.</small></div>
+      </section>
+      <p id="karaokeSetupMensagem" class="status-message" aria-live="polite"></p>
+      <div class="setup-actions"><button id="karaokeIniciarPartida" class="btn btn-primary btn-large" type="button" disabled>Começar Karaokê →</button><button id="karaokeVoltarModosSetup" class="btn btn-secondary" type="button">← Voltar aos modos</button></div>
+    </section>
+
+    <section id="telaKaraokeVez" class="card screen karaoke-screen" hidden>
+      <p class="eyebrow">CANTOR DA VEZ</p><div class="karaoke-hero-icon" aria-hidden="true">🎙️</div>
+      <h1 id="karaokeTituloCantorVez">Agora é sua vez!</h1>
+      <p id="karaokeSubtituloCantorVez" class="subtitulo"></p>
+      <div class="karaoke-singer-card"><span>APRESENTAÇÃO</span><strong id="karaokeNumeroApresentacao">1 de 20</strong><p id="karaokeEquipeCantorVez"></p></div>
+      <p class="karaoke-note">Escolha sua música ou deixe o aplicativo sortear uma. Cada faixa só pode ser usada uma vez nesta partida.</p>
+      <button id="karaokeContinuarCantor" class="btn btn-primary btn-large" type="button">Continuar →</button>
+      <button id="karaokeSairDaPartida" class="btn btn-secondary" type="button">Voltar aos modos</button>
+    </section>
+
+    <section id="telaKaraokeEscolherMusica" class="card screen karaoke-screen" hidden>
+      <p class="eyebrow">ESCOLHA SUA MÚSICA</p><h1>Qual você vai cantar?</h1>
+      <p id="karaokeCantorEscolhaTexto" class="subtitulo"></p>
+      <div class="karaoke-marquee" aria-label="Músicas disponíveis"><div id="karaokeMarqueeTrack" class="karaoke-marquee-track"></div></div>
+      <label class="field karaoke-search-field"><span>Pesquisar título ou artista</span><input id="karaokeBuscaMusica" type="search" placeholder="Digite o nome da música ou artista"></label>
+      <p id="karaokeDisponiveisResumo" class="karaoke-note"></p>
+      <div id="karaokeListaMusicas" class="karaoke-song-grid"></div>
+      <p id="karaokeEscolhaMensagem" class="status-message" aria-live="polite"></p>
+      <button id="karaokeCancelarEscolha" class="btn btn-secondary" type="button">← Voltar ao cantor da vez</button>
+    </section>
+
+    <section id="telaKaraokeApresentacao" class="card screen karaoke-screen" hidden>
+      <div class="karaoke-presentation-heading"><div><p class="eyebrow">APRESENTAÇÃO</p><h1 id="karaokeTituloFaixa">Sua música</h1><p id="karaokeArtistaFaixa" class="subtitulo"></p></div><span id="karaokeFormatoFaixa" class="pill">VÍDEO KARAOKÊ</span></div>
+      <div class="karaoke-media-frame"><video id="karaokeVideo" controls playsinline preload="metadata" hidden></video><audio id="karaokeAudio" controls preload="metadata" hidden></audio></div>
+      <div id="karaokeLetraSincronizada" class="karaoke-lyrics-panel" hidden><p class="eyebrow">CANTE NO TEMPO CERTO</p><p id="karaokeLinhaAtual" class="karaoke-lyric-current"></p><p id="karaokeProximaLinha" class="karaoke-lyric-next"></p></div>
+      <p id="karaokeMediaMensagem" class="status-message" aria-live="polite"></p>
+      <button id="karaokeFinalizarApresentacao" class="btn btn-primary btn-large" type="button">Finalizar apresentação e avaliar →</button>
+      <button id="karaokeFalhaMedia" class="btn btn-secondary" type="button">← Voltar ao menu inicial</button>
+    </section>
+
+    <section id="telaKaraokeAvaliacao" class="card screen karaoke-screen" hidden>
+      <p class="eyebrow">AVALIAÇÃO DOS JURADOS</p><h1>Como foi a apresentação?</h1><p id="karaokeAvaliacaoCantor" class="subtitulo"></p>
+      <div class="karaoke-judge-instructions"><strong>Nota de 0 a 100</strong><span>Avalie a letra cantada e o ritmo. Não avalie afinação, timbre ou qualidade da voz.</span></div>
+      <div id="karaokeCartoesJurados" class="karaoke-judges-list"></div>
+      <p id="karaokeAvaliacaoMensagem" class="status-message" aria-live="polite"></p>
+      <button id="karaokeEnviarNotas" class="btn btn-primary btn-large" type="button">Calcular nota final →</button>
+    </section>
+
+    <section id="telaKaraokeResultado" class="card screen karaoke-screen" hidden>
+      <p class="eyebrow">RESULTADO DA APRESENTAÇÃO</p><div id="karaokeResultadoScoreCard" class="karaoke-result-card karaoke-band-good">
+        <span class="karaoke-result-label">NOTA FINAL</span><div class="karaoke-score-number"><strong id="karaokeNotaFinal">82</strong><span>/ 100</span></div><h1 id="karaokeClassificacaoFinal">Incrível</h1><p id="karaokeResultadoCantor"></p>
+      </div>
+      <section class="karaoke-comments-panel"><h2>Comentários dos jurados</h2><div id="karaokeComentariosResultado" class="karaoke-comment-tags"></div></section>
+      <section class="karaoke-score-breakdown"><h2>Notas recebidas</h2><div id="karaokeNotasJuradosResultado"></div></section>
+      <button id="karaokeProximoCantor" class="btn btn-primary btn-large" type="button">Próximo cantor →</button>
+    </section>
+
+    <section id="telaKaraokeFinal" class="card screen karaoke-screen" hidden>
+      <div class="karaoke-hero-icon" aria-hidden="true">🏆</div><p class="eyebrow">FIM DO KARAOKÊ</p><h1 id="karaokeTituloFinal">Placar final</h1><p id="karaokeSubtituloFinal" class="subtitulo"></p>
+      <section class="karaoke-final-ranking"><h2>Classificação</h2><ol id="karaokeRankingFinal" class="karaoke-ranking-list"></ol></section>
+      <div class="setup-actions"><button id="karaokeNovaPartida" class="btn btn-primary btn-large" type="button">Repetir com as mesmas configurações</button><button id="karaokeVoltarModosFinal" class="btn btn-secondary" type="button">Voltar aos modos</button></div>
+    </section>
+
+  <footer class="rodape"><span>Um jogo criado por</span><strong>Natã Éber</strong></footer>
+
+  <script src="musicas.js"></script>
+  <script src="categorias.js"></script>
+  <script src="karaoke.js"></script>
+  <script src="ui-dialogs.js"></script>
+  <script src="script.js"></script>
+  <script src="karaoke-core.js"></script>
+  <script src="karaoke-mode.js"></script>
 </body>
-
 </html>

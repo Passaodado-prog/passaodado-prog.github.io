@@ -1,2237 +1,2763 @@
+/* Catálogo exportado pela ferramenta estática SOM NA MESA. */
 const musicas = [
-
-{
-    id:1,
-    codigo:"001",
-    nome:"LET IT BE",
-    artista:"BEATLES",
-    ano:1970,
-    arquivo:"audio/001.mp3",
-},
-
-{
-    id:2,
-    codigo:"002",
-    nome:"LE FREAK",
-    artista:"CHIC",
-    ano:1978,
-    arquivo:"audio/002.mp3",
-},
-
-{
-    id:3,
-    codigo:"003",
-    nome:"Killing Me Softly With His Song",
-    artista:"ROBERTA FLACK",
-    ano:1973,
-    arquivo:"audio/003.mp3",
-},
-
-{
-    id:4,
-    codigo:"004",
-    nome:"Isn't She Lovely",
-    artista:"Stevie Wonder",
-    ano:1976,
-    arquivo:"audio/004.mp3",
-},
-
-{
-    id:5,
-    codigo:"005",
-    nome:"INFINITA HIGHWAY",
-    artista:"ENGENHEIROS DO HAWAII",
-    ano:2004,
-    arquivo:"audio/005.mp3",
-},
-
-{
-    id:6,
-    codigo:"006",
-    nome:"IMAGINE",
-    artista:"JOHN LENNON",
-    ano:1971,
-    arquivo:"audio/006.mp3",
-},
-
-{
-    id:7,
-    codigo:"007",
-    nome:"I'm Coming Out",
-    artista:"DIANA ROSS",
-    ano:1980,
-    arquivo:"audio/007.mp3",
-},
-
-{
-    id:8,
-    codigo:"008",
-    nome:"Have You Ever Seen The Rain",
-    artista:"Creedence Clearwater Revival",
-    ano:1973,
-    arquivo:"audio/008.mp3",
-},
-
-{
-    id:9,
-    codigo:"009",
-    nome:"Gonna Make You Sweat",
-    artista:"C+C Music Factory",
-    ano:1991,
-    arquivo:"audio/009.mp3",
-},
-
-{
-    id:10,
-    codigo:"010",
-    nome:"Footloose",
-    artista:"Kenny Loggins",
-    ano:1984,
-    arquivo:"audio/010.mp3",
-},
-
-{
-    id:11,
-    codigo:"011",
-    nome:"Get Down On It",
-    artista:"Kool & The Gang",
-    ano:1981,
-    arquivo:"audio/011.mp3",
-},
-
-{
-    id:12,
-    codigo:"012",
-    nome:"NUMB",
-    artista:"LINKIN PARK",
-    ano:2003,
-    arquivo:"audio/012.mp3",
-},
-
-{
-    id:13,
-    codigo:"013",
-    nome:"Play That Funky Music",
-    artista:"Wild Cherry",
-    ano:1976,
-    arquivo:"audio/013.mp3",
-},
-
-{
-    id:14,
-    codigo:"014",
-    nome:"A PAZ",
-    artista:"GILBERTO GIL",
-    ano:1994,
-    arquivo:"audio/014.mp3",
-},
-
-{
-    id:15,
-    codigo:"015",
-    nome:"APENAS MAIS UMA DE AMOR",
-    artista:"LULU SANTOS",
-    ano:2000,
-    arquivo:"audio/015.mp3",
-},
-
-{
-    id:16,
-    codigo:"016",
-    nome:"AS QUATRO ESTAÇÕES",
-    artista:"SANDY & JUNIOR",
-    ano:2007,
-    arquivo:"audio/016.mp3",
-},
-
-{
-    id:17,
-    codigo:"017",
-    nome:"BEAT IT",
-    artista:"MICHAEL JACKSON",
-    ano:1982,
-    arquivo:"audio/017.mp3",
-},
-
-{
-    id:18,
-    codigo:"018",
-    nome:"If You Leave Me Now",
-    artista:"CHICAGO",
-    ano:1976,
-    arquivo:"audio/018.mp3",
-},
-
-{
-    id:19,
-    codigo:"019",
-    nome:"Eye of the Tiger",
-    artista:"SURVIVOR",
-    ano:1982,
-    arquivo:"audio/019.mp3",
-},
-
-{
-    id:20,
-    codigo:"020",
-    nome:"All Out Of Love",
-    artista:"Air Supply",
-    ano:1980,
-    arquivo:"audio/020.mp3",
-},
-
-{
-    id:21,
-    codigo:"021",
-    nome:"Celebration",
-    artista:"Kool & The Gang",
-    ano:1980,
-    arquivo:"audio/021.mp3",
-},
-
-{
-    id:22,
-    codigo:"022",
-    nome:"Funkytown",
-    artista:"Lipps Inc.",
-    ano:1980,
-    arquivo:"audio/022.mp3",
-},
-
-{
-    id:23,
-    codigo:"023",
-    nome:"Livin' On A Prayer",
-    artista:"Bon Jovi",
-    ano:1986,
-    arquivo:"audio/023.mp3",
-},
-
-{
-    id:24,
-    codigo:"024",
-    nome:"Malandragem",
-    artista:"Cassia Eller",
-    ano:1994,
-    arquivo:"audio/024.mp3",
-},
-
-{
-    id:25,
-    codigo:"025",
-    nome:"Me Chama",
-    artista:"Lobão",
-    ano:2000,
-    arquivo:"audio/025.mp3",
-},
-
-{
-    id:26,
-    codigo:"026",
-    nome:"Os Cegos do Castelo",
-    artista:"Nando Reis",
-    ano:1997,
-    arquivo:"audio/026.mp3",
-},
-
-{
-    id:27,
-    codigo:"027",
-    nome:"Pescador de Ilusões",
-    artista:"O Rappa",
-    ano:2005,
-    arquivo:"audio/027.mp3",
-},
-
-{
-    id:28,
-    codigo:"028",
-    nome:"Primeiros Erros",
-    artista:"Capital Inicial",
-    ano:2000,
-    arquivo:"audio/028.mp3",
-},
-
-{
-    id:29,
-    codigo:"029",
-    nome:"Rocket Man",
-    artista:"Elton John",
-    ano:1972,
-    arquivo:"audio/029.mp3",
-},
-
-{
-    id:30,
-    codigo:"030",
-    nome:"Sailing",
-    artista:"Christopher Cross",
-    ano:1980,
-    arquivo:"audio/030.mp3",
-},
-
-{
-    id:31,
-    codigo:"031",
-    nome:"September",
-    artista:"Earth, Wind & Fire",
-    ano:1978,
-    arquivo:"audio/031.mp3",
-},
-
-{
-    id:32,
-    codigo:"032",
-    nome:"Starman",
-    artista:"David Bowie",
-    ano:1972,
-    arquivo:"audio/032.mp3",
-},
-
-{
-    id:33,
-    codigo:"033",
-    nome:"Stayin' Alive",
-    artista:"Bee Gees",
-    ano:1977,
-    arquivo:"audio/033.mp3",
-},
-
-{
-    id:34,
-    codigo:"034",
-    nome:"Take On Me",
-    artista:"a-ha",
-    ano:1985,
-    arquivo:"audio/034.mp3",
-},
-
-{
-    id:35,
-    codigo:"035",
-    nome:"I Wanna Dance With Somebody",
-    artista:"Whitney Houston",
-    ano:1987,
-    arquivo:"audio/035.mp3",
-},
-
-{
-    id:36,
-    codigo:"036",
-    nome:"You Give Love a Bad Name",
-    artista:"Bon Jovi",
-    ano:1986,
-    arquivo:"audio/036.mp3",
-},
-
-{
-    id:37,
-    codigo:"037",
-    nome:"You Should Be Dancing",
-    artista:"Bee Gees",
-    ano:1976,
-    arquivo:"audio/037.mp3",
-},
-
-{
-    id: 38,
-    codigo: "038",
-    nome: "What's Up",
-    artista: "4 Non Blondes",
-    ano: 1993,
-    arquivo: "audio/038.mp3",
-},
-{
-    id: 39,
-    codigo: "039",
-    nome: "Ain't No Mountain High Enough",
-    artista: "Marvin Gaye x Tammi Terrell",
-    ano: 1967,
-    arquivo: "audio/048.mp3",
-},
-{
-    id: 40,
-    codigo: "040",
-    nome: "Anunciação",
-    artista: "Alceu Valença",
-    ano: 1983,
-    arquivo: "audio/040.mp3",
-},
-{
-    id: 41,
-    codigo: "041",
-    nome: "Árvore",
-    artista: "Edson Gomes",
-    ano: 1992,
-    arquivo: "audio/046-41.mp3",
-},
-{
-    id: 42,
-    codigo: "042",
-    nome: "Bilu, Bilu",
-    artista: "Pablo",
-    ano: 2014,
-    arquivo: "audio/050-42.mp3",
-},
-{
-    id: 43,
-    codigo: "043",
-    nome: "Black or White",
-    artista: "Michael Jackson",
-    ano: 1991,
-    arquivo: "audio/051-43.mp3",
-},
-{
-    id: 44,
-    codigo: "044",
-    nome: "Borboletas",
-    artista: "Victor & Leo",
-    ano: 2008,
-    arquivo: "audio/052-44.mp3",
-},
-{
-    id: 45,
-    codigo: "045",
-    nome: "Camelo",
-    artista: "Edson Gomes",
-    ano: 1997,
-    arquivo: "audio/053-45.mp3",
-},
-{
-    id: 46,
-    codigo: "046",
-    nome: "Exagerado",
-    artista: "Cazuza",
-    ano: 1985,
-    arquivo: "audio/054-46.mp3",
-},
-{
-    id: 47,
-    codigo: "047",
-    nome: "The Twist",
-    artista: "Chubby Checker",
-    ano: 1960,
-    arquivo: "audio/055-47.mp3",
-},
-{
-    id: 48,
-    codigo: "048",
-    nome: "Easy",
-    artista: "Commodores",
-    ano: 1977,
-    arquivo: "audio/039.mp3",
-},
-{
-    id: 49,
-    codigo: "049",
-    nome: "Como eu quero",
-    artista: "Kid Abelha",
-    ano: 1984,
-    arquivo: "audio/040-49.mp3",
-},
-{
-    id: 50,
-    codigo: "050",
-    nome: "Dancing Queen",
-    artista: "ABBA",
-    ano: 1976,
-    arquivo: "audio/041-50.mp3",
-},
-{
-    id: 51,
-    codigo: "051",
-    nome: "Diga Sim pra Mim",
-    artista: "Desejo de Menina",
-    ano: 2008,
-    arquivo: "audio/042-51.mp3",
-},
-{
-    id: 52,
-    codigo: "052",
-    nome: "Do Lado de Cá",
-    artista: "Chimarruts",
-    ano: 2010,
-    arquivo: "audio/043-52.mp3",
-},
-{
-    id: 53,
-    codigo: "053",
-    nome: "Don't Matter",
-    artista: "Akon",
-    ano: 2007,
-    arquivo: "audio/044-53.mp3",
-},
-{
-    id: 54,
-    codigo: "054",
-    nome: "Coração",
-    artista: "Dorgival Dantas",
-    ano: 2005,
-    arquivo: "audio/045-54.mp3",
-},
-{
-    id: 55,
-    codigo: "055",
-    nome: "É o Amor",
-    artista: "Zezé Di Camargo & Luciano",
-    ano: 1991,
-    arquivo: "audio/047-55.mp3",
-},
-
-{
-    id: 56,
-    codigo: "056",
-    nome: "ENDOIDECEU MEU CORAÇÃO",
-    artista: "João Gomes",
-    ano: null,
-    arquivo: "audio/056.mp3",
-},
-{
-    id: 57,
-    codigo: "057",
-    nome: "Esse Cara Sou Eu",
-    artista: "Roberto Carlos",
-    ano: 2012,
-    arquivo: "audio/057.mp3",
-},
-{
-    id: 58,
-    codigo: "058",
-    nome: "Eu Só Quero um Xodó",
-    artista: "Dominguinhos",
-    ano: null,
-    arquivo: "audio/058.mp3",
-},
-{
-    id: 59,
-    codigo: "059",
-    nome: "Eu Tenho Medo",
-    artista: "Zé Vaqueiro",
-    ano: 2020,
-    arquivo: "audio/059.mp3",
-},
-{
-    id: 60,
-    codigo: "060",
-    nome: "Evidências",
-    artista: "Chitãozinho & Xororó",
-    ano: 1990,
-    arquivo: "audio/060.mp3",
-},
-{
-    id: 61,
-    codigo: "061",
-    nome: "Fico Assim Sem Você",
-    artista: "Claudinho & Buchecha",
-    ano: null,
-    arquivo: "audio/061.mp3",
-},
-{
-    id: 62,
-    codigo: "062",
-    nome: "Dreams",
-    artista: "Fleetwood Mac",
-    ano: 1977,
-    arquivo: "audio/062.mp3",
-},
-{
-    id: 63,
-    codigo: "063",
-    nome: "Garota Nota 100",
-    artista: "MC Marcinho",
-    ano: 1998,
-    arquivo: "audio/063.mp3",
-},
-{
-    id: 64,
-    codigo: "064",
-    nome: "Give It Up",
-    artista: "KC and the Sunshine Band",
-    ano: null,
-    arquivo: "audio/064.mp3",
-},
-{
-    id: 65,
-    codigo: "065",
-    nome: "Gostava Tanto De Você",
-    artista: "Tim Maia",
-    ano: 1973,
-    arquivo: "audio/065.mp3",
-},
-{
-    id: 66,
-    codigo: "066",
-    nome: "Flashdance What A Feeling",
-    artista: "Irene Cara",
-    ano: 1983,
-    arquivo: "audio/066.mp3",
-},
-{
-    id: 67,
-    codigo: "067",
-    nome: "Is This Love",
-    artista: "Bob Marley",
-    ano: 1978,
-    arquivo: "audio/067.mp3",
-},
-{
-    id: 68,
-    codigo: "068",
-    nome: "Please Don't Go",
-    artista: "KC & The Sunshine Band",
-    ano: null,
-    arquivo: "audio/068.mp3",
-},
-{
-    id: 69,
-    codigo: "069",
-    nome: "La Belle De Jour",
-    artista: "Alceu Valença",
-    ano: 1992,
-    arquivo: "audio/049-69.mp3",
-},
-{
-    id: 70,
-    codigo: "070",
-    nome: "Tempo perdido",
-    artista: "Legião Urbana",
-    ano: 1986,
-    arquivo: "audio/070.mp3",
-},
-{
-    id: 71,
-    codigo: "071",
-    nome: "Linda Bela",
-    artista: "Elias Monkbel",
-    ano: 2019,
-    arquivo: "audio/071.mp3",
-},
-{
-    id: 72,
-    codigo: "072",
-    nome: "Lonely",
-    artista: "Akon",
-    ano: null,
-    arquivo: "audio/072.mp3",
-},
-{
-    id: 73,
-    codigo: "073",
-    nome: "Mágica",
-    artista: "Calcinha Preta",
-    ano: 2004,
-    arquivo: "audio/073.mp3",
-},
-
-{
-    id: 74,
-    codigo: "074",
-    nome: "Malandrinha",
-    artista: "Edson Gomes",
-    ano: 1998,
-    arquivo: "audio/074.mp3",
-},
-{
-    id: 75,
-    codigo: "075",
-    nome: "Manchete dos Jornais",
-    artista: "Calcinha Preta",
-    ano: 2003,
-    arquivo: "audio/075.mp3",
-},
-{
-    id: 76,
-    codigo: "076",
-    nome: "Saudades do Tempo",
-    artista: "Maneva",
-    ano: 2009,
-    arquivo: "audio/076.mp3",
-},
-{
-    id: 77,
-    codigo: "077",
-    nome: "Me Namora",
-    artista: "Edu Ribeiro",
-    ano: 2004,
-    arquivo: "audio/077.mp3",
-},
-{
-    id: 78,
-    codigo: "078",
-    nome: "Metamorfose Ambulante",
-    artista: "Raul Seixas",
-    ano: 1973,
-    arquivo: "audio/078.mp3",
-},
-{
-    id: 79,
-    codigo: "079",
-    nome: "Meu Erro",
-    artista: "Os Paralamas Do Sucesso",
-    ano: 1984,
-    arquivo: "audio/079.mp3",
-},
-{
-    id: 80,
-    codigo: "080",
-    nome: "Meu Mel",
-    artista: "Zé Vaqueiro",
-    ano: 2020,
-    arquivo: "audio/080.mp3",
-},
-{
-    id: 81,
-    codigo: "081",
-    nome: "Meu Pedaço de Pecado",
-    artista: "João Gomes",
-    ano: 2021,
-    arquivo: "audio/081.mp3",
-},
-{
-    id: 82,
-    codigo: "082",
-    nome: "Over My Shoulder",
-    artista: "Mike + The Mechanics",
-    ano: 1995,
-    arquivo: "audio/082.mp3",
-},
-{
-    id: 83,
-    codigo: "083",
-    nome: "Monalisa",
-    artista: "Jorge Vercillo",
-    ano: 2003,
-    arquivo: "audio/083.mp3",
-},
-{
-    id: 84,
-    codigo: "084",
-    nome: "Morango do Nordeste",
-    artista: "Karametade",
-    ano: 2000,
-    arquivo: "audio/084.mp3",
-},
-{
-    id: 85,
-    codigo: "085",
-    nome: "Morena Tropicana",
-    artista: "Alceu Valença",
-    ano: 1982,
-    arquivo: "audio/085.mp3",
-},
-{
-    id: 86,
-    codigo: "086",
-    nome: "Night Fever",
-    artista: "Bee Gees",
-    ano: 1978,
-    arquivo: "audio/086.mp3",
-},
-{
-    id: 87,
-    codigo: "087",
-    nome: "No Dia em Que Eu Saí de Casa",
-    artista: "Zezé Di Camargo & Luciano",
-    ano: 1995,
-    arquivo: "audio/087.mp3",
-},
-{
-    id: 88,
-    codigo: "088",
-    nome: "No Woman, No Cry",
-    artista: "Bob Marley",
-    ano: 1974,
-    arquivo: "audio/088.mp3",
-},
-{
-    id: 89,
-    codigo: "089",
-    nome: "O Astronauta de Marmore",
-    artista: "Nenhum de Nós",
-    ano: 1989,
-    arquivo: "audio/089.mp3",
-},
-{
-    id: 90,
-    codigo: "090",
-    nome: "O Descobridor Dos Sete Mares",
-    artista: "Tim Maia",
-    ano: 1983,
-    arquivo: "audio/090.mp3",
-},
-
-{
-    id: 91,
-    codigo: "091",
-    nome: "Oh Chuva",
-    artista: "Planta E Raiz",
-    ano: 2000,
-    arquivo: "audio/091.mp3",
-},
-
-{
-    id: 92,
-    codigo: "092",
-    nome: "Pássaro De Fogo",
-    artista: "Paula Fernandes",
-    ano: 2009,
-    arquivo: "audio/094-92.mp3",
-},
-{
-    id: 93,
-    codigo: "093",
-    nome: "Perdido De Amor",
-    artista: "Edson Gomes",
-    ano: 1997,
-    arquivo: "audio/092-93.mp3",
-},
-{
-    id: 94,
-    codigo: "094",
-    nome: "Perfume",
-    artista: "Belo",
-    ano: 2008,
-    arquivo: "audio/093-94.mp3",
-},
-{
-    id: 95,
-    codigo: "095",
-    nome: "Quero Te Encontrar",
-    artista: "Claudinho & Buchecha",
-    ano: 1997,
-    arquivo: "audio/095.mp3",
-},
-{
-    id: 96,
-    codigo: "096",
-    nome: "Right Here Waiting",
-    artista: "Richard Marx",
-    ano: 1989,
-    arquivo: "audio/096.mp3",
-},
-{
-    id: 97,
-    codigo: "097",
-    nome: "Sinônimos",
-    artista: "Chitãozinho & Xororó",
-    ano: 2004,
-    arquivo: "audio/097.mp3",
-},
-{
-    id: 98,
-    codigo: "098",
-    nome: "I'm a Believer",
-    artista: "Smash Mouth",
-    ano: 2001,
-    arquivo: "audio/098.mp3",
-},
-{
-    id: 99,
-    codigo: "099",
-    nome: "Só Love",
-    artista: "Claudinho & Buchecha",
-    ano: 1998,
-    arquivo: "audio/099.mp3",
-},
-{
-    id: 100,
-    codigo: "100",
-    nome: "Tá Vendo Aquela Lua",
-    artista: "Exalta Samba",
-    ano: 2010,
-    arquivo: "audio/106-100.mp3",
-},
-{
-    id: 101,
-    codigo: "101",
-    nome: "Tempos modernos",
-    artista: "Lulu Santos",
-    ano: 1982,
-    arquivo: "audio/100-101.mp3",
-},
-{
-    id: 102,
-    codigo: "102",
-    nome: "Best of My Love",
-    artista: "The Emotions",
-    ano: 1977,
-    arquivo: "audio/101-102.mp3",
-},
-{
-    id: 103,
-    codigo: "103",
-    nome: "I Don't Wanna Lose You",
-    artista: "Tina Turner",
-    ano: 1989,
-    arquivo: "audio/102-103.mp3",
-},
-{
-    id: 104,
-    codigo: "104",
-    nome: "Toma Conta De Mim",
-    artista: "Limão com Mel",
-    ano: 2002,
-    arquivo: "audio/103-104.mp3",
-},
-{
-    id: 105,
-    codigo: "105",
-    nome: "Treasure",
-    artista: "Bruno Mars",
-    ano: 2012,
-    arquivo: "audio/104-105.mp3",
-},
-{
-    id: 106,
-    codigo: "106",
-    nome: "True Love",
-    artista: "SOJA",
-    ano: 2006,
-    arquivo: "audio/105-106.mp3",
-},
-{
-    id: 107,
-    codigo: "107",
-    nome: "Vou Deixar",
-    artista: "Skank",
-    ano: 2003,
-    arquivo: "audio/107.mp3",
-},
-{
-    id: 108,
-    codigo: "108",
-    nome: "Wonderwall",
-    artista: "Oasis",
-    ano: 1995,
-    arquivo: "audio/108.mp3",
-},
-{
-    id: 109,
-    codigo: "109",
-    nome: "Xote dos Milagres",
-    artista: "Falamansa",
-    ano: 2000,
-    arquivo: "audio/109.mp3",
-},
-{
-    id: 110,
-    codigo: "110",
-    nome: "Deixe-me ir",
-    artista: "1Kilo",
-    ano: 2017,
-    arquivo: "audio/110.mp3",
-},
-{
-    id: 111,
-    codigo: "111",
-    nome: "Anna Júlia",
-    artista: "LOS HERMANOS",
-    ano: 1999,
-    arquivo: "audio/111.mp3",
-},
-{
-    id: 112,
-    codigo: "112",
-    nome: "Apenas Mais Uma De Amor",
-    artista: "Lulu Santos",
-    ano: 1992,
-    arquivo: "audio/112.mp3",
-},
-{
-    id: 113,
-    codigo: "113",
-    nome: "Burguesinha",
-    artista: "Seu Jorge",
-    ano: 2007,
-    arquivo: "audio/113.mp3",
-},
-{
-    id: 114,
-    codigo: "114",
-    nome: "Céu Azul",
-    artista: "Charlie Brown Jr",
-    ano: 2011,
-    arquivo: "audio/114.mp3",
-},
-{
-    id: 115,
-    codigo: "115",
-    nome: "Coisas Que Eu Sei",
-    artista: "Danni Carlos",
-    ano: 2007,
-    arquivo: "audio/115.mp3",
-},
-{
-    id: 116,
-    codigo: "116",
-    nome: "Dias De Luta, Dias De Gloria",
-    artista: "Charlie Brown Jr.",
-    ano: 2005,
-    arquivo: "audio/116.mp3",
-},
-{
-    id: 117,
-    codigo: "117",
-    nome: "Sina",
-    artista: "Djavan",
-    ano: 1982,
-    arquivo: "audio/117.mp3",
-},
-{
-    id: 118,
-    codigo: "118",
-    nome: "Equalize",
-    artista: "Pitty",
-    ano: 2003,
-    arquivo: "audio/118.mp3",
-},
-{
-    id: 119,
-    codigo: "119",
-    nome: "Eu Amo Você",
-    artista: "Tim Maia",
-    ano: 1970,
-    arquivo: "audio/119.mp3",
-},
-{
-    id: 120,
-    codigo: "120",
-    nome: "Eu Sei",
-    artista: "Papas Da Língua",
-    ano: 2002,
-    arquivo: "audio/120.mp3",
-},
-{
-    id: 121,
-    codigo: "121",
-    nome: "Borbulhas de Amor",
-    artista: "Fagner",
-    ano: 1991,
-    arquivo: "audio/121.mp3",
-},
-{
-    id: 122,
-    codigo: "122",
-    nome: "Felicidade",
-    artista: "Seu Jorge",
-    ano: 2015,
-    arquivo: "audio/122.mp3",
-},
-{
-    id: 123,
-    codigo: "123",
-    nome: "João e Maria",
-    artista: "Chico Buarque",
-    ano: 1977,
-    arquivo: "audio/123.mp3",
-},
-{
-    id: 124,
-    codigo: "124",
-    nome: "Lágrimas E Chuva",
-    artista: "Kid Abelha",
-    ano: 1985,
-    arquivo: "audio/124.mp3",
-},
-{
-    id: 125,
-    codigo: "125",
-    nome: "Lanterna Dos Afogados",
-    artista: "Os Paralamas Do Sucesso",
-    ano: 1989,
-    arquivo: "audio/125.mp3",
-},
-{
-    id: 126,
-    codigo: "126",
-    nome: "Linha do Equador",
-    artista: "Djavan",
-    ano: 1992,
-    arquivo: "audio/126.mp3",
-},
-{
-    id: 127,
-    codigo: "127",
-    nome: "Na Linha do Tempo",
-    artista: "Victor & Leo",
-    ano: 2013,
-    arquivo: "audio/127.mp3",
-},
-{
-    id: 128,
-    codigo: "128",
-    nome: "Naquela Mesa",
-    artista: "Nelson Gonçalves",
-    ano: 1972,
-    arquivo: "audio/128.mp3",
-},
-{
-    id: 129,
-    codigo: "129",
-    nome: "Nem um Dia",
-    artista: "Djavan",
-    ano: 1996,
-    arquivo: "audio/129.mp3",
-},
-{
-    id: 130,
-    codigo: "130",
-    nome: "Pela Luz dos Olhos Teus",
-    artista: "Miucha",
-    ano: 1977,
-    arquivo: "audio/130.mp3",
-},
-{
-    id: 131,
-    codigo: "131",
-    nome: "Vagalumes (part. Ivo Mozart)",
-    artista: "Pollo",
-    ano: 2012,
-    arquivo: "audio/131.mp3",
-},
-{
-    id: 132,
-    codigo: "132",
-    nome: "Por Você (Acústica)",
-    artista: "Barão Vermelho",
-    ano: 1998,
-    arquivo: "audio/132.mp3",
-},
-{
-    id: 133,
-    codigo: "133",
-    nome: "Sem Radar",
-    artista: "LS Jack",
-    ano: 2003,
-    arquivo: "audio/133.mp3",
-},
-{
-    id: 134,
-    codigo: "134",
-    nome: "SENHOR DO TEMPO",
-    artista: "Charlie Brown Jr.",
-    ano: 2005,
-    arquivo: "audio/134.mp3",
-},
-{
-    id: 135,
-    codigo: "135",
-    nome: "Será que é amor",
-    artista: "Arlindo Cruz",
-    ano: 2003,
-    arquivo: "audio/135.mp3",
-},
-{
-    id: 136,
-    codigo: "136",
-    nome: "Acima do Sol",
-    artista: "Skank",
-    ano: 2001,
-    arquivo: "audio/136.mp3",
-},
-{
-    id: 137,
-    codigo: "137",
-    nome: "Só Hoje",
-    artista: "Jota Quest",
-    ano: 2002,
-    arquivo: "audio/137.mp3",
-},
-{
-    id: 138,
-    codigo: "138",
-    nome: "Só Os Loucos Sabem",
-    artista: "Charlie Brown Jr.",
-    ano: 2009,
-    arquivo: "audio/138.mp3",
-},
-{
-    id: 139,
-    codigo: "139",
-    nome: "Enquanto Houver Sol",
-    artista: "Titãs",
-    ano: 2003,
-    arquivo: "audio/139.mp3",
-},
-{
-    id: 140,
-    codigo: "140",
-    nome: "Tive Razão",
-    artista: "Seu Jorge",
-    ano: 2004,
-    arquivo: "audio/140.mp3",
-},
-{
-    id: 141,
-    codigo: "141",
-    nome: "Várias Queixas",
-    artista: "Gilsons",
-    ano: 2019,
-    arquivo: "audio/141.mp3",
-},
-{
-    id: 142,
-    codigo: "142",
-    nome: "Velha Infância",
-    artista: "Tribalista",
-    ano: 2002,
-    arquivo: "audio/142.mp3",
-},
-{
-    id: 143,
-    codigo: "143",
-    nome: "Ainda Gosto Dela",
-    artista: "Skank",
-    ano: 2008,
-    arquivo: "audio/143.mp3",
-},
-{
-    id: 144,
-    codigo: "144",
-    nome: "Vamos Fugir",
-    artista: "Skank",
-    ano: 2004,
-    arquivo: "audio/143.mp3",
-},
-{
-    id: 145,
-    codigo: "145",
-    nome: "Poderosa",
-    artista: "Banda Brasil",
-    ano: 1993,
-    arquivo: "audio/145.mp3",
-},
-{
-    id: 146,
-    codigo: "146",
-    nome: "A Beleza É Você Menina",
-    artista: "Bebeto",
-    ano: 1974,
-    arquivo: "audio/146.mp3",
-},
-{
-    id: 147,
-    codigo: "147",
-    nome: "Someone Like You",
-    artista: "Adele",
-    ano: 2011,
-    arquivo: "audio/147.mp3",
-},
-{
-    id: 148,
-    codigo: "148",
-    nome: "Don't Matter",
-    artista: "Akon",
-    ano: 2007,
-    arquivo: "audio/148.mp3",
-},
-{
-    id: 149,
-    codigo: "149",
-    nome: "If I Ain't Got You",
-    artista: "Alicia Keys",
-    ano: 2004,
-    arquivo: "audio/149.mp3",
-},
-{
-    id: 150,
-    codigo: "150",
-    nome: "No One",
-    artista: "Alicia Keys",
-    ano: 2007,
-    arquivo: "audio/150.mp3",
-},
-{
-    id: 151,
-    codigo: "151",
-    nome: "As Long As You Love Me",
-    artista: "Backstreet Boys",
-    ano: 1997,
-    arquivo: "audio/151.mp3",
-},
-{
-    id: 152,
-    codigo: "152",
-    nome: "Everybody",
-    artista: "Backstreet Boys",
-    ano: 1997,
-    arquivo: "audio/152.mp3",
-},
-{
-    id: 153,
-    codigo: "153",
-    nome: "I Want It That Way",
-    artista: "Backstreet Boys",
-    ano: 1999,
-    arquivo: "audio/153.mp3",
-},
-{
-    id: 154,
-    codigo: "154",
-    nome: "Say Goodbye",
-    artista: "Chris Brown",
-    ano: 2006,
-    arquivo: "audio/154.mp3",
-},
-{
-    id: 155,
-    codigo: "155",
-    nome: "With You",
-    artista: "Chris Brown",
-    ano: 2007,
-    arquivo: "audio/155.mp3",
-},
-{
-    id: 156,
-    codigo: "156",
-    nome: "Boogie Wonderland",
-    artista: "Earth, Wind & Fire",
-    ano: 1979,
-    arquivo: "audio/156.mp3",
-},
-{
-    id: 157,
-    codigo: "157",
-    nome: "Amor",
-    artista: "Emmanuell Cortess",
-    ano: 2024,
-    arquivo: "audio/157.mp3",
-},
-{
-    id: 158,
-    codigo: "158",
-    nome: "Tema de Não Quero Ver Você Triste",
-    artista: "Erasmo Carlos Ft. Marisa Monte",
-    ano: 2007,
-    arquivo: "audio/158.mp3",
-},
-{
-    id: 159,
-    codigo: "159",
-    nome: "Jeito Sexy",
-    artista: "Fat Family",
-    ano: 1998,
-    arquivo: "audio/159.mp3",
-},
-{
-    id: 160,
-    codigo: "160",
-    nome: "I'm Yours",
-    artista: "Jason Mraz",
-    ano: 2008,
-    arquivo: "audio/160.mp3",
-},
-{
-    id: 161,
-    codigo: "161",
-    nome: "Baby",
-    artista: "Justin Bieber",
-    ano: 2010,
-    arquivo: "audio/161.mp3",
-},
-{
-    id: 162,
-    codigo: "162",
-    nome: "That Girl",
-    artista: "Justin Timberlake",
-    ano: 2013,
-    arquivo: "audio/162.mp3",
-},
-{
-    id: 163,
-    codigo: "163",
-    nome: "Folded",
-    artista: "Kehlani",
-    ano: 2025,
-    arquivo: "audio/163.mp3",
-},
-{
-    id: 164,
-    codigo: "164",
-    nome: "Me Gustas Tú",
-    artista: "Manu Chao",
-    ano: 2001,
-    arquivo: "audio/164.mp3",
-},
-{
-    id: 165,
-    codigo: "165",
-    nome: "We Belong Together",
-    artista: "Mariah Carey",
-    ano: 2005,
-    arquivo: "audio/165.mp3",
-},
-{
-    id: 166,
-    codigo: "166",
-    nome: "Amor I Love You",
-    artista: "Marisa Monte",
-    ano: 2000,
-    arquivo: "audio/166.mp3",
-},
-{
-    id: 167,
-    codigo: "167",
-    nome: "Sugar",
-    artista: "Maroon 5",
-    ano: 2015,
-    arquivo: "audio/167.mp3",
-},
-{
-    id: 168,
-    codigo: "168",
-    nome: "I Want You Back",
-    artista: "NSYNC",
-    ano: 1996,
-    arquivo: "audio/168.mp3",
-},
-{
-    id: 169,
-    codigo: "169",
-    nome: "Umbrella ft. JAY-Z",
-    artista: "Rihanna",
-    ano: 2007,
-    arquivo: "audio/169.mp3",
-},
-{
-    id: 170,
-    codigo: "170",
-    nome: "MAKE UP YOU MIND",
-    artista: "TATYANA ALI",
-    ano: 1995,
-    arquivo: "audio/170.mp3",
-},
-{
-    id: 171,
-    codigo: "171",
-    nome: "Can We Talk",
-    artista: "Tevin Campbell",
-    ano: 1993,
-    arquivo: "audio/171.mp3",
-},
-{
-    id: 172,
-    codigo: "172",
-    nome: "Hey, Soul Sister",
-    artista: "Train",
-    ano: 2009,
-    arquivo: "audio/172.mp3",
-},
-{
-    id: 173,
-    codigo: "173",
-    nome: "Burn",
-    artista: "Usher",
-    ano: 2004,
-    arquivo: "audio/173.mp3",
-},
-{
-    id: 174,
-    codigo: "174",
-    nome: "U Got It Bad",
-    artista: "Usher",
-    ano: 2001,
-    arquivo: "audio/174.mp3",
-},
-{
-    id: 175,
-    codigo: "175",
-    nome: "A Thousand Miles",
-    artista: "Vanessa Carlton",
-    ano: 2002,
-    arquivo: "audio/175.mp3",
-},
-{
-    id: 176,
-    codigo: "176",
-    nome: "A Desconhecida",
-    artista: "Fernando Mendes",
-    ano: 1972,
-    arquivo: "audio/176.mp3",
-},
-{
-    id: 177,
-    codigo: "177",
-    nome: "A Dor Desse Amor",
-    artista: "KLB",
-    ano: 2000,
-    arquivo: "audio/177.mp3",
-},
-{
-    id: 178,
-    codigo: "178",
-    nome: "A Força do Amor",
-    artista: "Roupa Nova",
-    ano: 1987,
-    arquivo: "audio/178.mp3",
-},
-{
-    id: 179,
-    codigo: "179",
-    nome: "A Lenda",
-    artista: "Sandy e Junior",
-    ano: 2000,
-    arquivo: "audio/179.mp3",
-},
-{
-    id: 180,
-    codigo: "180",
-    nome: "A Lua Q Eu T Dei",
-    artista: "Ivete Sangalo",
-    ano: 2001,
-    arquivo: "audio/180.mp3",
-},
-{
-    id: 181,
-    codigo: "181",
-    nome: "A Natureza das Coisas",
-    artista: "Flavio José",
-    ano: 2004,
-    arquivo: "audio/181.mp3",
-},
-{
-    id: 182,
-    codigo: "182",
-    nome: "A Praia",
-    artista: "Mastruz com Leite",
-    ano: 2004,
-    arquivo: "audio/182.mp3",
-},
-{
-    id: 183,
-    codigo: "183",
-    nome: "When We Were Young",
-    artista: "Adele",
-    ano: 2015,
-    arquivo: "audio/183.mp3",
-},
-{
-    id: 184,
-    codigo: "184",
-    nome: "Adoro amar você",
-    artista: "DANIEL",
-    ano: 1998,
-    arquivo: "audio/184.mp3",
-},
-{
-    id: 185,
-    codigo: "185",
-    nome: "Alma Gêmea",
-    artista: "Fábio Jr.",
-    ano: 1994,
-    arquivo: "audio/185.mp3",
-},
-{
-    id: 186,
-    codigo: "186",
-    nome: "Amado",
-    artista: "Vanessa da Mata",
-    ano: 2007,
-    arquivo: "audio/186.mp3",
-},
-{
-    id: 187,
-    codigo: "187",
-    nome: "Menininha Meu Amor",
-    artista: "Amado Batista",
-    ano: 1985,
-    arquivo: "audio/187.mp3",
-},
-{
-    id: 188,
-    codigo: "188",
-    nome: "Princesa",
-    artista: "Amado Batista",
-    ano: 1991,
-    arquivo: "audio/188.mp3",
-},
-{
-    id: 189,
-    codigo: "189",
-    nome: "serenata",
-    artista: "amado batista",
-    ano: 1978,
-    arquivo: "audio/189.mp3",
-},
-{
-    id: 190,
-    codigo: "190",
-    nome: "Amor, Amor, Amor",
-    artista: "Reginaldo Rossi",
-    ano: 1980,
-    arquivo: "audio/190.mp3",
-},
-{
-    id: 191,
-    codigo: "191",
-    nome: "Aonde Quer Que Eu Vá",
-    artista: "Os Paralamas Do Sucesso",
-    ano: 2000,
-    arquivo: "audio/191.mp3",
-},
-{
-    id: 192,
-    codigo: "192",
-    nome: "Apenas Um Rapaz",
-    artista: "Belchior",
-    ano: 1976,
-    arquivo: "audio/192.mp3",
-},
-{
-    id: 193,
-    codigo: "193",
-    nome: "Verdadeiro Amor",
-    artista: "Banda Magníficos",
-    ano: 1996,
-    arquivo: "audio/193.mp3",
-},
-{
-    id: 194,
-    codigo: "194",
-    nome: "Beautiful Boy",
-    artista: "John Lennon",
-    ano: 1980,
-    arquivo: "audio/194.mp3",
-},
-{
-    id: 195,
-    codigo: "195",
-    nome: "Stand By Me",
-    artista: "Ben E. King",
-    ano: 1962,
-    arquivo: "audio/195.mp3",
-},
-{
-    id: 196,
-    codigo: "196",
-    nome: "Back At One",
-    artista: "Brian McKnight",
-    ano: 1999,
-    arquivo: "audio/196.mp3",
-},
-{
-    id: 197,
-    codigo: "197",
-    nome: "Caça e Caçador",
-    artista: "Fábio Jr.",
-    ano: 1998,
-    arquivo: "audio/197.mp3",
-},
-{
-    id: 198,
-    codigo: "198",
-    nome: "Melhor eu ir_Ligando os Fatos_Sonho de Amor_Deixa eu te querer",
-    artista: "Churrasquinho do Menos é Mais",
-    ano: 2019,
-    arquivo: "audio/198.mp3",
-},
-{
-    id: 199,
-    codigo: "199",
-    nome: "1 Minuto",
-    artista: "D'Black e Negra Li",
-    ano: 2008,
-    arquivo: "audio/199.mp3",
-},
-{
-    id: 200,
-    codigo: "200",
-    nome: "Deixo",
-    artista: "Ivete Sangalo",
-    ano: 2007,
-    arquivo: "audio/200.mp3",
-},
-{
-    id: 201,
-    codigo: "201",
-    nome: "Diga pra Mim",
-    artista: "Zezo",
-    ano: 2021,
-    arquivo: "audio/201.mp3",
-},
-{
-    id: 202,
-    codigo: "202",
-    nome: "Eu Te Devoro",
-    artista: "Djavan",
-    ano: 1998,
-    arquivo: "audio/202.mp3",
-},
-{
-    id: 203,
-    codigo: "203",
-    nome: "Pétala",
-    artista: "Djavan",
-    ano: 1982,
-    arquivo: "audio/203.mp3",
-},
-{
-    id: 204,
-    codigo: "204",
-    nome: "Samurai",
-    artista: "Djavan",
-    ano: 1982,
-    arquivo: "audio/204.mp3",
-},
-{
-    id: 205,
-    codigo: "205",
-    nome: "Te Faço Um Cafuné",
-    artista: "Dominguinhos e Mestrinho",
-    ano: 2017,
-    arquivo: "audio/205.mp3",
-},
-{
-    id: 206,
-    codigo: "206",
-    nome: "Coração",
-    artista: "Dorgival Dantas",
-    ano: 2005,
-    arquivo: "audio/206.mp3",
-},
-{
-    id: 207,
-    codigo: "207",
-    nome: "Tarde Demais tchau, tchau..",
-    artista: "Dorgival Dantas",
-    ano: 2014,
-    arquivo: "audio/207.mp3",
-},
-{
-    id: 208,
-    codigo: "208",
-    nome: "Ela Não Está Aqui",
-    artista: "KLB",
-    ano: 2000,
-    arquivo: "audio/208.mp3",
-},
-{
-    id: 209,
-    codigo: "209",
-    nome: "Ela só quer paz",
-    artista: "Projota",
-    ano: 2016,
-    arquivo: "audio/209.mp3",
-},
-{
-    id: 210,
-    codigo: "210",
-    nome: "Can't Help Falling In Love",
-    artista: "Elvis Presley",
-    ano: 1961,
-    arquivo: "audio/210.mp3",
-},
-{
-    id: 211,
-    codigo: "211",
-    nome: "Era Uma Vez...",
-    artista: "Sandy e Junior",
-    ano: 1997,
-    arquivo: "audio/211.mp3",
-},
-{
-    id: 212,
-    codigo: "212",
-    nome: "Esperando na janela",
-    artista: "Gilberto Gil",
-    ano: 2000,
-    arquivo: "audio/212.mp3",
-},
-{
-    id: 213,
-    codigo: "213",
-    nome: "Espumas ao Vento",
-    artista: "Flavio José",
-    ano: 1997,
-    arquivo: "audio/213.mp3",
-},
-{
-    id: 214,
-    codigo: "214",
-    nome: "Estou apaixonado",
-    artista: "João Paulo & Daniel",
-    ano: 1996,
-    arquivo: "audio/214.mp3",
-},
-{
-    id: 215,
-    codigo: "215",
-    nome: "Estou Em Suas Mãos",
-    artista: "KLB",
-    ano: 2000,
-    arquivo: "audio/215.mp3",
-},
-{
-    id: 216,
-    codigo: "216",
-    nome: "Eu Queria Dizer Que Te Amo Numa Canção",
-    artista: "Zezo",
-    ano: 2000,
-    arquivo: "audio/216.mp3",
-},
-{
-    id: 217,
-    codigo: "217",
-    nome: "Só Você",
-    artista: "Fábio Jr.",
-    ano: 1997,
-    arquivo: "audio/217.mp3",
-},
-{
-    id: 218,
-    codigo: "218",
-    nome: "Deslizes",
-    artista: "Fagner",
-    ano: 1987,
-    arquivo: "audio/218.mp3",
-},
-{
-    id: 219,
-    codigo: "219",
-    nome: "Fim De Tarde",
-    artista: "Fat Family",
-    ano: 2001,
-    arquivo: "audio/219.mp3",
-},
-{
-    id: 220,
-    codigo: "220",
-    nome: "Final Feliz",
-    artista: "Jorge Vercillo",
-    ano: 2000,
-    arquivo: "audio/220.mp3",
-},
-{
-    id: 221,
-    codigo: "221",
-    nome: "All Of Me",
-    artista: "John Legend",
-    ano: 2013,
-    arquivo: "audio/221.mp3",
-},
-{
-    id: 222,
-    codigo: "222",
-    nome: "Sensível Demais",
-    artista: "Jorge Vercillo",
-    ano: 2007,
-    arquivo: "audio/222.mp3",
-},
-{
-    id: 223,
-    codigo: "223",
-    nome: "Ela Une Todas As Coisas",
-    artista: "Jorge Vercillo",
-    ano: 2007,
-    arquivo: "audio/223.mp3",
-},
-{
-    id: 224,
-    codigo: "224",
-    nome: "Just the Two of Us",
-    artista: "Bill Withers e Grover Washington Jr",
-    ano: 1980,
-    arquivo: "audio/224.mp3",
-},
-{
-    id: 225,
-    codigo: "225",
-    nome: "Mirrors",
-    artista: "Justin Timberlake",
-    ano: 2013,
-    arquivo: "audio/225.mp3",
-},
-{
-    id: 226,
-    codigo: "226",
-    nome: "Lembrança De Um Beijo",
-    artista: "Santanna O Cantador",
-    ano: 2003,
-    arquivo: "audio/226.mp3",
-},
-{
-    id: 227,
-    codigo: "227",
-    nome: "Maluco Beleza",
-    artista: "Raul Seixas",
-    ano: 1977,
-    arquivo: "audio/227.mp3",
-},
-{
-    id: 228,
-    codigo: "228",
-    nome: "Estranho",
-    artista: "Marília Mendonça",
-    ano: 2018,
-    arquivo: "audio/228.mp3",
-},
-{
-    id: 229,
-    codigo: "229",
-    nome: "Te Amo Demais",
-    artista: "Marília Mendonça",
-    ano: 2022,
-    arquivo: "audio/229.mp3",
-},
-{
-    id: 230,
-    codigo: "230",
-    nome: "Minha Doce Estrela",
-    artista: "Nando Cordel",
-    ano: 1991,
-    arquivo: "audio/230.mp3",
-},
-{
-    id: 231,
-    codigo: "231",
-    nome: "Morango do Nordeste",
-    artista: "Lairton e Seus",
-    ano: 1999,
-    arquivo: "audio/231.mp3",
-},
-{
-    id: 232,
-    codigo: "232",
-    nome: "Muito Estranho",
-    artista: "KLB",
-    ano: 2000,
-    arquivo: "audio/232.mp3",
-},
-{
-    id: 233,
-    codigo: "233",
-    nome: "Naquela Mesa",
-    artista: "Zezo",
-    ano: 2004,
-    arquivo: "audio/233.mp3",
-},
-{
-    id: 234,
-    codigo: "234",
-    nome: "O Xote das Meninas",
-    artista: "Luiz Gonzaga",
-    ano: 1953,
-    arquivo: "audio/234.mp3",
-},
-{
-    id: 235,
-    codigo: "235",
-    nome: "Planeta de Cores",
-    artista: "Forrozão Tropykalia",
-    ano: 2004,
-    arquivo: "audio/235.mp3",
-},
-{
-    id: 236,
-    codigo: "236",
-    nome: "Porque Brigamos",
-    artista: "DIANA",
-    ano: 1972,
-    arquivo: "audio/236.mp3",
-},
-{
-    id: 237,
-    codigo: "237",
-    nome: "Quando A Chuva Passar",
-    artista: "Ivete Sangalo",
-    ano: 2005,
-    arquivo: "audio/237.mp3",
-},
-{
-    id: 238,
-    codigo: "238",
-    nome: "Que Nem Maré",
-    artista: "Jorge Vercillo",
-    ano: 2002,
-    arquivo: "audio/238.mp3",
-},
-{
-    id: 239,
-    codigo: "239",
-    nome: "Levo Comigo",
-    artista: "Restart",
-    ano: 2009,
-    arquivo: "audio/239.mp3",
-},
-{
-    id: 240,
-    codigo: "240",
-    nome: "Lady Laura",
-    artista: "Roberto Carlos",
-    ano: 1978,
-    arquivo: "audio/240.mp3",
-},
-{
-    id: 241,
-    codigo: "241",
-    nome: "Rolling In The Deep",
-    artista: "Adele",
-    ano: 2010,
-    arquivo: "audio/241.mp3",
-},
-{
-    id: 242,
-    codigo: "242",
-    nome: "Retratos e Canções",
-    artista: "Sandra De Sá",
-    ano: 1986,
-    arquivo: "audio/242.mp3",
-},
-{
-    id: 243,
-    codigo: "243",
-    nome: "Solidão (Áudio Oficial)",
-    artista: "Sandra De Sá",
-    ano: null,
-    arquivo: "audio/243.mp3",
-},
-{
-    id: 244,
-    codigo: "244",
-    nome: "Solidão",
-    artista: "Sandra De Sá",
-    ano: 1986,
-    arquivo: "audio/244.mp3",
-},
-{
-    id: 245,
-    codigo: "245",
-    nome: "Say You, Say Me",
-    artista: "Lionel Richie",
-    ano: 1986,
-    arquivo: "audio/245.mp3",
-},
-{
-    id: 246,
-    codigo: "246",
-    nome: "Se Ainda Existe Amor",
-    artista: "Balthazar",
-    ano: 1975,
-    arquivo: "audio/246.mp3",
-},
-{
-    id: 247,
-    codigo: "247",
-    nome: "Sendo Assim",
-    artista: "Genival Santos",
-    ano: 1976,
-    arquivo: "audio/247.mp3",
-},
-{
-    id: 248,
-    codigo: "248",
-    nome: "Seresteiro das Noites",
-    artista: "Amado Batista",
-    ano: 1985,
-    arquivo: "audio/248.mp3",
-},
-{
-    id: 249,
-    codigo: "249",
-    nome: "Seu Olhar Não Mente",
-    artista: "Flavio José",
-    ano: 2000,
-    arquivo: "audio/249.mp3",
-},
-{
-    id: 250,
-    codigo: "250",
-    nome: "Sintonia",
-    artista: "Moraes Moreira",
-    ano: 1986,
-    arquivo: "audio/250.mp3",
-},
-{
-    id: 251,
-    codigo: "251",
-    nome: "Somewhere over the Rainbow",
-    artista: "Israel IZ Kamakawiwo'ole",
-    ano: 1990,
-    arquivo: "audio/251.mp3",
-},
-{
-    id: 252,
-    codigo: "252",
-    nome: "Me Espera",
-    artista: "Sorriso Maroto",
-    ano: 2000,
-    arquivo: "audio/252.mp3",
-},
-{
-    id: 253,
-    codigo: "253",
-    nome: "Telefone Fora de Área",
-    artista: "Banda Magníficos",
-    ano: 2008,
-    arquivo: "audio/253.mp3",
-},
-{
-    id: 254,
-    codigo: "254",
-    nome: "Tente Outra Vez",
-    artista: "Raul Seixas",
-    ano: 1975,
-    arquivo: "audio/254.mp3",
-},
-{
-    id: 255,
-    codigo: "255",
-    nome: "Amei Te Ver",
-    artista: "TIAGO IORC",
-    ano: 2015,
-    arquivo: "audio/255.mp3",
-},
-{
-    id: 256,
-    codigo: "256",
-    nome: "Coisa Linda",
-    artista: "TIAGO IORC",
-    ano: 2015,
-    arquivo: "audio/256.mp3",
-},
-{
-    id: 257,
-    codigo: "257",
-    nome: "Ela Partiu",
-    artista: "Tim Maia",
-    ano: 1976,
-    arquivo: "audio/257.mp3",
-},
-{
-    id: 258,
-    codigo: "258",
-    nome: "Tudo Que Você Quiser",
-    artista: "Luan Santana",
-    ano: 2013,
-    arquivo: "audio/258.mp3",
-},
-{
-    id: 259,
-    codigo: "259",
-    nome: "Última Canção",
-    artista: "Paulo Sergio",
-    ano: 1968,
-    arquivo: "audio/259.mp3",
-},
-{
-    id: 260,
-    codigo: "260",
-    nome: "Um Sonho de Amor",
-    artista: "Limão Com Mel",
-    ano: 1994,
-    arquivo: "audio/260.mp3",
-},
-{
-    id: 261,
-    codigo: "261",
-    nome: "O Sol",
-    artista: "Vitor Kley",
-    ano: 2017,
-    arquivo: "audio/261.mp3",
-},
-{
-    id: 262,
-    codigo: "262",
-    nome: "Você Endoideceu Meu Coração",
-    artista: "Nando Cordel",
-    ano: 1986,
-    arquivo: "audio/262.mp3",
-},
-{
-    id: 263,
-    codigo: "263",
-    nome: "We Are The World",
-    artista: "U.S.A. for Africa",
-    ano: 1985,
-    arquivo: "audio/263.mp3",
-},
-{
-    id: 264,
-    codigo: "264",
-    nome: "Telegrama",
-    artista: "Zeca Baleiro",
-    ano: 2002,
-    arquivo: "audio/264.mp3",
-},
-{
-    id: 265,
-    codigo: "265",
-    nome: "Its Not Unusual",
-    artista: "Tom Jones",
-    ano: 1965,
-    arquivo: "audio/265.mp3",
-},
-{
-    id: 266,
-    codigo: "266",
-    nome: "My Heart Will Go On",
-    artista: "Celine Dion",
-    ano: 1997,
-    arquivo: "audio/266.mp3",
-},
-{
-    id: 267,
-    codigo: "267",
-    nome: "Billie Jean",
-    artista: "Michael Jackson",
-    ano: 1983,
-    arquivo: "audio/267.mp3",
-},
-{
-    id: 268,
-    codigo: "268",
-    nome: "Sozinho",
-    artista: "Caetano Veloso",
-    ano: 1998,
-    arquivo: "audio/268.mp3",
-},
-{
-    id: 269,
-    codigo: "269",
-    nome: "Everybody Wants To Rule The World ",
-    artista: "Tears For Fears",
-    ano: 1985,
-    arquivo: "audio/269.mp3",
-},
-{
-    id: 270,
-    codigo: "270",
-    nome: "Adventure of a Lifetime ",
-    artista: "Coldplay",
-    ano: 2015,
-    arquivo: "audio/270.mp3",
-},
-{
-    id: 271,
-    codigo: "271",
-    nome: "O AMOR DA SUA VIDA ",
-    artista: "Kiko Chicabana",
-    ano: 2014,
-    arquivo: "audio/271.mp3",
-},
-{
-    id: 272,
-    codigo: "272",
-    nome: "Eu Quero Só Você ",
-    artista: "Kiko Chicabana",
-    ano: 2010,
-    arquivo: "audio/272.mp3",
-},
-{
-    id: 273,
-    codigo: "273",
-    nome: "Pega-Pega",
-    artista: "Kiko Chicabana",
-    ano: 2009,
-    arquivo: "audio/273.mp3",
-},
-{
-    id: 274,
-    codigo: "274",
-    nome: "BB (garupa de moto amarela)",
-    artista: "Tim Bernardes",
-    ano: 2022,
-    arquivo: "audio/274.mp3",
-}
-
+  {
+    "id": 1,
+    "codigo": "001",
+    "nome": "LET IT BE",
+    "artista": "BEATLES",
+    "ano": 1970,
+    "arquivo": "audio/001.mp3"
+  },
+  {
+    "id": 2,
+    "codigo": "002",
+    "nome": "LE FREAK",
+    "artista": "CHIC",
+    "ano": 1978,
+    "arquivo": "audio/002.mp3"
+  },
+  {
+    "id": 3,
+    "codigo": "003",
+    "nome": "Killing Me Softly With His Song",
+    "artista": "ROBERTA FLACK",
+    "ano": 1973,
+    "arquivo": "audio/003.mp3"
+  },
+  {
+    "id": 4,
+    "codigo": "004",
+    "nome": "Isn't She Lovely",
+    "artista": "Stevie Wonder",
+    "ano": 1976,
+    "arquivo": "audio/004.mp3"
+  },
+  {
+    "id": 5,
+    "codigo": "005",
+    "nome": "INFINITA HIGHWAY",
+    "artista": "ENGENHEIROS DO HAWAII",
+    "ano": 2004,
+    "arquivo": "audio/005.mp3"
+  },
+  {
+    "id": 6,
+    "codigo": "006",
+    "nome": "IMAGINE",
+    "artista": "JOHN LENNON",
+    "ano": 1971,
+    "arquivo": "audio/006.mp3"
+  },
+  {
+    "id": 7,
+    "codigo": "007",
+    "nome": "I'm Coming Out",
+    "artista": "DIANA ROSS",
+    "ano": 1980,
+    "arquivo": "audio/007.mp3"
+  },
+  {
+    "id": 8,
+    "codigo": "008",
+    "nome": "Have You Ever Seen The Rain",
+    "artista": "Creedence Clearwater Revival",
+    "ano": 1973,
+    "arquivo": "audio/008.mp3"
+  },
+  {
+    "id": 9,
+    "codigo": "009",
+    "nome": "Gonna Make You Sweat",
+    "artista": "C+C Music Factory",
+    "ano": 1991,
+    "arquivo": "audio/009.mp3"
+  },
+  {
+    "id": 10,
+    "codigo": "010",
+    "nome": "Footloose",
+    "artista": "Kenny Loggins",
+    "ano": 1984,
+    "arquivo": "audio/010.mp3"
+  },
+  {
+    "id": 11,
+    "codigo": "011",
+    "nome": "Get Down On It",
+    "artista": "Kool & The Gang",
+    "ano": 1981,
+    "arquivo": "audio/011.mp3"
+  },
+  {
+    "id": 12,
+    "codigo": "012",
+    "nome": "NUMB",
+    "artista": "LINKIN PARK",
+    "ano": 2003,
+    "arquivo": "audio/012.mp3"
+  },
+  {
+    "id": 13,
+    "codigo": "013",
+    "nome": "Play That Funky Music",
+    "artista": "Wild Cherry",
+    "ano": 1976,
+    "arquivo": "audio/013.mp3"
+  },
+  {
+    "id": 14,
+    "codigo": "014",
+    "nome": "A PAZ",
+    "artista": "GILBERTO GIL",
+    "ano": 1994,
+    "arquivo": "audio/014.mp3"
+  },
+  {
+    "id": 15,
+    "codigo": "015",
+    "nome": "APENAS MAIS UMA DE AMOR",
+    "artista": "LULU SANTOS",
+    "ano": 2000,
+    "arquivo": "audio/015.mp3"
+  },
+  {
+    "id": 16,
+    "codigo": "016",
+    "nome": "AS QUATRO ESTAÇÕES",
+    "artista": "SANDY & JUNIOR",
+    "ano": 2007,
+    "arquivo": "audio/016.mp3"
+  },
+  {
+    "id": 17,
+    "codigo": "017",
+    "nome": "BEAT IT",
+    "artista": "MICHAEL JACKSON",
+    "ano": 1982,
+    "arquivo": "audio/017.mp3"
+  },
+  {
+    "id": 18,
+    "codigo": "018",
+    "nome": "If You Leave Me Now",
+    "artista": "CHICAGO",
+    "ano": 1976,
+    "arquivo": "audio/018.mp3"
+  },
+  {
+    "id": 19,
+    "codigo": "019",
+    "nome": "Eye of the Tiger",
+    "artista": "SURVIVOR",
+    "ano": 1982,
+    "arquivo": "audio/019.mp3"
+  },
+  {
+    "id": 20,
+    "codigo": "020",
+    "nome": "All Out Of Love",
+    "artista": "Air Supply",
+    "ano": 1980,
+    "arquivo": "audio/020.mp3"
+  },
+  {
+    "id": 21,
+    "codigo": "021",
+    "nome": "Celebration",
+    "artista": "Kool & The Gang",
+    "ano": 1980,
+    "arquivo": "audio/021.mp3"
+  },
+  {
+    "id": 22,
+    "codigo": "022",
+    "nome": "Funkytown",
+    "artista": "Lipps Inc.",
+    "ano": 1980,
+    "arquivo": "audio/022.mp3"
+  },
+  {
+    "id": 23,
+    "codigo": "023",
+    "nome": "Livin' On A Prayer",
+    "artista": "Bon Jovi",
+    "ano": 1986,
+    "arquivo": "audio/023.mp3"
+  },
+  {
+    "id": 24,
+    "codigo": "024",
+    "nome": "Malandragem",
+    "artista": "Cassia Eller",
+    "ano": 1994,
+    "arquivo": "audio/024.mp3"
+  },
+  {
+    "id": 25,
+    "codigo": "025",
+    "nome": "Me Chama",
+    "artista": "Lobão",
+    "ano": 2000,
+    "arquivo": "audio/025.mp3"
+  },
+  {
+    "id": 26,
+    "codigo": "026",
+    "nome": "Os Cegos do Castelo",
+    "artista": "Nando Reis",
+    "ano": 1997,
+    "arquivo": "audio/026.mp3"
+  },
+  {
+    "id": 27,
+    "codigo": "027",
+    "nome": "Pescador de Ilusões",
+    "artista": "O Rappa",
+    "ano": 2005,
+    "arquivo": "audio/027.mp3"
+  },
+  {
+    "id": 28,
+    "codigo": "028",
+    "nome": "Primeiros Erros",
+    "artista": "Capital Inicial",
+    "ano": 2000,
+    "arquivo": "audio/028.mp3"
+  },
+  {
+    "id": 29,
+    "codigo": "029",
+    "nome": "Rocket Man",
+    "artista": "Elton John",
+    "ano": 1972,
+    "arquivo": "audio/029.mp3"
+  },
+  {
+    "id": 30,
+    "codigo": "030",
+    "nome": "Sailing",
+    "artista": "Christopher Cross",
+    "ano": 1980,
+    "arquivo": "audio/030.mp3"
+  },
+  {
+    "id": 31,
+    "codigo": "031",
+    "nome": "September",
+    "artista": "Earth, Wind & Fire",
+    "ano": 1978,
+    "arquivo": "audio/031.mp3"
+  },
+  {
+    "id": 32,
+    "codigo": "032",
+    "nome": "Starman",
+    "artista": "David Bowie",
+    "ano": 1972,
+    "arquivo": "audio/032.mp3"
+  },
+  {
+    "id": 33,
+    "codigo": "033",
+    "nome": "Stayin' Alive",
+    "artista": "Bee Gees",
+    "ano": 1977,
+    "arquivo": "audio/033.mp3"
+  },
+  {
+    "id": 34,
+    "codigo": "034",
+    "nome": "Take On Me",
+    "artista": "a-ha",
+    "ano": 1985,
+    "arquivo": "audio/034.mp3"
+  },
+  {
+    "id": 35,
+    "codigo": "035",
+    "nome": "I Wanna Dance With Somebody",
+    "artista": "Whitney Houston",
+    "ano": 1987,
+    "arquivo": "audio/035.mp3"
+  },
+  {
+    "id": 36,
+    "codigo": "036",
+    "nome": "You Give Love a Bad Name",
+    "artista": "Bon Jovi",
+    "ano": 1986,
+    "arquivo": "audio/036.mp3"
+  },
+  {
+    "id": 37,
+    "codigo": "037",
+    "nome": "You Should Be Dancing",
+    "artista": "Bee Gees",
+    "ano": 1976,
+    "arquivo": "audio/037.mp3"
+  },
+  {
+    "id": 38,
+    "codigo": "038",
+    "nome": "What's Up",
+    "artista": "4 Non Blondes",
+    "ano": 1993,
+    "arquivo": "audio/038.mp3"
+  },
+  {
+    "id": 39,
+    "codigo": "039",
+    "nome": "Ain't No Mountain High Enough",
+    "artista": "Marvin Gaye x Tammi Terrell",
+    "ano": 1967,
+    "arquivo": "audio/048-39.mp3"
+  },
+  {
+    "id": 40,
+    "codigo": "040",
+    "nome": "Anunciação",
+    "artista": "Alceu Valença",
+    "ano": 1983,
+    "arquivo": "audio/040.mp3"
+  },
+  {
+    "id": 41,
+    "codigo": "041",
+    "nome": "Árvore",
+    "artista": "Edson Gomes",
+    "ano": 1992,
+    "arquivo": "audio/046-41.mp3"
+  },
+  {
+    "id": 42,
+    "codigo": "042",
+    "nome": "Bilu, Bilu",
+    "artista": "Pablo",
+    "ano": 2014,
+    "arquivo": "audio/050-42.mp3"
+  },
+  {
+    "id": 43,
+    "codigo": "043",
+    "nome": "Black or White",
+    "artista": "Michael Jackson",
+    "ano": 1991,
+    "arquivo": "audio/051-43.mp3"
+  },
+  {
+    "id": 44,
+    "codigo": "044",
+    "nome": "Borboletas",
+    "artista": "Victor & Leo",
+    "ano": 2008,
+    "arquivo": "audio/052-44.mp3"
+  },
+  {
+    "id": 45,
+    "codigo": "045",
+    "nome": "Camelo",
+    "artista": "Edson Gomes",
+    "ano": 1997,
+    "arquivo": "audio/053-45.mp3"
+  },
+  {
+    "id": 46,
+    "codigo": "046",
+    "nome": "Exagerado",
+    "artista": "Cazuza",
+    "ano": 1985,
+    "arquivo": "audio/054-46.mp3"
+  },
+  {
+    "id": 47,
+    "codigo": "047",
+    "nome": "The Twist",
+    "artista": "Chubby Checker",
+    "ano": 1960,
+    "arquivo": "audio/055-47.mp3"
+  },
+  {
+    "id": 48,
+    "codigo": "048",
+    "nome": "Easy",
+    "artista": "Commodores",
+    "ano": 1977,
+    "arquivo": "audio/039.mp3"
+  },
+  {
+    "id": 49,
+    "codigo": "049",
+    "nome": "Como eu quero",
+    "artista": "Kid Abelha",
+    "ano": 1984,
+    "arquivo": "audio/040-49.mp3"
+  },
+  {
+    "id": 50,
+    "codigo": "050",
+    "nome": "Dancing Queen",
+    "artista": "ABBA",
+    "ano": 1976,
+    "arquivo": "audio/041-50.mp3"
+  },
+  {
+    "id": 51,
+    "codigo": "051",
+    "nome": "Diga Sim pra Mim",
+    "artista": "Desejo de Menina",
+    "ano": 2008,
+    "arquivo": "audio/042-51.mp3"
+  },
+  {
+    "id": 52,
+    "codigo": "052",
+    "nome": "Do Lado de Cá",
+    "artista": "Chimarruts",
+    "ano": 2010,
+    "arquivo": "audio/043-52.mp3"
+  },
+  {
+    "id": 53,
+    "codigo": "053",
+    "nome": "Don't Matter",
+    "artista": "Akon",
+    "ano": 2007,
+    "arquivo": "audio/044-53.mp3"
+  },
+  {
+    "id": 54,
+    "codigo": "054",
+    "nome": "Coração",
+    "artista": "Dorgival Dantas",
+    "ano": 2005,
+    "arquivo": "audio/045-54.mp3"
+  },
+  {
+    "id": 55,
+    "codigo": "055",
+    "nome": "É o Amor",
+    "artista": "Zezé Di Camargo & Luciano",
+    "ano": 1991,
+    "arquivo": "audio/047-55.mp3"
+  },
+  {
+    "id": 56,
+    "codigo": "056",
+    "nome": "ENDOIDECEU MEU CORAÇÃO",
+    "artista": "João Gomes",
+    "ano": 2024,
+    "arquivo": "audio/056.mp3"
+  },
+  {
+    "id": 57,
+    "codigo": "057",
+    "nome": "Esse Cara Sou Eu",
+    "artista": "Roberto Carlos",
+    "ano": 2012,
+    "arquivo": "audio/057.mp3"
+  },
+  {
+    "id": 58,
+    "codigo": "058",
+    "nome": "Eu Só Quero um Xodó",
+    "artista": "Dominguinhos",
+    "ano": 2003,
+    "arquivo": "audio/058.mp3"
+  },
+  {
+    "id": 59,
+    "codigo": "059",
+    "nome": "Eu Tenho Medo",
+    "artista": "Zé Vaqueiro",
+    "ano": 2020,
+    "arquivo": "audio/059.mp3"
+  },
+  {
+    "id": 60,
+    "codigo": "060",
+    "nome": "Evidências",
+    "artista": "Chitãozinho & Xororó",
+    "ano": 1990,
+    "arquivo": "audio/060.mp3"
+  },
+  {
+    "id": 61,
+    "codigo": "061",
+    "nome": "Fico Assim Sem Você",
+    "artista": "Claudinho & Buchecha",
+    "ano": 2002,
+    "arquivo": "audio/061.mp3"
+  },
+  {
+    "id": 62,
+    "codigo": "062",
+    "nome": "Dreams",
+    "artista": "Fleetwood Mac",
+    "ano": 1977,
+    "arquivo": "audio/062.mp3"
+  },
+  {
+    "id": 63,
+    "codigo": "063",
+    "nome": "Garota Nota 100",
+    "artista": "MC Marcinho",
+    "ano": 1998,
+    "arquivo": "audio/063.mp3"
+  },
+  {
+    "id": 64,
+    "codigo": "064",
+    "nome": "Give It Up",
+    "artista": "KC and the Sunshine Band",
+    "ano": 1982,
+    "arquivo": "audio/064.mp3"
+  },
+  {
+    "id": 65,
+    "codigo": "065",
+    "nome": "Gostava Tanto De Você",
+    "artista": "Tim Maia",
+    "ano": 1973,
+    "arquivo": "audio/065.mp3"
+  },
+  {
+    "id": 66,
+    "codigo": "066",
+    "nome": "Flashdance What A Feeling",
+    "artista": "Irene Cara",
+    "ano": 1983,
+    "arquivo": "audio/066.mp3"
+  },
+  {
+    "id": 67,
+    "codigo": "067",
+    "nome": "Is This Love",
+    "artista": "Bob Marley",
+    "ano": 1978,
+    "arquivo": "audio/067.mp3"
+  },
+  {
+    "id": 68,
+    "codigo": "068",
+    "nome": "Please Don't Go",
+    "artista": "KC & The Sunshine Band",
+    "ano": 1979,
+    "arquivo": "audio/068.mp3"
+  },
+  {
+    "id": 69,
+    "codigo": "069",
+    "nome": "La Belle De Jour",
+    "artista": "Alceu Valença",
+    "ano": 1992,
+    "arquivo": "audio/049-69.mp3"
+  },
+  {
+    "id": 70,
+    "codigo": "070",
+    "nome": "Tempo perdido",
+    "artista": "Legião Urbana",
+    "ano": 1986,
+    "arquivo": "audio/070.mp3"
+  },
+  {
+    "id": 71,
+    "codigo": "071",
+    "nome": "Linda Bela",
+    "artista": "Elias Monkbel",
+    "ano": 2019,
+    "arquivo": "audio/071.mp3"
+  },
+  {
+    "id": 72,
+    "codigo": "072",
+    "nome": "Lonely",
+    "artista": "Akon",
+    "ano": 2005,
+    "arquivo": "audio/072.mp3"
+  },
+  {
+    "id": 73,
+    "codigo": "073",
+    "nome": "Mágica",
+    "artista": "Calcinha Preta",
+    "ano": 2004,
+    "arquivo": "audio/073.mp3"
+  },
+  {
+    "id": 74,
+    "codigo": "074",
+    "nome": "Malandrinha",
+    "artista": "Edson Gomes",
+    "ano": 1998,
+    "arquivo": "audio/074.mp3"
+  },
+  {
+    "id": 75,
+    "codigo": "075",
+    "nome": "Manchete dos Jornais",
+    "artista": "Calcinha Preta",
+    "ano": 2003,
+    "arquivo": "audio/075.mp3"
+  },
+  {
+    "id": 76,
+    "codigo": "076",
+    "nome": "Saudades do Tempo",
+    "artista": "Maneva",
+    "ano": 2009,
+    "arquivo": "audio/076.mp3"
+  },
+  {
+    "id": 77,
+    "codigo": "077",
+    "nome": "Me Namora",
+    "artista": "Edu Ribeiro",
+    "ano": 2004,
+    "arquivo": "audio/077.mp3"
+  },
+  {
+    "id": 78,
+    "codigo": "078",
+    "nome": "Metamorfose Ambulante",
+    "artista": "Raul Seixas",
+    "ano": 1973,
+    "arquivo": "audio/078.mp3"
+  },
+  {
+    "id": 79,
+    "codigo": "079",
+    "nome": "Meu Erro",
+    "artista": "Os Paralamas Do Sucesso",
+    "ano": 1984,
+    "arquivo": "audio/079.mp3"
+  },
+  {
+    "id": 80,
+    "codigo": "080",
+    "nome": "Meu Mel",
+    "artista": "Zé Vaqueiro",
+    "ano": 2020,
+    "arquivo": "audio/080.mp3"
+  },
+  {
+    "id": 81,
+    "codigo": "081",
+    "nome": "Meu Pedaço de Pecado",
+    "artista": "João Gomes",
+    "ano": 2021,
+    "arquivo": "audio/081.mp3"
+  },
+  {
+    "id": 82,
+    "codigo": "082",
+    "nome": "Over My Shoulder",
+    "artista": "Mike + The Mechanics",
+    "ano": 1995,
+    "arquivo": "audio/082.mp3"
+  },
+  {
+    "id": 83,
+    "codigo": "083",
+    "nome": "Monalisa",
+    "artista": "Jorge Vercillo",
+    "ano": 2003,
+    "arquivo": "audio/083.mp3"
+  },
+  {
+    "id": 84,
+    "codigo": "084",
+    "nome": "Morango do Nordeste",
+    "artista": "Karametade",
+    "ano": 2000,
+    "arquivo": "audio/084.mp3"
+  },
+  {
+    "id": 85,
+    "codigo": "085",
+    "nome": "Morena Tropicana",
+    "artista": "Alceu Valença",
+    "ano": 1982,
+    "arquivo": "audio/085.mp3"
+  },
+  {
+    "id": 86,
+    "codigo": "086",
+    "nome": "Night Fever",
+    "artista": "Bee Gees",
+    "ano": 1978,
+    "arquivo": "audio/086.mp3"
+  },
+  {
+    "id": 87,
+    "codigo": "087",
+    "nome": "No Dia em Que Eu Saí de Casa",
+    "artista": "Zezé Di Camargo & Luciano",
+    "ano": 1995,
+    "arquivo": "audio/087.mp3"
+  },
+  {
+    "id": 88,
+    "codigo": "088",
+    "nome": "No Woman, No Cry",
+    "artista": "Bob Marley",
+    "ano": 1974,
+    "arquivo": "audio/088.mp3"
+  },
+  {
+    "id": 89,
+    "codigo": "089",
+    "nome": "O Astronauta de Marmore",
+    "artista": "Nenhum de Nós",
+    "ano": 1989,
+    "arquivo": "audio/089.mp3"
+  },
+  {
+    "id": 90,
+    "codigo": "090",
+    "nome": "O Descobridor Dos Sete Mares",
+    "artista": "Tim Maia",
+    "ano": 1983,
+    "arquivo": "audio/090.mp3"
+  },
+  {
+    "id": 91,
+    "codigo": "091",
+    "nome": "Oh Chuva",
+    "artista": "Planta E Raiz",
+    "ano": 2000,
+    "arquivo": "audio/091.mp3"
+  },
+  {
+    "id": 92,
+    "codigo": "092",
+    "nome": "Pássaro De Fogo",
+    "artista": "Paula Fernandes",
+    "ano": 2009,
+    "arquivo": "audio/094-92.mp3"
+  },
+  {
+    "id": 93,
+    "codigo": "093",
+    "nome": "Perdido De Amor",
+    "artista": "Edson Gomes",
+    "ano": 1997,
+    "arquivo": "audio/092-93.mp3"
+  },
+  {
+    "id": 94,
+    "codigo": "094",
+    "nome": "Perfume",
+    "artista": "Belo",
+    "ano": 2008,
+    "arquivo": "audio/093-94.mp3"
+  },
+  {
+    "id": 95,
+    "codigo": "095",
+    "nome": "Quero Te Encontrar",
+    "artista": "Claudinho & Buchecha",
+    "ano": 1997,
+    "arquivo": "audio/095.mp3"
+  },
+  {
+    "id": 96,
+    "codigo": "096",
+    "nome": "Right Here Waiting",
+    "artista": "Richard Marx",
+    "ano": 1989,
+    "arquivo": "audio/096.mp3"
+  },
+  {
+    "id": 97,
+    "codigo": "097",
+    "nome": "Sinônimos",
+    "artista": "Chitãozinho & Xororó",
+    "ano": 2004,
+    "arquivo": "audio/097.mp3"
+  },
+  {
+    "id": 98,
+    "codigo": "098",
+    "nome": "I'm a Believer",
+    "artista": "Smash Mouth",
+    "ano": 2001,
+    "arquivo": "audio/098.mp3"
+  },
+  {
+    "id": 99,
+    "codigo": "099",
+    "nome": "Só Love",
+    "artista": "Claudinho & Buchecha",
+    "ano": 1998,
+    "arquivo": "audio/099.mp3"
+  },
+  {
+    "id": 100,
+    "codigo": "100",
+    "nome": "Tá Vendo Aquela Lua",
+    "artista": "Exalta Samba",
+    "ano": 2010,
+    "arquivo": "audio/106-100.mp3"
+  },
+  {
+    "id": 101,
+    "codigo": "101",
+    "nome": "Tempos modernos",
+    "artista": "Lulu Santos",
+    "ano": 1982,
+    "arquivo": "audio/100-101.mp3"
+  },
+  {
+    "id": 102,
+    "codigo": "102",
+    "nome": "Best of My Love",
+    "artista": "The Emotions",
+    "ano": 1977,
+    "arquivo": "audio/101-102.mp3"
+  },
+  {
+    "id": 103,
+    "codigo": "103",
+    "nome": "I Don't Wanna Lose You",
+    "artista": "Tina Turner",
+    "ano": 1989,
+    "arquivo": "audio/102-103.mp3"
+  },
+  {
+    "id": 104,
+    "codigo": "104",
+    "nome": "Toma Conta De Mim",
+    "artista": "Limão com Mel",
+    "ano": 2002,
+    "arquivo": "audio/103-104.mp3"
+  },
+  {
+    "id": 105,
+    "codigo": "105",
+    "nome": "Treasure",
+    "artista": "Bruno Mars",
+    "ano": 2012,
+    "arquivo": "audio/104-105.mp3"
+  },
+  {
+    "id": 106,
+    "codigo": "106",
+    "nome": "True Love",
+    "artista": "SOJA",
+    "ano": 2006,
+    "arquivo": "audio/105-106.mp3"
+  },
+  {
+    "id": 107,
+    "codigo": "107",
+    "nome": "Vou Deixar",
+    "artista": "Skank",
+    "ano": 2003,
+    "arquivo": "audio/107.mp3"
+  },
+  {
+    "id": 108,
+    "codigo": "108",
+    "nome": "Wonderwall",
+    "artista": "Oasis",
+    "ano": 1995,
+    "arquivo": "audio/108.mp3"
+  },
+  {
+    "id": 109,
+    "codigo": "109",
+    "nome": "Xote dos Milagres",
+    "artista": "Falamansa",
+    "ano": 2000,
+    "arquivo": "audio/109.mp3"
+  },
+  {
+    "id": 110,
+    "codigo": "110",
+    "nome": "Deixe-me ir",
+    "artista": "1Kilo",
+    "ano": 2017,
+    "arquivo": "audio/110.mp3"
+  },
+  {
+    "id": 111,
+    "codigo": "111",
+    "nome": "Anna Júlia",
+    "artista": "LOS HERMANOS",
+    "ano": 1999,
+    "arquivo": "audio/111.mp3"
+  },
+  {
+    "id": 112,
+    "codigo": "112",
+    "nome": "Apenas Mais Uma De Amor",
+    "artista": "Lulu Santos",
+    "ano": 1992,
+    "arquivo": "audio/112.mp3"
+  },
+  {
+    "id": 113,
+    "codigo": "113",
+    "nome": "Burguesinha",
+    "artista": "Seu Jorge",
+    "ano": 2007,
+    "arquivo": "audio/113.mp3"
+  },
+  {
+    "id": 114,
+    "codigo": "114",
+    "nome": "Céu Azul",
+    "artista": "Charlie Brown Jr",
+    "ano": 2011,
+    "arquivo": "audio/114.mp3"
+  },
+  {
+    "id": 115,
+    "codigo": "115",
+    "nome": "Coisas Que Eu Sei",
+    "artista": "Danni Carlos",
+    "ano": 2007,
+    "arquivo": "audio/115.mp3"
+  },
+  {
+    "id": 116,
+    "codigo": "116",
+    "nome": "Dias De Luta, Dias De Gloria",
+    "artista": "Charlie Brown Jr.",
+    "ano": 2005,
+    "arquivo": "audio/116.mp3"
+  },
+  {
+    "id": 117,
+    "codigo": "117",
+    "nome": "Sina",
+    "artista": "Djavan",
+    "ano": 1982,
+    "arquivo": "audio/117.mp3"
+  },
+  {
+    "id": 118,
+    "codigo": "118",
+    "nome": "Equalize",
+    "artista": "Pitty",
+    "ano": 2003,
+    "arquivo": "audio/118.mp3"
+  },
+  {
+    "id": 119,
+    "codigo": "119",
+    "nome": "Eu Amo Você",
+    "artista": "Tim Maia",
+    "ano": 1970,
+    "arquivo": "audio/119.mp3"
+  },
+  {
+    "id": 120,
+    "codigo": "120",
+    "nome": "Eu Sei",
+    "artista": "Papas Da Língua",
+    "ano": 2002,
+    "arquivo": "audio/120.mp3"
+  },
+  {
+    "id": 121,
+    "codigo": "121",
+    "nome": "Borbulhas de Amor",
+    "artista": "Fagner",
+    "ano": 1991,
+    "arquivo": "audio/121.mp3"
+  },
+  {
+    "id": 122,
+    "codigo": "122",
+    "nome": "Felicidade",
+    "artista": "Seu Jorge",
+    "ano": 2015,
+    "arquivo": "audio/122.mp3"
+  },
+  {
+    "id": 123,
+    "codigo": "123",
+    "nome": "João e Maria",
+    "artista": "Chico Buarque",
+    "ano": 1977,
+    "arquivo": "audio/123.mp3"
+  },
+  {
+    "id": 124,
+    "codigo": "124",
+    "nome": "Lágrimas E Chuva",
+    "artista": "Kid Abelha",
+    "ano": 1985,
+    "arquivo": "audio/124.mp3"
+  },
+  {
+    "id": 125,
+    "codigo": "125",
+    "nome": "Lanterna Dos Afogados",
+    "artista": "Os Paralamas Do Sucesso",
+    "ano": 1989,
+    "arquivo": "audio/125.mp3"
+  },
+  {
+    "id": 126,
+    "codigo": "126",
+    "nome": "Linha do Equador",
+    "artista": "Djavan",
+    "ano": 1992,
+    "arquivo": "audio/126.mp3"
+  },
+  {
+    "id": 127,
+    "codigo": "127",
+    "nome": "Na Linha do Tempo",
+    "artista": "Victor & Leo",
+    "ano": 2013,
+    "arquivo": "audio/127.mp3"
+  },
+  {
+    "id": 128,
+    "codigo": "128",
+    "nome": "Naquela Mesa",
+    "artista": "Nelson Gonçalves",
+    "ano": 1972,
+    "arquivo": "audio/128.mp3"
+  },
+  {
+    "id": 129,
+    "codigo": "129",
+    "nome": "Nem um Dia",
+    "artista": "Djavan",
+    "ano": 1996,
+    "arquivo": "audio/129.mp3"
+  },
+  {
+    "id": 130,
+    "codigo": "130",
+    "nome": "Pela Luz dos Olhos Teus",
+    "artista": "Miucha",
+    "ano": 1977,
+    "arquivo": "audio/130.mp3"
+  },
+  {
+    "id": 131,
+    "codigo": "131",
+    "nome": "Vagalumes (part. Ivo Mozart)",
+    "artista": "Pollo",
+    "ano": 2012,
+    "arquivo": "audio/131.mp3"
+  },
+  {
+    "id": 132,
+    "codigo": "132",
+    "nome": "Por Você (Acústica)",
+    "artista": "Barão Vermelho",
+    "ano": 1998,
+    "arquivo": "audio/132.mp3"
+  },
+  {
+    "id": 133,
+    "codigo": "133",
+    "nome": "Sem Radar",
+    "artista": "LS Jack",
+    "ano": 2003,
+    "arquivo": "audio/133.mp3"
+  },
+  {
+    "id": 134,
+    "codigo": "134",
+    "nome": "SENHOR DO TEMPO",
+    "artista": "Charlie Brown Jr.",
+    "ano": 2005,
+    "arquivo": "audio/134.mp3"
+  },
+  {
+    "id": 135,
+    "codigo": "135",
+    "nome": "Será que é amor",
+    "artista": "Arlindo Cruz",
+    "ano": 2003,
+    "arquivo": "audio/135.mp3"
+  },
+  {
+    "id": 136,
+    "codigo": "136",
+    "nome": "Acima do Sol",
+    "artista": "Skank",
+    "ano": 2001,
+    "arquivo": "audio/136.mp3"
+  },
+  {
+    "id": 137,
+    "codigo": "137",
+    "nome": "Só Hoje",
+    "artista": "Jota Quest",
+    "ano": 2002,
+    "arquivo": "audio/137.mp3"
+  },
+  {
+    "id": 138,
+    "codigo": "138",
+    "nome": "Só Os Loucos Sabem",
+    "artista": "Charlie Brown Jr.",
+    "ano": 2009,
+    "arquivo": "audio/138.mp3"
+  },
+  {
+    "id": 139,
+    "codigo": "139",
+    "nome": "Enquanto Houver Sol",
+    "artista": "Titãs",
+    "ano": 2003,
+    "arquivo": "audio/139.mp3"
+  },
+  {
+    "id": 140,
+    "codigo": "140",
+    "nome": "Tive Razão",
+    "artista": "Seu Jorge",
+    "ano": 2004,
+    "arquivo": "audio/140.mp3"
+  },
+  {
+    "id": 141,
+    "codigo": "141",
+    "nome": "Várias Queixas",
+    "artista": "Gilsons",
+    "ano": 2019,
+    "arquivo": "audio/141.mp3"
+  },
+  {
+    "id": 142,
+    "codigo": "142",
+    "nome": "Velha Infância",
+    "artista": "Tribalista",
+    "ano": 2002,
+    "arquivo": "audio/142.mp3"
+  },
+  {
+    "id": 143,
+    "codigo": "143",
+    "nome": "Ainda Gosto Dela",
+    "artista": "Skank",
+    "ano": 2008,
+    "arquivo": "audio/143.mp3"
+  },
+  {
+    "id": 144,
+    "codigo": "144",
+    "nome": "Vamos Fugir",
+    "artista": "Skank",
+    "ano": 2004,
+    "arquivo": "audio/144.mp3"
+  },
+  {
+    "id": 145,
+    "codigo": "145",
+    "nome": "Poderosa",
+    "artista": "Banda Brasil",
+    "ano": 1993,
+    "arquivo": "audio/145.mp3"
+  },
+  {
+    "id": 146,
+    "codigo": "146",
+    "nome": "A Beleza É Você Menina",
+    "artista": "Bebeto",
+    "ano": 1974,
+    "arquivo": "audio/146.mp3"
+  },
+  {
+    "id": 147,
+    "codigo": "147",
+    "nome": "Someone Like You",
+    "artista": "Adele",
+    "ano": 2011,
+    "arquivo": "audio/147.mp3"
+  },
+  {
+    "id": 148,
+    "codigo": "148",
+    "nome": "Don't Matter",
+    "artista": "Akon",
+    "ano": 2007,
+    "arquivo": "audio/148.mp3"
+  },
+  {
+    "id": 149,
+    "codigo": "149",
+    "nome": "If I Ain't Got You",
+    "artista": "Alicia Keys",
+    "ano": 2004,
+    "arquivo": "audio/149.mp3"
+  },
+  {
+    "id": 150,
+    "codigo": "150",
+    "nome": "No One",
+    "artista": "Alicia Keys",
+    "ano": 2007,
+    "arquivo": "audio/150.mp3"
+  },
+  {
+    "id": 151,
+    "codigo": "151",
+    "nome": "As Long As You Love Me",
+    "artista": "Backstreet Boys",
+    "ano": 1997,
+    "arquivo": "audio/151.mp3"
+  },
+  {
+    "id": 152,
+    "codigo": "152",
+    "nome": "Everybody",
+    "artista": "Backstreet Boys",
+    "ano": 1997,
+    "arquivo": "audio/152.mp3"
+  },
+  {
+    "id": 153,
+    "codigo": "153",
+    "nome": "I Want It That Way",
+    "artista": "Backstreet Boys",
+    "ano": 1999,
+    "arquivo": "audio/153.mp3"
+  },
+  {
+    "id": 154,
+    "codigo": "154",
+    "nome": "Say Goodbye",
+    "artista": "Chris Brown",
+    "ano": 2006,
+    "arquivo": "audio/154.mp3"
+  },
+  {
+    "id": 155,
+    "codigo": "155",
+    "nome": "With You",
+    "artista": "Chris Brown",
+    "ano": 2007,
+    "arquivo": "audio/155.mp3"
+  },
+  {
+    "id": 156,
+    "codigo": "156",
+    "nome": "Boogie Wonderland",
+    "artista": "Earth, Wind & Fire",
+    "ano": 1979,
+    "arquivo": "audio/156.mp3"
+  },
+  {
+    "id": 157,
+    "codigo": "157",
+    "nome": "Amor",
+    "artista": "Emmanuell Cortess",
+    "ano": 2024,
+    "arquivo": "audio/157.mp3"
+  },
+  {
+    "id": 158,
+    "codigo": "158",
+    "nome": "Tema de Não Quero Ver Você Triste",
+    "artista": "Erasmo Carlos Ft. Marisa Monte",
+    "ano": 2007,
+    "arquivo": "audio/158.mp3"
+  },
+  {
+    "id": 159,
+    "codigo": "159",
+    "nome": "Jeito Sexy",
+    "artista": "Fat Family",
+    "ano": 1998,
+    "arquivo": "audio/159.mp3"
+  },
+  {
+    "id": 160,
+    "codigo": "160",
+    "nome": "I'm Yours",
+    "artista": "Jason Mraz",
+    "ano": 2008,
+    "arquivo": "audio/160.mp3"
+  },
+  {
+    "id": 161,
+    "codigo": "161",
+    "nome": "Baby",
+    "artista": "Justin Bieber",
+    "ano": 2010,
+    "arquivo": "audio/161.mp3"
+  },
+  {
+    "id": 162,
+    "codigo": "162",
+    "nome": "That Girl",
+    "artista": "Justin Timberlake",
+    "ano": 2013,
+    "arquivo": "audio/162.mp3"
+  },
+  {
+    "id": 163,
+    "codigo": "163",
+    "nome": "Folded",
+    "artista": "Kehlani",
+    "ano": 2025,
+    "arquivo": "audio/163.mp3"
+  },
+  {
+    "id": 164,
+    "codigo": "164",
+    "nome": "Me Gustas Tú",
+    "artista": "Manu Chao",
+    "ano": 2001,
+    "arquivo": "audio/164.mp3"
+  },
+  {
+    "id": 165,
+    "codigo": "165",
+    "nome": "We Belong Together",
+    "artista": "Mariah Carey",
+    "ano": 2005,
+    "arquivo": "audio/165.mp3"
+  },
+  {
+    "id": 166,
+    "codigo": "166",
+    "nome": "Amor I Love You",
+    "artista": "Marisa Monte",
+    "ano": 2000,
+    "arquivo": "audio/166.mp3"
+  },
+  {
+    "id": 167,
+    "codigo": "167",
+    "nome": "Sugar",
+    "artista": "Maroon 5",
+    "ano": 2015,
+    "arquivo": "audio/167.mp3"
+  },
+  {
+    "id": 168,
+    "codigo": "168",
+    "nome": "I Want You Back",
+    "artista": "NSYNC",
+    "ano": 1996,
+    "arquivo": "audio/168.mp3"
+  },
+  {
+    "id": 169,
+    "codigo": "169",
+    "nome": "Umbrella ft. JAY-Z",
+    "artista": "Rihanna",
+    "ano": 2007,
+    "arquivo": "audio/169.mp3"
+  },
+  {
+    "id": 170,
+    "codigo": "170",
+    "nome": "MAKE UP YOU MIND",
+    "artista": "TATYANA ALI",
+    "ano": 1995,
+    "arquivo": "audio/170.mp3"
+  },
+  {
+    "id": 171,
+    "codigo": "171",
+    "nome": "Can We Talk",
+    "artista": "Tevin Campbell",
+    "ano": 1993,
+    "arquivo": "audio/171.mp3"
+  },
+  {
+    "id": 172,
+    "codigo": "172",
+    "nome": "Hey, Soul Sister",
+    "artista": "Train",
+    "ano": 2009,
+    "arquivo": "audio/172.mp3"
+  },
+  {
+    "id": 173,
+    "codigo": "173",
+    "nome": "Burn",
+    "artista": "Usher",
+    "ano": 2004,
+    "arquivo": "audio/173.mp3"
+  },
+  {
+    "id": 174,
+    "codigo": "174",
+    "nome": "U Got It Bad",
+    "artista": "Usher",
+    "ano": 2001,
+    "arquivo": "audio/174.mp3"
+  },
+  {
+    "id": 175,
+    "codigo": "175",
+    "nome": "A Thousand Miles",
+    "artista": "Vanessa Carlton",
+    "ano": 2002,
+    "arquivo": "audio/175.mp3"
+  },
+  {
+    "id": 176,
+    "codigo": "176",
+    "nome": "A Desconhecida",
+    "artista": "Fernando Mendes",
+    "ano": 1972,
+    "arquivo": "audio/176.mp3"
+  },
+  {
+    "id": 177,
+    "codigo": "177",
+    "nome": "A Dor Desse Amor",
+    "artista": "KLB",
+    "ano": 2000,
+    "arquivo": "audio/177.mp3"
+  },
+  {
+    "id": 178,
+    "codigo": "178",
+    "nome": "A Força do Amor",
+    "artista": "Roupa Nova",
+    "ano": 1987,
+    "arquivo": "audio/178.mp3"
+  },
+  {
+    "id": 179,
+    "codigo": "179",
+    "nome": "A Lenda",
+    "artista": "Sandy e Junior",
+    "ano": 2000,
+    "arquivo": "audio/179.mp3"
+  },
+  {
+    "id": 180,
+    "codigo": "180",
+    "nome": "A Lua Q Eu T Dei",
+    "artista": "Ivete Sangalo",
+    "ano": 2001,
+    "arquivo": "audio/180.mp3"
+  },
+  {
+    "id": 181,
+    "codigo": "181",
+    "nome": "A Natureza das Coisas",
+    "artista": "Flavio José",
+    "ano": 2004,
+    "arquivo": "audio/181.mp3"
+  },
+  {
+    "id": 182,
+    "codigo": "182",
+    "nome": "A Praia",
+    "artista": "Mastruz com Leite",
+    "ano": 2004,
+    "arquivo": "audio/182.mp3"
+  },
+  {
+    "id": 183,
+    "codigo": "183",
+    "nome": "When We Were Young",
+    "artista": "Adele",
+    "ano": 2015,
+    "arquivo": "audio/183.mp3"
+  },
+  {
+    "id": 184,
+    "codigo": "184",
+    "nome": "Adoro amar você",
+    "artista": "DANIEL",
+    "ano": 1998,
+    "arquivo": "audio/184.mp3"
+  },
+  {
+    "id": 185,
+    "codigo": "185",
+    "nome": "Alma Gêmea",
+    "artista": "Fábio Jr.",
+    "ano": 1994,
+    "arquivo": "audio/185.mp3"
+  },
+  {
+    "id": 186,
+    "codigo": "186",
+    "nome": "Amado",
+    "artista": "Vanessa da Mata",
+    "ano": 2007,
+    "arquivo": "audio/186.mp3"
+  },
+  {
+    "id": 187,
+    "codigo": "187",
+    "nome": "Menininha Meu Amor",
+    "artista": "Amado Batista",
+    "ano": 1985,
+    "arquivo": "audio/187.mp3"
+  },
+  {
+    "id": 188,
+    "codigo": "188",
+    "nome": "Princesa",
+    "artista": "Amado Batista",
+    "ano": 1991,
+    "arquivo": "audio/188.mp3"
+  },
+  {
+    "id": 189,
+    "codigo": "189",
+    "nome": "serenata",
+    "artista": "amado batista",
+    "ano": 1978,
+    "arquivo": "audio/189.mp3"
+  },
+  {
+    "id": 190,
+    "codigo": "190",
+    "nome": "Amor, Amor, Amor",
+    "artista": "Reginaldo Rossi",
+    "ano": 1980,
+    "arquivo": "audio/190.mp3"
+  },
+  {
+    "id": 191,
+    "codigo": "191",
+    "nome": "Aonde Quer Que Eu Vá",
+    "artista": "Os Paralamas Do Sucesso",
+    "ano": 2000,
+    "arquivo": "audio/191.mp3"
+  },
+  {
+    "id": 192,
+    "codigo": "192",
+    "nome": "Apenas Um Rapaz",
+    "artista": "Belchior",
+    "ano": 1976,
+    "arquivo": "audio/192.mp3"
+  },
+  {
+    "id": 193,
+    "codigo": "193",
+    "nome": "Verdadeiro Amor",
+    "artista": "Banda Magníficos",
+    "ano": 1996,
+    "arquivo": "audio/193.mp3"
+  },
+  {
+    "id": 194,
+    "codigo": "194",
+    "nome": "Beautiful Boy",
+    "artista": "John Lennon",
+    "ano": 1980,
+    "arquivo": "audio/194.mp3"
+  },
+  {
+    "id": 195,
+    "codigo": "195",
+    "nome": "Stand By Me",
+    "artista": "Ben E. King",
+    "ano": 1962,
+    "arquivo": "audio/195.mp3"
+  },
+  {
+    "id": 196,
+    "codigo": "196",
+    "nome": "Back At One",
+    "artista": "Brian McKnight",
+    "ano": 1999,
+    "arquivo": "audio/196.mp3"
+  },
+  {
+    "id": 197,
+    "codigo": "197",
+    "nome": "Caça e Caçador",
+    "artista": "Fábio Jr.",
+    "ano": 1998,
+    "arquivo": "audio/197.mp3"
+  },
+  {
+    "id": 198,
+    "codigo": "198",
+    "nome": "Melhor eu ir_Ligando os Fatos_Sonho de Amor_Deixa eu te querer",
+    "artista": "Churrasquinho do Menos é Mais",
+    "ano": 2019,
+    "arquivo": "audio/198.mp3"
+  },
+  {
+    "id": 199,
+    "codigo": "199",
+    "nome": "1 Minuto",
+    "artista": "D'Black e Negra Li",
+    "ano": 2008,
+    "arquivo": "audio/199.mp3"
+  },
+  {
+    "id": 200,
+    "codigo": "200",
+    "nome": "Deixo",
+    "artista": "Ivete Sangalo",
+    "ano": 2007,
+    "arquivo": "audio/200.mp3"
+  },
+  {
+    "id": 201,
+    "codigo": "201",
+    "nome": "Diga pra Mim",
+    "artista": "Zezo",
+    "ano": 2021,
+    "arquivo": "audio/201.mp3"
+  },
+  {
+    "id": 202,
+    "codigo": "202",
+    "nome": "Eu Te Devoro",
+    "artista": "Djavan",
+    "ano": 1998,
+    "arquivo": "audio/202.mp3"
+  },
+  {
+    "id": 203,
+    "codigo": "203",
+    "nome": "Pétala",
+    "artista": "Djavan",
+    "ano": 1982,
+    "arquivo": "audio/203.mp3"
+  },
+  {
+    "id": 204,
+    "codigo": "204",
+    "nome": "Samurai",
+    "artista": "Djavan",
+    "ano": 1982,
+    "arquivo": "audio/204.mp3"
+  },
+  {
+    "id": 205,
+    "codigo": "205",
+    "nome": "Te Faço Um Cafuné",
+    "artista": "Dominguinhos e Mestrinho",
+    "ano": 2017,
+    "arquivo": "audio/205.mp3"
+  },
+  {
+    "id": 206,
+    "codigo": "206",
+    "nome": "Coração",
+    "artista": "Dorgival Dantas",
+    "ano": 2005,
+    "arquivo": "audio/206.mp3"
+  },
+  {
+    "id": 207,
+    "codigo": "207",
+    "nome": "Tarde Demais tchau, tchau..",
+    "artista": "Dorgival Dantas",
+    "ano": 2014,
+    "arquivo": "audio/207.mp3"
+  },
+  {
+    "id": 208,
+    "codigo": "208",
+    "nome": "Ela Não Está Aqui",
+    "artista": "KLB",
+    "ano": 2000,
+    "arquivo": "audio/208.mp3"
+  },
+  {
+    "id": 209,
+    "codigo": "209",
+    "nome": "Ela só quer paz",
+    "artista": "Projota",
+    "ano": 2016,
+    "arquivo": "audio/209.mp3"
+  },
+  {
+    "id": 210,
+    "codigo": "210",
+    "nome": "Can't Help Falling In Love",
+    "artista": "Elvis Presley",
+    "ano": 1961,
+    "arquivo": "audio/210.mp3"
+  },
+  {
+    "id": 211,
+    "codigo": "211",
+    "nome": "Era Uma Vez...",
+    "artista": "Sandy e Junior",
+    "ano": 1997,
+    "arquivo": "audio/211.mp3"
+  },
+  {
+    "id": 212,
+    "codigo": "212",
+    "nome": "Esperando na janela",
+    "artista": "Gilberto Gil",
+    "ano": 2000,
+    "arquivo": "audio/212.mp3"
+  },
+  {
+    "id": 213,
+    "codigo": "213",
+    "nome": "Espumas ao Vento",
+    "artista": "Flavio José",
+    "ano": 1997,
+    "arquivo": "audio/213.mp3"
+  },
+  {
+    "id": 214,
+    "codigo": "214",
+    "nome": "Estou apaixonado",
+    "artista": "João Paulo & Daniel",
+    "ano": 1996,
+    "arquivo": "audio/214.mp3"
+  },
+  {
+    "id": 215,
+    "codigo": "215",
+    "nome": "Estou Em Suas Mãos",
+    "artista": "KLB",
+    "ano": 2000,
+    "arquivo": "audio/215.mp3"
+  },
+  {
+    "id": 216,
+    "codigo": "216",
+    "nome": "Eu Queria Dizer Que Te Amo Numa Canção",
+    "artista": "Zezo",
+    "ano": 2000,
+    "arquivo": "audio/216.mp3"
+  },
+  {
+    "id": 217,
+    "codigo": "217",
+    "nome": "Só Você",
+    "artista": "Fábio Jr.",
+    "ano": 1997,
+    "arquivo": "audio/217.mp3"
+  },
+  {
+    "id": 218,
+    "codigo": "218",
+    "nome": "Deslizes",
+    "artista": "Fagner",
+    "ano": 1987,
+    "arquivo": "audio/218.mp3"
+  },
+  {
+    "id": 219,
+    "codigo": "219",
+    "nome": "Fim De Tarde",
+    "artista": "Fat Family",
+    "ano": 2001,
+    "arquivo": "audio/219.mp3"
+  },
+  {
+    "id": 220,
+    "codigo": "220",
+    "nome": "Final Feliz",
+    "artista": "Jorge Vercillo",
+    "ano": 2000,
+    "arquivo": "audio/220.mp3"
+  },
+  {
+    "id": 221,
+    "codigo": "221",
+    "nome": "All Of Me",
+    "artista": "John Legend",
+    "ano": 2013,
+    "arquivo": "audio/221.mp3"
+  },
+  {
+    "id": 222,
+    "codigo": "222",
+    "nome": "Sensível Demais",
+    "artista": "Jorge Vercillo",
+    "ano": 2007,
+    "arquivo": "audio/222.mp3"
+  },
+  {
+    "id": 223,
+    "codigo": "223",
+    "nome": "Ela Une Todas As Coisas",
+    "artista": "Jorge Vercillo",
+    "ano": 2007,
+    "arquivo": "audio/223.mp3"
+  },
+  {
+    "id": 224,
+    "codigo": "224",
+    "nome": "Just the Two of Us",
+    "artista": "Bill Withers e Grover Washington Jr",
+    "ano": 1980,
+    "arquivo": "audio/224.mp3"
+  },
+  {
+    "id": 225,
+    "codigo": "225",
+    "nome": "Mirrors",
+    "artista": "Justin Timberlake",
+    "ano": 2013,
+    "arquivo": "audio/225.mp3"
+  },
+  {
+    "id": 226,
+    "codigo": "226",
+    "nome": "Lembrança De Um Beijo",
+    "artista": "Santanna O Cantador",
+    "ano": 2003,
+    "arquivo": "audio/226.mp3"
+  },
+  {
+    "id": 227,
+    "codigo": "227",
+    "nome": "Maluco Beleza",
+    "artista": "Raul Seixas",
+    "ano": 1977,
+    "arquivo": "audio/227.mp3"
+  },
+  {
+    "id": 228,
+    "codigo": "228",
+    "nome": "Estranho",
+    "artista": "Marília Mendonça",
+    "ano": 2018,
+    "arquivo": "audio/228.mp3"
+  },
+  {
+    "id": 229,
+    "codigo": "229",
+    "nome": "Te Amo Demais",
+    "artista": "Marília Mendonça",
+    "ano": 2022,
+    "arquivo": "audio/229.mp3"
+  },
+  {
+    "id": 230,
+    "codigo": "230",
+    "nome": "Minha Doce Estrela",
+    "artista": "Nando Cordel",
+    "ano": 1991,
+    "arquivo": "audio/230.mp3"
+  },
+  {
+    "id": 231,
+    "codigo": "231",
+    "nome": "Morango do Nordeste",
+    "artista": "Lairton e Seus",
+    "ano": 1999,
+    "arquivo": "audio/231.mp3"
+  },
+  {
+    "id": 232,
+    "codigo": "232",
+    "nome": "Muito Estranho",
+    "artista": "KLB",
+    "ano": 2000,
+    "arquivo": "audio/232.mp3"
+  },
+  {
+    "id": 233,
+    "codigo": "233",
+    "nome": "Naquela Mesa",
+    "artista": "Zezo",
+    "ano": 2004,
+    "arquivo": "audio/233.mp3"
+  },
+  {
+    "id": 234,
+    "codigo": "234",
+    "nome": "O Xote das Meninas",
+    "artista": "Luiz Gonzaga",
+    "ano": 1953,
+    "arquivo": "audio/234.mp3"
+  },
+  {
+    "id": 235,
+    "codigo": "235",
+    "nome": "Planeta de Cores",
+    "artista": "Forrozão Tropykalia",
+    "ano": 2004,
+    "arquivo": "audio/235.mp3"
+  },
+  {
+    "id": 236,
+    "codigo": "236",
+    "nome": "Porque Brigamos",
+    "artista": "DIANA",
+    "ano": 1972,
+    "arquivo": "audio/236.mp3"
+  },
+  {
+    "id": 237,
+    "codigo": "237",
+    "nome": "Quando A Chuva Passar",
+    "artista": "Ivete Sangalo",
+    "ano": 2005,
+    "arquivo": "audio/237.mp3"
+  },
+  {
+    "id": 238,
+    "codigo": "238",
+    "nome": "Que Nem Maré",
+    "artista": "Jorge Vercillo",
+    "ano": 2002,
+    "arquivo": "audio/238.mp3"
+  },
+  {
+    "id": 239,
+    "codigo": "239",
+    "nome": "Levo Comigo",
+    "artista": "Restart",
+    "ano": 2009,
+    "arquivo": "audio/239.mp3"
+  },
+  {
+    "id": 240,
+    "codigo": "240",
+    "nome": "Lady Laura",
+    "artista": "Roberto Carlos",
+    "ano": 1978,
+    "arquivo": "audio/240.mp3"
+  },
+  {
+    "id": 241,
+    "codigo": "241",
+    "nome": "Rolling In The Deep",
+    "artista": "Adele",
+    "ano": 2010,
+    "arquivo": "audio/241.mp3"
+  },
+  {
+    "id": 242,
+    "codigo": "242",
+    "nome": "Retratos e Canções",
+    "artista": "Sandra De Sá",
+    "ano": 1986,
+    "arquivo": "audio/242.mp3"
+  },
+  {
+    "id": 243,
+    "codigo": "243",
+    "nome": "Solidão (Áudio Oficial)",
+    "artista": "Sandra De Sá",
+    "ano": 1986,
+    "arquivo": "audio/243.mp3"
+  },
+  {
+    "id": 244,
+    "codigo": "244",
+    "nome": "Solidão",
+    "artista": "Sandra De Sá",
+    "ano": 1986,
+    "arquivo": "audio/244.mp3"
+  },
+  {
+    "id": 245,
+    "codigo": "245",
+    "nome": "Say You, Say Me",
+    "artista": "Lionel Richie",
+    "ano": 1986,
+    "arquivo": "audio/245.mp3"
+  },
+  {
+    "id": 246,
+    "codigo": "246",
+    "nome": "Se Ainda Existe Amor",
+    "artista": "Balthazar",
+    "ano": 1975,
+    "arquivo": "audio/246.mp3"
+  },
+  {
+    "id": 247,
+    "codigo": "247",
+    "nome": "Sendo Assim",
+    "artista": "Genival Santos",
+    "ano": 1976,
+    "arquivo": "audio/247.mp3"
+  },
+  {
+    "id": 248,
+    "codigo": "248",
+    "nome": "Seresteiro das Noites",
+    "artista": "Amado Batista",
+    "ano": 1985,
+    "arquivo": "audio/248.mp3"
+  },
+  {
+    "id": 249,
+    "codigo": "249",
+    "nome": "Seu Olhar Não Mente",
+    "artista": "Flavio José",
+    "ano": 2000,
+    "arquivo": "audio/249.mp3"
+  },
+  {
+    "id": 250,
+    "codigo": "250",
+    "nome": "Sintonia",
+    "artista": "Moraes Moreira",
+    "ano": 1986,
+    "arquivo": "audio/250.mp3"
+  },
+  {
+    "id": 251,
+    "codigo": "251",
+    "nome": "Somewhere over the Rainbow",
+    "artista": "Israel IZ Kamakawiwo'ole",
+    "ano": 1990,
+    "arquivo": "audio/251.mp3"
+  },
+  {
+    "id": 252,
+    "codigo": "252",
+    "nome": "Me Espera",
+    "artista": "Sorriso Maroto",
+    "ano": 2000,
+    "arquivo": "audio/252.mp3"
+  },
+  {
+    "id": 253,
+    "codigo": "253",
+    "nome": "Telefone Fora de Área",
+    "artista": "Banda Magníficos",
+    "ano": 2008,
+    "arquivo": "audio/253.mp3"
+  },
+  {
+    "id": 254,
+    "codigo": "254",
+    "nome": "Tente Outra Vez",
+    "artista": "Raul Seixas",
+    "ano": 1975,
+    "arquivo": "audio/254.mp3"
+  },
+  {
+    "id": 255,
+    "codigo": "255",
+    "nome": "Amei Te Ver",
+    "artista": "TIAGO IORC",
+    "ano": 2015,
+    "arquivo": "audio/255.mp3"
+  },
+  {
+    "id": 256,
+    "codigo": "256",
+    "nome": "Coisa Linda",
+    "artista": "TIAGO IORC",
+    "ano": 2015,
+    "arquivo": "audio/256.mp3"
+  },
+  {
+    "id": 257,
+    "codigo": "257",
+    "nome": "Ela Partiu",
+    "artista": "Tim Maia",
+    "ano": 1976,
+    "arquivo": "audio/257.mp3"
+  },
+  {
+    "id": 258,
+    "codigo": "258",
+    "nome": "Tudo Que Você Quiser",
+    "artista": "Luan Santana",
+    "ano": 2013,
+    "arquivo": "audio/258.mp3"
+  },
+  {
+    "id": 259,
+    "codigo": "259",
+    "nome": "Última Canção",
+    "artista": "Paulo Sergio",
+    "ano": 1968,
+    "arquivo": "audio/259.mp3"
+  },
+  {
+    "id": 260,
+    "codigo": "260",
+    "nome": "Um Sonho de Amor",
+    "artista": "Limão Com Mel",
+    "ano": 1994,
+    "arquivo": "audio/260.mp3"
+  },
+  {
+    "id": 261,
+    "codigo": "261",
+    "nome": "O Sol",
+    "artista": "Vitor Kley",
+    "ano": 2017,
+    "arquivo": "audio/261.mp3"
+  },
+  {
+    "id": 262,
+    "codigo": "262",
+    "nome": "Você Endoideceu Meu Coração",
+    "artista": "Nando Cordel",
+    "ano": 1986,
+    "arquivo": "audio/262.mp3"
+  },
+  {
+    "id": 263,
+    "codigo": "263",
+    "nome": "We Are The World",
+    "artista": "U.S.A. for Africa",
+    "ano": 1985,
+    "arquivo": "audio/263.mp3"
+  },
+  {
+    "id": 264,
+    "codigo": "264",
+    "nome": "Telegrama",
+    "artista": "Zeca Baleiro",
+    "ano": 2002,
+    "arquivo": "audio/264.mp3"
+  },
+  {
+    "id": 265,
+    "codigo": "265",
+    "nome": "Its Not Unusual",
+    "artista": "Tom Jones",
+    "ano": 1965,
+    "arquivo": "audio/265.mp3"
+  },
+  {
+    "id": 266,
+    "codigo": "266",
+    "nome": "My Heart Will Go On",
+    "artista": "Celine Dion",
+    "ano": 1997,
+    "arquivo": "audio/266.mp3"
+  },
+  {
+    "id": 267,
+    "codigo": "267",
+    "nome": "Billie Jean",
+    "artista": "Michael Jackson",
+    "ano": 1983,
+    "arquivo": "audio/267.mp3"
+  },
+  {
+    "id": 268,
+    "codigo": "268",
+    "nome": "Sozinho",
+    "artista": "Caetano Veloso",
+    "ano": 1998,
+    "arquivo": "audio/268.mp3"
+  },
+  {
+    "id": 269,
+    "codigo": "269",
+    "nome": "Everybody Wants To Rule The World ",
+    "artista": "Tears For Fears",
+    "ano": 1985,
+    "arquivo": "audio/269.mp3"
+  },
+  {
+    "id": 270,
+    "codigo": "270",
+    "nome": "Adventure of a Lifetime ",
+    "artista": "Coldplay",
+    "ano": 2015,
+    "arquivo": "audio/270.mp3"
+  },
+  {
+    "id": 271,
+    "codigo": "271",
+    "nome": "O AMOR DA SUA VIDA ",
+    "artista": "Kiko Chicabana",
+    "ano": 2014,
+    "arquivo": "audio/271.mp3"
+  },
+  {
+    "id": 272,
+    "codigo": "272",
+    "nome": "Eu Quero Só Você ",
+    "artista": "Kiko Chicabana",
+    "ano": 2010,
+    "arquivo": "audio/272.mp3"
+  },
+  {
+    "id": 273,
+    "codigo": "273",
+    "nome": "Pega-Pega",
+    "artista": "Kiko Chicabana",
+    "ano": 2009,
+    "arquivo": "audio/273.mp3"
+  },
+  {
+    "id": 274,
+    "codigo": "274",
+    "nome": "BB (garupa de moto amarela)",
+    "artista": "Tim Bernardes",
+    "ano": 2022,
+    "arquivo": "audio/274.mp3"
+  },
+  {
+    "id": 275,
+    "codigo": "275",
+    "nome": "Amor Sem Limite",
+    "artista": "Roberto Carlos",
+    "ano": 2000,
+    "arquivo": "audio/275.mp3"
+  },
+  {
+    "id": 276,
+    "codigo": "276",
+    "nome": "Chegaste",
+    "artista": "Roberto Carlos & Jennifer Lopez",
+    "ano": 2016,
+    "arquivo": "audio/276.mp3"
+  },
+  {
+    "id": 277,
+    "codigo": "277",
+    "nome": "Um certo alguém",
+    "artista": "Lulu Santos",
+    "ano": 1983,
+    "arquivo": "audio/277.mp3"
+  },
+  {
+    "id": 278,
+    "codigo": "278",
+    "nome": "Toda Forma de Amor",
+    "artista": "Lulu Santos",
+    "ano": 1988,
+    "arquivo": "audio/278.mp3"
+  },
+  {
+    "id": 279,
+    "codigo": "279",
+    "nome": "Daqui Só Se Leva o Amor",
+    "artista": "Jota Quest",
+    "ano": 2015,
+    "arquivo": "audio/279.mp3"
+  },
+  {
+    "id": 280,
+    "codigo": "280",
+    "nome": "Fácil",
+    "artista": "Jota Quest",
+    "ano": 1998,
+    "arquivo": "audio/280.mp3"
+  },
+  {
+    "id": 281,
+    "codigo": "281",
+    "nome": "Dias Melhores",
+    "artista": "Jota Quest FT. Milton Nascimento",
+    "ano": 2000,
+    "arquivo": "audio/281.mp3"
+  },
+  {
+    "id": 282,
+    "codigo": "282",
+    "nome": "Amor Maior",
+    "artista": "Jota Quest",
+    "ano": 2003,
+    "arquivo": "audio/282.mp3"
+  },
+  {
+    "id": 283,
+    "codigo": "283",
+    "nome": "A fórmula do amor",
+    "artista": "Kid Abelha",
+    "ano": 1985,
+    "arquivo": "audio/283.mp3"
+  },
+  {
+    "id": 284,
+    "codigo": "284",
+    "nome": "Por que não eu?",
+    "artista": "Kid Abelha",
+    "ano": 1984,
+    "arquivo": "audio/284.mp3"
+  },
+  {
+    "id": 285,
+    "codigo": "285",
+    "nome": "Nada Sei",
+    "artista": "​ Kid Abelha",
+    "ano": 2002,
+    "arquivo": "audio/285.mp3"
+  },
+  {
+    "id": 286,
+    "codigo": "286",
+    "nome": "Monte Castelo",
+    "artista": "Legião Urbana",
+    "ano": 1989,
+    "arquivo": "audio/286.mp3"
+  },
+  {
+    "id": 287,
+    "codigo": "287",
+    "nome": "Hoje a noite não tem luar",
+    "artista": "Legião Urbana",
+    "ano": 1999,
+    "arquivo": "audio/287.mp3"
+  },
+  {
+    "id": 288,
+    "codigo": "288",
+    "nome": "Quando O Sol Bater Na Janela Do Teu Quarto",
+    "artista": "Legião Urbano",
+    "ano": 1989,
+    "arquivo": "audio/288.mp3"
+  },
+  {
+    "id": 289,
+    "codigo": "289",
+    "nome": "Vento no litoral",
+    "artista": "Legião Urbana",
+    "ano": 1991,
+    "arquivo": "audio/289.mp3"
+  },
+  {
+    "id": 290,
+    "codigo": "290",
+    "nome": "Índios",
+    "artista": "Legião Urbana",
+    "ano": 1986,
+    "arquivo": "audio/290.mp3"
+  },
+  {
+    "id": 291,
+    "codigo": "291",
+    "nome": "Ainda É Cedo",
+    "artista": "Legião Urbana",
+    "ano": 1985,
+    "arquivo": "audio/291.mp3"
+  },
+  {
+    "id": 292,
+    "codigo": "292",
+    "nome": "Quase Sem Querer",
+    "artista": "Legião Urbana",
+    "ano": 1986,
+    "arquivo": "audio/292.mp3"
+  },
+  {
+    "id": 293,
+    "codigo": "293",
+    "nome": "Pais E Filhos",
+    "artista": "Legião Urabana",
+    "ano": 1989,
+    "arquivo": "audio/293.mp3"
+  },
+  {
+    "id": 294,
+    "codigo": "294",
+    "nome": "Amor covarde",
+    "artista": "Dorgival Dantas",
+    "ano": 2007,
+    "arquivo": "audio/294.mp3"
+  },
+  {
+    "id": 295,
+    "codigo": "295",
+    "nome": "Eu Não Vou Mais Chorar",
+    "artista": "Dorgival Dantas",
+    "ano": 2006,
+    "arquivo": "audio/295.mp3"
+  },
+  {
+    "id": 296,
+    "codigo": "296",
+    "nome": "Valeu",
+    "artista": "Dorgival Dantas",
+    "ano": 2008,
+    "arquivo": "audio/296.mp3"
+  },
+  {
+    "id": 297,
+    "codigo": "297",
+    "nome": "Valeu Versão forro",
+    "artista": "Dorgival Dantas",
+    "ano": 2008,
+    "arquivo": "audio/297.mp3"
+  },
+  {
+    "id": 298,
+    "codigo": "298",
+    "nome": "Destá",
+    "artista": "Dorgival Dantas",
+    "ano": 2008,
+    "arquivo": "audio/298.mp3"
+  },
+  {
+    "id": 299,
+    "codigo": "299",
+    "nome": "Ainda Bem",
+    "artista": "Marisa Monte",
+    "ano": 2011,
+    "arquivo": "audio/299.mp3"
+  },
+  {
+    "id": 300,
+    "codigo": "300",
+    "nome": "AMOR NAO VAI FALTAR",
+    "artista": "BRUNO E MARRONE",
+    "ano": 2009,
+    "arquivo": "audio/300.mp3"
+  },
+  {
+    "id": 301,
+    "codigo": "301",
+    "nome": "Um Sonho a Dois",
+    "artista": "Roupa Nova ft. Cláudia Leitte",
+    "ano": 2006,
+    "arquivo": "audio/301.mp3"
+  },
+  {
+    "id": 302,
+    "codigo": "302",
+    "nome": "De Janeiro a Janeiro",
+    "artista": "Nando Reis",
+    "ano": 2010,
+    "arquivo": "audio/302.mp3"
+  },
+  {
+    "id": 303,
+    "codigo": "303",
+    "nome": "Daqui Pra Sempre",
+    "artista": "Manu Bahtidão",
+    "ano": 2023,
+    "arquivo": "audio/303.mp3"
+  },
+  {
+    "id": 304,
+    "codigo": "304",
+    "nome": "Preciso de Você",
+    "artista": "Netinho",
+    "ano": 1995,
+    "arquivo": "audio/304.mp3"
+  },
+  {
+    "id": 305,
+    "codigo": "305",
+    "nome": "Na estrada",
+    "artista": "Marisa Monte",
+    "ano": 1994,
+    "arquivo": "audio/305.mp3"
+  },
+  {
+    "id": 306,
+    "codigo": "306",
+    "nome": "Sozinho",
+    "artista": "​ Peninha",
+    "ano": 1997,
+    "arquivo": "audio/306.mp3"
+  },
+  {
+    "id": 307,
+    "codigo": "307",
+    "nome": "Lua",
+    "artista": "Fábio Jr.",
+    "ano": 1991,
+    "arquivo": "audio/307.mp3"
+  },
+  {
+    "id": 308,
+    "codigo": "308",
+    "nome": "Historia de amor",
+    "artista": "Fafá de Belém",
+    "ano": 2006,
+    "arquivo": "audio/308.mp3"
+  },
+  {
+    "id": 309,
+    "codigo": "309",
+    "nome": "​ Sem Ar",
+    "artista": "D'Black",
+    "ano": 2008,
+    "arquivo": "audio/309.mp3"
+  },
+  {
+    "id": 310,
+    "codigo": "310",
+    "nome": "Porta Aberta",
+    "artista": "Luka",
+    "ano": 2003,
+    "arquivo": "audio/310.mp3"
+  },
+  {
+    "id": 311,
+    "codigo": "311",
+    "nome": "Planos impossíveis",
+    "artista": "Manu Gavassi",
+    "ano": 2010,
+    "arquivo": "audio/311.mp3"
+  },
+  {
+    "id": 312,
+    "codigo": "312",
+    "nome": "Ainda Bem",
+    "artista": "Vanessa da Mata",
+    "ano": 2004,
+    "arquivo": "audio/312.mp3"
+  },
+  {
+    "id": 313,
+    "codigo": "313",
+    "nome": "Boa sorte",
+    "artista": "Vanessa da Mata",
+    "ano": 2007,
+    "arquivo": "audio/313.mp3"
+  },
+  {
+    "id": 314,
+    "codigo": "314",
+    "nome": "Palpite",
+    "artista": "Vanessa Rangel",
+    "ano": 1997,
+    "arquivo": "audio/314.mp3"
+  },
+  {
+    "id": 315,
+    "codigo": "315",
+    "nome": "Só Você e Eu",
+    "artista": "Vanessa da Mata",
+    "ano": 2019,
+    "arquivo": "audio/315.mp3"
+  },
+  {
+    "id": 316,
+    "codigo": "316",
+    "nome": "A Noite",
+    "artista": "Tiê",
+    "ano": 2014,
+    "arquivo": "audio/316.mp3"
+  },
+  {
+    "id": 317,
+    "codigo": "317",
+    "nome": "Palavras Ao Vento",
+    "artista": "Cássia Eller",
+    "ano": 1999,
+    "arquivo": "audio/317.mp3"
+  },
+  {
+    "id": 318,
+    "codigo": "318",
+    "nome": "O Segundo Sol",
+    "artista": "Cássia Eller",
+    "ano": 1999,
+    "arquivo": "audio/318.mp3"
+  },
+  {
+    "id": 319,
+    "codigo": "319",
+    "nome": "Chorando se foi",
+    "artista": "Kaoma",
+    "ano": 1989,
+    "arquivo": "audio/319.mp3"
+  },
+  {
+    "id": 320,
+    "codigo": "320",
+    "nome": "Desafio",
+    "artista": "XANDDY HARMONIA",
+    "ano": 1999,
+    "arquivo": "audio/320.mp3"
+  },
+  {
+    "id": 321,
+    "codigo": "321",
+    "nome": "Rindo a Toa",
+    "artista": "Falamansa",
+    "ano": 2000,
+    "arquivo": "audio/321.mp3"
+  },
+  {
+    "id": 322,
+    "codigo": "322",
+    "nome": "Casinha Branca",
+    "artista": "Gilson",
+    "ano": 1979,
+    "arquivo": "audio/322.mp3"
+  },
+  {
+    "id": 323,
+    "codigo": "323",
+    "nome": "Selva Branca",
+    "artista": "Chiclete com Banana",
+    "ano": 1987,
+    "arquivo": "audio/323.mp3"
+  },
+  {
+    "id": 324,
+    "codigo": "324",
+    "nome": "TARDE DEMAIS",
+    "artista": "RAÇA NEGRA",
+    "ano": 1995,
+    "arquivo": "audio/324.mp3"
+  },
+  {
+    "id": 325,
+    "codigo": "325",
+    "nome": "Grito de Guerra",
+    "artista": "Chiclete com Banana",
+    "ano": 1986,
+    "arquivo": "audio/325.mp3"
+  },
+  {
+    "id": 326,
+    "codigo": "326",
+    "nome": "Kryptônia",
+    "artista": "Zé Ramalho",
+    "ano": 1983,
+    "arquivo": "audio/326.mp3"
+  },
+  {
+    "id": 327,
+    "codigo": "327",
+    "nome": "Milla",
+    "artista": "Netinho",
+    "ano": 1996,
+    "arquivo": "audio/327.mp3"
+  },
+  {
+    "id": 328,
+    "codigo": "328",
+    "nome": "Deixa Acontecer",
+    "artista": "Grupo Revelação",
+    "ano": 2001,
+    "arquivo": "audio/328.mp3"
+  },
+  {
+    "id": 329,
+    "codigo": "329",
+    "nome": "Vida Vazia",
+    "artista": "Desejo de Menina",
+    "ano": 2007,
+    "arquivo": "audio/329.mp3"
+  },
+  {
+    "id": 330,
+    "codigo": "330",
+    "nome": "Moldura",
+    "artista": "Desejo de Menina",
+    "ano": 2007,
+    "arquivo": "audio/330.mp3"
+  },
+  {
+    "id": 331,
+    "codigo": "331",
+    "nome": "Olhe Nós Dois",
+    "artista": "Desejo de Menina",
+    "ano": 2008,
+    "arquivo": "audio/331.mp3"
+  },
+  {
+    "id": 332,
+    "codigo": "332",
+    "nome": "Paixão Fatal",
+    "artista": "Desejo de Menina",
+    "ano": 2004,
+    "arquivo": "audio/332.mp3"
+  },
+  {
+    "id": 333,
+    "codigo": "333",
+    "nome": "Minha Alma Gêmea É Você",
+    "artista": "Desejo de Menina",
+    "ano": 2007,
+    "arquivo": "audio/333.mp3"
+  },
+  {
+    "id": 334,
+    "codigo": "334",
+    "nome": "Pra Ver o Sol Brilhar",
+    "artista": "Belo",
+    "ano": 2006,
+    "arquivo": "audio/334.mp3"
+  },
+  {
+    "id": 335,
+    "codigo": "335",
+    "nome": "Tudo Mudou",
+    "artista": "Belo",
+    "ano": 2009,
+    "arquivo": "audio/335.mp3"
+  },
+  {
+    "id": 336,
+    "codigo": "336",
+    "nome": "Farol Das Estrelas",
+    "artista": "Belo",
+    "ano": 1999,
+    "arquivo": "audio/336.mp3"
+  },
+  {
+    "id": 337,
+    "codigo": "337",
+    "nome": "Tua Boca",
+    "artista": "Belo",
+    "ano": 2000,
+    "arquivo": "audio/337.mp3"
+  },
+  {
+    "id": 338,
+    "codigo": "338",
+    "nome": "Razão da minha vida",
+    "artista": "Belo",
+    "ano": 2006,
+    "arquivo": "audio/338.mp3"
+  },
+  {
+    "id": 339,
+    "codigo": "339",
+    "nome": "Vi Amor no Seu Olhar",
+    "artista": "Belo",
+    "ano": 2013,
+    "arquivo": "audio/339.mp3"
+  },
+  {
+    "id": 340,
+    "codigo": "340",
+    "nome": "Incondicionalmente",
+    "artista": "Belo",
+    "ano": 2008,
+    "arquivo": "audio/340.mp3"
+  },
+  {
+    "id": 341,
+    "codigo": "341",
+    "nome": "Intriga Da Oposição",
+    "artista": "Belo",
+    "ano": 2006,
+    "arquivo": "audio/341.mp3"
+  },
+  {
+    "id": 342,
+    "codigo": "342",
+    "nome": "VALEU ESPERAR",
+    "artista": "Belo",
+    "ano": 2002,
+    "arquivo": "audio/342.mp3"
+  },
+  {
+    "id": 343,
+    "codigo": "343",
+    "nome": "Resumo Da Felicidade",
+    "artista": "Belo",
+    "ano": 2001,
+    "arquivo": "audio/343.mp3"
+  },
+  {
+    "id": 344,
+    "codigo": "344",
+    "nome": "Ainda Existe Amor Em Nós",
+    "artista": "Sorriso Maroto",
+    "ano": 2009,
+    "arquivo": "audio/344.mp3"
+  },
+  {
+    "id": 345,
+    "codigo": "345",
+    "nome": "Nada de Pensar em Despedida",
+    "artista": "Sorriso Maroto",
+    "ano": 2003,
+    "arquivo": "audio/345.mp3"
+  }
 ];
