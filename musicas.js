@@ -2759,5 +2759,285 @@ const musicas = [
     "artista": "Sorriso Maroto",
     "ano": 2003,
     "arquivo": "audio/345.mp3"
+  },
+  {
+    "id": 346,
+    "codigo": "346",
+    "nome": "Dia Branco",
+    "artista": "Geraldo Azevedo",
+    "ano": 1981,
+    "arquivo": "audio/346.mp3"
+  },
+  {
+    "id": 347,
+    "codigo": "347",
+    "nome": "Moça Bonita",
+    "artista": "Geraldo Azevedo",
+    "ano": 1981,
+    "arquivo": "audio/347.mp3"
+  },
+  {
+    "id": 348,
+    "codigo": "348",
+    "nome": "Ai Que Saudade D'Ocê",
+    "artista": "Elba Ramalho, Zé Ramalho, Geraldo Azevedo",
+    "ano": 1997,
+    "arquivo": "audio/348.mp3"
+  },
+  {
+    "id": 349,
+    "codigo": "349",
+    "nome": "Sabiá",
+    "artista": "Elba Ramalho",
+    "ano": 1996,
+    "arquivo": "audio/349.mp3"
+  },
+  {
+    "id": 350,
+    "codigo": "350",
+    "nome": "Dona da Minha Cabeça",
+    "artista": "Geraldo Azevedo",
+    "ano": 1986,
+    "arquivo": "audio/350.mp3"
+  },
+  {
+    "id": 351,
+    "codigo": "351",
+    "nome": "O Amanhã é Distante",
+    "artista": "Geraldo Azevedo, Zé Ramalho",
+    "ano": 1996,
+    "arquivo": "audio/351.mp3"
+  },
+  {
+    "id": 352,
+    "codigo": "352",
+    "nome": "​ Canta Coração",
+    "artista": "Geralado Azevedo",
+    "ano": 1981,
+    "arquivo": "audio/352.mp3"
+  },
+  {
+    "id": 353,
+    "codigo": "353",
+    "nome": "Bicho de 7 Cabeças II",
+    "artista": "Geraldo Azevedo",
+    "ano": 1978,
+    "arquivo": "audio/353.mp3"
+  },
+  {
+    "id": 354,
+    "codigo": "354",
+    "nome": "Camila, Camila",
+    "artista": "Nenhum de Nós",
+    "ano": 1987,
+    "arquivo": "audio/354.mp3"
+  },
+  {
+    "id": 355,
+    "codigo": "355",
+    "nome": "Meu mundo e nada mais",
+    "artista": "Nenhum de Nós",
+    "ano": 1998,
+    "arquivo": "audio/355.mp3"
+  },
+  {
+    "id": 356,
+    "codigo": "356",
+    "nome": "Porto Solidão",
+    "artista": "Jessé",
+    "ano": 1980,
+    "arquivo": "audio/356.mp3"
+  },
+  {
+    "id": 357,
+    "codigo": "357",
+    "nome": "Vôa Liberdade",
+    "artista": "Jessé",
+    "ano": 1980,
+    "arquivo": "audio/357.mp3"
+  },
+  {
+    "id": 358,
+    "codigo": "358",
+    "nome": "Unchained Melody",
+    "artista": "Jessé",
+    "ano": 1992,
+    "arquivo": "audio/358.mp3"
+  },
+  {
+    "id": 359,
+    "codigo": "359",
+    "nome": "​ Não Chore Mais",
+    "artista": "GILBERTO GIL",
+    "ano": 1979,
+    "arquivo": "audio/359.mp3"
+  },
+  {
+    "id": 360,
+    "codigo": "360",
+    "nome": "Andar com Fé",
+    "artista": "GILBERTO GIL",
+    "ano": 1982,
+    "arquivo": "audio/360.mp3"
+  },
+  {
+    "id": 361,
+    "codigo": "361",
+    "nome": "Palco",
+    "artista": "GILBERTO GIL",
+    "ano": 1981,
+    "arquivo": "audio/361.mp3"
+  },
+  {
+    "id": 362,
+    "codigo": "362",
+    "nome": "Oceano",
+    "artista": "Djavan",
+    "ano": 1989,
+    "arquivo": "audio/362.mp3"
+  },
+  {
+    "id": 363,
+    "codigo": "363",
+    "nome": "Se...",
+    "artista": "Djavan",
+    "ano": 1992,
+    "arquivo": "audio/363.mp3"
+  },
+  {
+    "id": 364,
+    "codigo": "364",
+    "nome": "Meu Bem Querer",
+    "artista": "Djavan",
+    "ano": 1980,
+    "arquivo": "audio/364.mp3"
+  },
+  {
+    "id": 365,
+    "codigo": "365",
+    "nome": "Essa Tal Liberdade",
+    "artista": "Só Pra Contrariar",
+    "ano": 1994,
+    "arquivo": "audio/365.mp3"
+  },
+  {
+    "id": 366,
+    "codigo": "366",
+    "nome": "Deus Me Livre",
+    "artista": "Raça Negra",
+    "ano": 1999,
+    "arquivo": "audio/366.mp3"
+  },
+  {
+    "id": 367,
+    "codigo": "367",
+    "nome": "Me Leva Junto Com Você",
+    "artista": "Raça Negra",
+    "ano": 1999,
+    "arquivo": "audio/367.mp3"
+  },
+  {
+    "id": 368,
+    "codigo": "368",
+    "nome": "Estou mal",
+    "artista": "Raça Negra",
+    "ano": 1993,
+    "arquivo": "audio/368.mp3"
+  },
+  {
+    "id": 369,
+    "codigo": "369",
+    "nome": "Tempo Perdido",
+    "artista": "Raça Negra",
+    "ano": 1993,
+    "arquivo": "audio/369.mp3"
+  },
+  {
+    "id": 370,
+    "codigo": "370",
+    "nome": "Eu e você sempre",
+    "artista": "Jorge Aragão",
+    "ano": 2000,
+    "arquivo": "audio/370.mp3"
+  },
+  {
+    "id": 371,
+    "codigo": "371",
+    "nome": "​ Verdadeiro Amor",
+    "artista": "Mara Pavanelly",
+    "ano": 2022,
+    "arquivo": "audio/371.mp3"
+  },
+  {
+    "id": 372,
+    "codigo": "372",
+    "nome": "Dor de Amor",
+    "artista": "Beth Carvalho",
+    "ano": 1986,
+    "arquivo": "audio/372.mp3"
+  },
+  {
+    "id": 373,
+    "codigo": "373",
+    "nome": "Detalhes",
+    "artista": "Roberto Carlos",
+    "ano": 1971,
+    "arquivo": "audio/373.mp3"
+  },
+  {
+    "id": 374,
+    "codigo": "374",
+    "nome": "Como Vai Você",
+    "artista": "Roberto Carlos",
+    "ano": 1972,
+    "arquivo": "audio/374.mp3"
+  },
+  {
+    "id": 375,
+    "codigo": "375",
+    "nome": "Como é Grande o Meu Amor por Você",
+    "artista": "Roberto Carlos",
+    "ano": 1996,
+    "arquivo": "audio/375.mp3"
+  },
+  {
+    "id": 376,
+    "codigo": "376",
+    "nome": "As canções que você fez pra mim",
+    "artista": "Roberto Carlos",
+    "ano": 1968,
+    "arquivo": "audio/376.mp3"
+  },
+  {
+    "id": 377,
+    "codigo": "377",
+    "nome": "Só Vou Gostar de Quem Gosta de Mim",
+    "artista": "Roberto Carlos",
+    "ano": 1967,
+    "arquivo": "audio/377.mp3"
+  },
+  {
+    "id": 378,
+    "codigo": "378",
+    "nome": "Debaixo dos Caracóis dos Seus Cabelos",
+    "artista": "Roberto Carlos",
+    "ano": 1971,
+    "arquivo": "audio/378.mp3"
+  },
+  {
+    "id": 379,
+    "codigo": "379",
+    "nome": "É Preciso Saber Viver",
+    "artista": "Roberto Carlos",
+    "ano": 1974,
+    "arquivo": "audio/379.mp3"
+  },
+  {
+    "id": 380,
+    "codigo": "380",
+    "nome": "Tudo Passará",
+    "artista": "Nelson Ned",
+    "ano": 1969,
+    "arquivo": "audio/380.mp3"
   }
 ];
