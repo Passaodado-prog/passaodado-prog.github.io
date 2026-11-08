@@ -339,6 +339,7 @@ async function excluirCategoria(id) {
   limparSelecao();
   salvarRascunho();
   popularSeletorCategorias();
+  if (typeof popularSeletorQrCategorias === "function") popularSeletorQrCategorias();
   renderizarListaGeneros();
   mensagemAdmin.textContent = `Gênero "${categoria.nome}" removido do rascunho. As músicas e os MP3 foram preservados. Exporte categorias.js para aplicar a alteração ao projeto.`;
 }
@@ -365,6 +366,7 @@ async function criarCategoria(nome) {
   };
   salvarRascunho();
   popularSeletorCategorias(slugBase);
+  if (typeof popularSeletorQrCategorias === "function") popularSeletorQrCategorias();
   renderizarListaGeneros();
   mensagemAdmin.textContent = `Gênero "${nomeLimpo}" criado. Classifique as músicas e exporte categorias.js.`;
   return true;
@@ -921,6 +923,7 @@ async function descartarRascunho() {
   el("audioPreviewWrap").hidden = true;
   el("baixarNovoAudio").disabled = true;
   popularSeletorCategorias("pagode");
+  if (typeof popularSeletorQrCategorias === "function") popularSeletorQrCategorias();
   renderizarListaGeneros();
   renderizarSeletorGenerosNovaMusica();
   atualizarResumoGeral();
@@ -953,6 +956,7 @@ async function descartarRascunhoPendente() {
   cancelarEdicaoMusica();
   limparSelecao();
   popularSeletorCategorias("pagode");
+  if (typeof popularSeletorQrCategorias === "function") popularSeletorQrCategorias();
   renderizarListaGeneros();
   renderizarSeletorGenerosNovaMusica();
   atualizarResumoGeral();
@@ -1008,3 +1012,132 @@ popularSeletorCategorias("pagode");
 renderizarListaGeneros();
 renderizarSeletorGenerosNovaMusica();
 atualizarResumoGeral();
+
+// Gerador de QR Codes do catalogo. O conteudo do QR e exclusivamente o ID numerico.
+const qrCategoriaSelect = el("qrCategoria");
+const qrBuscaMusica = el("qrBuscaMusica");
+const qrLista = el("listaQrCodes");
+const qrStatus = el("qrCodeStatus");
+const qrGerarButton = el("gerarQrCodes");
+const qrImprimirButton = el("imprimirQrCodes");
+let qrCodeLibraryPromise = null;
+
+function popularSeletorQrCategorias() {
+  if (!qrCategoriaSelect) return;
+  qrCategoriaSelect.replaceChildren();
+  const todas = document.createElement("option");
+  todas.value = "__all__";
+  todas.textContent = "Todas as musicas";
+  qrCategoriaSelect.appendChild(todas);
+  categoriasDoPainel().forEach(([id, categoria]) => {
+    const option = document.createElement("option");
+    option.value = id;
+    option.textContent = categoria.nome;
+    qrCategoriaSelect.appendChild(option);
+  });
+}
+
+function carregarBibliotecaQrCodes() {
+  if (typeof window.QRCode === "function") return Promise.resolve(true);
+  if (qrCodeLibraryPromise) return qrCodeLibraryPromise;
+  qrCodeLibraryPromise = new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js";
+    script.async = true;
+    script.onload = () => {
+      const disponivel = typeof window.QRCode === "function";
+      if (!disponivel) qrCodeLibraryPromise = null;
+      resolve(disponivel);
+    };
+    script.onerror = () => {
+      qrCodeLibraryPromise = null;
+      resolve(false);
+    };
+    document.head.appendChild(script);
+  });
+  return qrCodeLibraryPromise;
+}
+
+function obterMusicasParaQr() {
+  const categoriaId = qrCategoriaSelect.value;
+  const categoria = categoriaId === "__all__" ? null : categoriasDraft[categoriaId];
+  let base = musicasDraft;
+  if (categoria && categoria.tipo === "decada") {
+    base = musicasDaCategoria(categoria);
+  } else if (categoria && categoria.tipo === "genero") {
+    const codigos = new Set((categoria.codigos || []).map(String));
+    base = musicasDraft.filter((musica) => codigos.has(String(musica.codigo)));
+  }
+  const termo = qrBuscaMusica.value.trim().toLocaleLowerCase("pt-BR");
+  return base.filter((musica) => {
+    const idValido = Number.isSafeInteger(Number(musica && musica.id)) && Number(musica.id) > 0;
+    if (!idValido || !String(musica.arquivo || "").trim()) return false;
+    const alvo = `${musica.id} ${musica.codigo || ""} ${musica.nome || ""} ${musica.artista || ""}`.toLocaleLowerCase("pt-BR");
+    return !termo || alvo.includes(termo);
+  });
+}
+
+async function gerarQrCodesDoCatalogo() {
+  if (!qrLista || !qrGerarButton) return;
+  qrGerarButton.disabled = true;
+  qrStatus.textContent = "Carregando o gerador de QR Codes...";
+  const bibliotecaDisponivel = await carregarBibliotecaQrCodes();
+  if (!bibliotecaDisponivel) {
+    qrStatus.textContent = "Nao foi possivel carregar o gerador. Verifique a conexao com a internet e tente novamente.";
+    qrGerarButton.disabled = false;
+    return;
+  }
+
+  const musicasSelecionadas = obterMusicasParaQr();
+  const idsVistos = new Set();
+  const musicasValidas = musicasSelecionadas.filter((musica) => {
+    const id = String(Number(musica.id));
+    if (idsVistos.has(id)) return false;
+    idsVistos.add(id);
+    return true;
+  });
+
+  qrLista.replaceChildren();
+  if (!musicasValidas.length) {
+    qrStatus.textContent = "Nenhuma musica com ID numerico corresponde ao filtro escolhido.";
+    qrImprimirButton.disabled = true;
+    qrGerarButton.disabled = false;
+    return;
+  }
+
+  const fragmento = document.createDocumentFragment();
+  musicasValidas.forEach((musica) => {
+    const card = document.createElement("article");
+    card.className = "qr-code-card";
+    const imagem = document.createElement("div");
+    imagem.className = "qr-code-image";
+    const id = Number(musica.id);
+    new window.QRCode(imagem, {
+      text: String(id),
+      width: 128,
+      height: 128,
+      colorDark: "#111827",
+      colorLight: "#ffffff",
+      correctLevel: window.QRCode.CorrectLevel.M
+    });
+    const identificador = document.createElement("strong");
+    identificador.className = "qr-code-id";
+    identificador.textContent = `ID ${id}`;
+    const descricao = document.createElement("span");
+    descricao.className = "qr-code-song-meta";
+    descricao.textContent = `${musica.nome || "Titulo nao informado"} - ${musica.artista || "Artista nao informado"}`;
+    card.append(imagem, identificador, descricao);
+    fragmento.appendChild(card);
+  });
+
+  qrLista.appendChild(fragmento);
+  qrStatus.textContent = `${musicasValidas.length} QR Code(s) gerado(s). Cada codigo contem somente o ID numerico. Use Imprimir / salvar PDF para preparar as cartas.`;
+  qrImprimirButton.disabled = false;
+  qrGerarButton.disabled = false;
+}
+
+if (qrCategoriaSelect && qrBuscaMusica && qrLista && qrStatus && qrGerarButton && qrImprimirButton) {
+  popularSeletorQrCategorias();
+  qrGerarButton.addEventListener("click", () => { void gerarQrCodesDoCatalogo(); });
+  qrImprimirButton.addEventListener("click", () => window.print());
+}

@@ -162,11 +162,30 @@
       </form>
     </section>
 
+    <section class="panel qr-codes-panel" id="painelQrCodes">
+      <h2>4. Gerar QR Codes das m&uacute;sicas</h2>
+      <p class="section-intro">Cada QR Code grava somente o ID num&eacute;rico da m&uacute;sica. O jogo usa esse n&uacute;mero para localizar a faixa no cat&aacute;logo. Gere todos os c&oacute;digos ou filtre por tema antes de imprimir.</p>
+      <div class="toolbar qr-code-toolbar">
+        <label class="field">
+          <span>Tema ou g&ecirc;nero</span>
+          <select id="qrCategoria"><option value="__all__">Todas as m&uacute;sicas</option></select>
+        </label>
+        <label class="field grow">
+          <span>Buscar por ID, carta, t&iacute;tulo ou artista</span>
+          <input id="qrBuscaMusica" type="search" placeholder="Ex.: 123 ou nome da m&uacute;sica">
+        </label>
+        <button id="gerarQrCodes" class="button primary" type="button">Gerar QR Codes</button>
+        <button id="imprimirQrCodes" class="button secondary" type="button" disabled>Imprimir / salvar PDF</button>
+      </div>
+      <p id="qrCodeStatus" class="hint" aria-live="polite">Os c&oacute;digos ser&atilde;o gerados a partir do cat&aacute;logo e dos rascunhos atuais deste navegador.</p>
+      <div id="listaQrCodes" class="qr-code-grid"></div>
+    </section>
+
     <section class="panel karaoke-admin-panel">
       <div class="karaoke-admin-heading">
         <div>
           <p class="eyebrow">TERCEIRO MODO DE JOGO</p>
-          <h2>4. Catálogo do Karaokê — cadastrar vídeos</h2>
+          <h2>5. Catálogo do Karaokê — cadastrar vídeos</h2>
           <p class="section-intro">Cadastre o título, o cantor, o ano e o vídeo de karaokê. O painel gera o nome do arquivo e prepara o cadastro para exportar em karaoke.js.</p>
         </div>
         <span id="karaokeAdminTotal" class="karaoke-admin-count">0 vídeos</span>
@@ -234,7 +253,7 @@
     </section>
 
     <section class="panel">
-      <h2>5. Exportar para o projeto</h2>
+      <h2>6. Exportar para o projeto</h2>
       <p class="hint">Exporte e confira os arquivos antes de substituir os originais. O download não publica automaticamente no GitHub.</p>
       <div class="export-grid">
         <button id="exportarCategorias" class="button primary" type="button">⬇ Exportar categorias.js</button>

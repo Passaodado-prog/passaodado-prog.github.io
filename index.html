@@ -159,8 +159,32 @@
         <p id="participantesEquipeDaVez">Participantes da equipe</p>
         <span id="rodadaPrevista" class="round-badge">RODADA 1</span>
       </div>
-      <p id="instrucaoEquipeDaVez" class="turn-screen-note">Ao continuar, a música será sorteada e começará a tocar.</p>
-      <button id="continuarEquipeDaVez" class="btn btn-primary btn-large" type="button">Continuar — sortear música →</button>
+      <p id="instrucaoEquipeDaVez" class="turn-screen-note">Ao continuar, a m&uacute;sica ser&aacute; selecionada para esta rodada.</p>
+      <button id="continuarEquipeDaVez" class="btn btn-primary btn-large" type="button">Continuar</button>
+    </section>
+
+    <section id="telaLeitorQr" class="card screen qr-screen" hidden aria-labelledby="tituloTelaLeitorQr">
+      <p class="eyebrow">SELE&Ccedil;&Atilde;O POR QR CODE</p>
+      <h1 id="tituloTelaLeitorQr">Escaneie a m&uacute;sica da rodada</h1>
+      <p class="subtitulo">Aponte a c&acirc;mera para o QR Code. O c&oacute;digo deve conter o ID num&eacute;rico da m&uacute;sica.</p>
+      <div class="qr-turn-summary">
+        <div><span>Equipe da vez</span><strong id="qrEquipeDaVez">Equipe 1</strong></div>
+        <span id="qrRodadaDaVez" class="round-badge">RODADA 1</span>
+      </div>
+      <div id="qrCameraArea" class="qr-camera-area">
+        <div id="qrReader" aria-label="Leitor de QR Code"></div>
+      </div>
+      <p id="qrScannerStatus" class="status-message" role="status" aria-live="polite">Preparando a c&acirc;mera...</p>
+      <form id="qrManualForm" class="qr-manual-form">
+        <label class="field" for="qrManualId">
+          <span>Ou digite o ID num&eacute;rico impresso no QR Code</span>
+          <input id="qrManualId" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" placeholder="Ex.: 123">
+        </label>
+        <button id="qrConfirmarId" class="btn btn-primary" type="submit">Localizar m&uacute;sica</button>
+      </form>
+      <button id="qrIniciarAudio" class="btn btn-success btn-large" type="button" hidden>Iniciar m&uacute;sica</button>
+      <p class="small-note">A c&acirc;mera exige permiss&atilde;o do navegador e conex&atilde;o segura (HTTPS ou localhost). Se n&atilde;o abrir, use o campo de ID.</p>
+      <button id="qrCancelarLeitura" class="btn btn-secondary" type="button">Voltar para a equipe</button>
     </section>
 
     <section id="jogo" class="card screen game-screen" hidden>
@@ -381,6 +405,31 @@
         <button id="confirmarAberturaRevanche" class="btn btn-primary btn-large" type="button">Sim, revisar equipes →</button>
         <button id="cancelarConfirmacaoRevanche" class="btn btn-secondary" type="button">Cancelar</button>
       </div>
+    </div>
+  </section>
+
+  <section id="modalEscolhaFonteMusica" class="rules-modal" hidden role="dialog" aria-modal="true" aria-labelledby="tituloEscolhaFonteMusica">
+    <div class="rules-modal-backdrop" data-fechar-fonte-musica="true"></div>
+    <div class="rules-modal-card music-source-modal-card" role="document">
+      <button id="fecharModalFonteMusica" class="rules-modal-close" type="button" aria-label="Fechar escolha de sele&ccedil;&atilde;o">&times;</button>
+      <p class="eyebrow">ANTES DE CONFIGURAR A PARTIDA</p>
+      <h2 id="tituloEscolhaFonteMusica">Como deseja selecionar as m&uacute;sicas?</h2>
+      <p class="rules-modal-lead">Escolha como a pr&oacute;xima m&uacute;sica ser&aacute; definida. Essa escolha vale para Cante e Dance e Desafio Musical.</p>
+      <div class="music-source-options">
+        <button id="fonteMusicaAleatoria" class="music-source-card" type="button">
+          <span class="music-source-icon" aria-hidden="true">&#127922;</span>
+          <strong>Modo aleat&oacute;rio</strong>
+          <span>O sistema continua sorteando as m&uacute;sicas automaticamente, como j&aacute; funciona hoje.</span>
+          <small>SELE&Ccedil;&Atilde;O AUTOM&Aacute;TICA</small>
+        </button>
+        <button id="fonteMusicaQr" class="music-source-card music-source-card-qr" type="button">
+          <span class="music-source-icon" aria-hidden="true">&#128246;</span>
+          <strong>Modo QR Code</strong>
+          <span>Leia o QR Code da m&uacute;sica. O ID identifica a faixa e o jogo s&oacute; come&ccedil;a depois que o &aacute;udio iniciar.</span>
+          <small>SELE&Ccedil;&Atilde;O POR CART&Atilde;O</small>
+        </button>
+      </div>
+      <p class="small-note">Os QR Codes podem ser gerados e impressos no painel administrativo do cat&aacute;logo.</p>
     </div>
   </section>
 
