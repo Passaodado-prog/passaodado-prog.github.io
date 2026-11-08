@@ -3039,5 +3039,197 @@ const musicas = [
     "artista": "Nelson Ned",
     "ano": 1969,
     "arquivo": "audio/380.mp3"
+  },
+  {
+    "id": 381,
+    "codigo": "381",
+    "nome": "Nada Por Mim",
+    "artista": "Kid Abelha",
+    "ano": 1986,
+    "arquivo": "audio/381.mp3"
+  },
+  {
+    "id": 382,
+    "codigo": "382",
+    "nome": "Quem Mandou Você Me Amar",
+    "artista": "Desejo de Menina",
+    "ano": 2000,
+    "arquivo": "audio/382.mp3"
+  },
+  {
+    "id": 383,
+    "codigo": "383",
+    "nome": "Sinais",
+    "artista": "Sorriso Maroto",
+    "ano": 2009,
+    "arquivo": "audio/383.mp3"
+  },
+  {
+    "id": 384,
+    "codigo": "384",
+    "nome": "A Primeira Namorada",
+    "artista": "Sorriso Maroto",
+    "ano": 2007,
+    "arquivo": "audio/384.mp3"
+  },
+  {
+    "id": 385,
+    "codigo": "385",
+    "nome": "Como Nossos Pais",
+    "artista": "Elis Regina",
+    "ano": 1976,
+    "arquivo": "audio/385.mp3"
+  },
+  {
+    "id": 386,
+    "codigo": "386",
+    "nome": "Águas De Março",
+    "artista": "Elis Regina e Tom Jobim",
+    "ano": 1974,
+    "arquivo": "audio/386.mp3"
+  },
+  {
+    "id": 387,
+    "codigo": "387",
+    "nome": "Tiro ao álvaro",
+    "artista": "Elis Regina & Adoniran Barbosa",
+    "ano": 1980,
+    "arquivo": "audio/387.mp3"
+  },
+  {
+    "id": 388,
+    "codigo": "388",
+    "nome": "Californication",
+    "artista": "Red Hot Chili Peppers",
+    "ano": 1999,
+    "arquivo": "audio/388.mp3"
+  },
+  {
+    "id": 389,
+    "codigo": "389",
+    "nome": "O bêbado e a equilibrista",
+    "artista": "Elis Regina",
+    "ano": 1979,
+    "arquivo": "audio/389.mp3"
+  },
+  {
+    "id": 390,
+    "codigo": "390",
+    "nome": "​ Maria, Maria",
+    "artista": "Elis Regina",
+    "ano": 1980,
+    "arquivo": "audio/390.mp3"
+  },
+  {
+    "id": 391,
+    "codigo": "391",
+    "nome": "​ Desculpe O Auê",
+    "artista": "Rita Lee",
+    "ano": 1983,
+    "arquivo": "audio/391.mp3"
+  },
+  {
+    "id": 392,
+    "codigo": "392",
+    "nome": "​ O Show Tem Que Continuar",
+    "artista": "Beth Carvalho",
+    "ano": 1998,
+    "arquivo": "audio/392.mp3"
+  },
+  {
+    "id": 393,
+    "codigo": "393",
+    "nome": "Perdoa",
+    "artista": "Raça Negra",
+    "ano": 2001,
+    "arquivo": "audio/393.mp3"
+  },
+  {
+    "id": 394,
+    "codigo": "394",
+    "nome": "​ Faz uma loucura por mim",
+    "artista": "Alcione",
+    "ano": 2004,
+    "arquivo": "audio/394.mp3"
+  },
+  {
+    "id": 395,
+    "codigo": "395",
+    "nome": "Cigana",
+    "artista": "Raça Negra",
+    "ano": 1992,
+    "arquivo": "audio/395.mp3"
+  },
+  {
+    "id": 396,
+    "codigo": "396",
+    "nome": "Brincar De Viver",
+    "artista": "Maria Bethânia",
+    "ano": 1983,
+    "arquivo": "audio/396.mp3"
+  },
+  {
+    "id": 397,
+    "codigo": "397",
+    "nome": "Amor Meu Grande Amor",
+    "artista": "Angela Roro",
+    "ano": 1979,
+    "arquivo": "audio/397.mp3"
+  },
+  {
+    "id": 398,
+    "codigo": "398",
+    "nome": "Você Me Vira A Cabeça",
+    "artista": "Alcione",
+    "ano": 2001,
+    "arquivo": "audio/398.mp3"
+  },
+  {
+    "id": 399,
+    "codigo": "399",
+    "nome": "​ Ronda",
+    "artista": "Maria Bethânia",
+    "ano": 1978,
+    "arquivo": "audio/399.mp3"
+  },
+  {
+    "id": 400,
+    "codigo": "400",
+    "nome": "Vilarejo",
+    "artista": "Marisa Monte",
+    "ano": 2006,
+    "arquivo": "audio/400.mp3"
+  },
+  {
+    "id": 401,
+    "codigo": "401",
+    "nome": "My Way",
+    "artista": "Frank Sinatra",
+    "ano": 1969,
+    "arquivo": "audio/401.mp3"
+  },
+  {
+    "id": 402,
+    "codigo": "402",
+    "nome": "​ Qui Nem Giló",
+    "artista": "Luiz Gonzaga & Zélia Duncan",
+    "ano": 2012,
+    "arquivo": "audio/402.mp3"
+  },
+  {
+    "id": 403,
+    "codigo": "403",
+    "nome": "Meu limao, meu limoeiro",
+    "artista": "​ Wilson Simonal",
+    "ano": 1966,
+    "arquivo": "audio/403.mp3"
+  },
+  {
+    "id": 404,
+    "codigo": "404",
+    "nome": "La mentira",
+    "artista": "Luis Miguel",
+    "ano": 1991,
+    "arquivo": "audio/404.mp3"
   }
 ];

@@ -43,6 +43,16 @@ const etapaEquipeDaVez = document.getElementById("etapaEquipeDaVez");
 const rodadaPrevista = document.getElementById("rodadaPrevista");
 const instrucaoEquipeDaVez = document.getElementById("instrucaoEquipeDaVez");
 const continuarEquipeDaVez = document.getElementById("continuarEquipeDaVez");
+const telaLeitorQr = document.getElementById("telaLeitorQr");
+const qrEquipeDaVez = document.getElementById("qrEquipeDaVez");
+const qrRodadaDaVez = document.getElementById("qrRodadaDaVez");
+const qrCameraArea = document.getElementById("qrCameraArea");
+const qrReader = document.getElementById("qrReader");
+const qrScannerStatus = document.getElementById("qrScannerStatus");
+const qrManualForm = document.getElementById("qrManualForm");
+const qrManualId = document.getElementById("qrManualId");
+const qrIniciarAudio = document.getElementById("qrIniciarAudio");
+const qrCancelarLeitura = document.getElementById("qrCancelarLeitura");
 
 const modoAtual = document.getElementById("modoAtual");
 const temaAtual = document.getElementById("temaAtual");
@@ -106,6 +116,10 @@ const statusAudio = document.getElementById("statusAudio");
 const proximaMusica = document.getElementById("proximaMusica");
 const voltarAoInicio = document.getElementById("voltarAoInicio");
 const modalRegrasModo = document.getElementById("modalRegrasModo");
+const modalEscolhaFonteMusica = document.getElementById("modalEscolhaFonteMusica");
+const fecharModalFonteMusica = document.getElementById("fecharModalFonteMusica");
+const fonteMusicaAleatoria = document.getElementById("fonteMusicaAleatoria");
+const fonteMusicaQr = document.getElementById("fonteMusicaQr");
 const fecharModalRegras = document.getElementById("fecharModalRegras");
 const continuarRegrasModo = document.getElementById("continuarRegrasModo");
 const modalConfirmarRevanche = document.getElementById("modalConfirmarRevanche");
@@ -162,6 +176,19 @@ let equipesConfiguradas = [
 ];
 
 let modoSelecionado = null;
+let fonteMusicaSelecionada = "aleatorio";
+let modoPendenteFonteMusica = null;
+let musicasUsadasQr = new Set();
+let musicasFalhasQr = new Set();
+let leitorQr = null;
+let qrLibraryPromise = null;
+let qrResolucaoEmAndamento = false;
+let qrMusicaPendente = null;
+let qrAudioUrlPendente = null;
+let qrAudioPronto = false;
+let qrAudioTimeoutId = null;
+let qrPlaybackTimeoutId = null;
+let qrTentativaToken = 0;
 let temaSelecionado = null;
 let dificuldadeSelecionada = null;
 let metaPontos = null;
@@ -771,6 +798,8 @@ function validarSetupEquipes() {
 }
 
 function prepararEquipesParaPartida() {
+  musicasUsadasQr.clear();
+  musicasFalhasQr.clear();
   equipesConfiguradas.forEach((equipe) => {
     equipe.discosOuro = 0;
     equipe.vinisComuns = 0;
@@ -817,6 +846,10 @@ function embaralhar(lista) {
 }
 
 function prepararFila() {
+  if (fonteMusicaSelecionada === "qr") {
+    filaMusicas = [];
+    return;
+  }
   filaMusicas = embaralhar(obterMusicasDoTema(temaSelecionado));
   if (filaMusicas.length > 1 && filaMusicas[filaMusicas.length - 1].id === ultimaMusicaId) {
     [filaMusicas[0], filaMusicas[filaMusicas.length - 1]] = [filaMusicas[filaMusicas.length - 1], filaMusicas[0]];
@@ -856,27 +889,312 @@ function mostrarTelaEquipeDaVez() {
   nomeEquipeDaVez.textContent = equipe.nome;
   participantesEquipeDaVez.textContent = equipe.participantes.filter(Boolean).join(" · ") || "Participantes não informados";
   rodadaPrevista.textContent = `RODADA ${numeroRodada + 1}`;
-  instrucaoEquipeDaVez.textContent = modoDesempate
-    ? "Só as equipes empatadas participam deste desempate. Ao continuar, a próxima música será sorteada."
-    : modoSelecionado === "desafio-musical"
-      ? "Ao continuar, a música começa. A equipe da vez escolherá uma tentativa entre cantar, título, artista ou ano."
-      : "Quando todos estiverem prontos, toque em continuar para sortear e iniciar a música.";
-  continuarEquipeDaVez.textContent = modoDesempate ? "Continuar para o desempate →" : "Continuar — sortear música →";
+  if (fonteMusicaSelecionada === "qr") {
+    instrucaoEquipeDaVez.textContent = "Ao continuar, a c\u00e2mera ser\u00e1 aberta para ler o QR Code da m\u00fasica. A rodada e a pontua\u00e7\u00e3o s\u00f3 come\u00e7am depois que o \u00e1udio iniciar corretamente.";
+    continuarEquipeDaVez.textContent = "Continuar — ler QR Code →";
+  } else {
+    instrucaoEquipeDaVez.textContent = modoDesempate
+      ? "S\u00f3 as equipes empatadas participam deste desempate. Ao continuar, a pr\u00f3xima m\u00fasica ser\u00e1 sorteada."
+      : modoSelecionado === "desafio-musical"
+        ? "Ao continuar, a m\u00fasica come\u00e7a. A equipe da vez escolher\u00e1 uma tentativa entre cantar, t\u00edtulo, artista ou ano."
+        : "Quando todos estiverem prontos, toque em continuar para sortear e iniciar a m\u00fasica.";
+    continuarEquipeDaVez.textContent = modoDesempate ? "Continuar para o desempate →" : "Continuar — sortear m\u00fasica →";
+  }
+  mostrarTela(telaEquipeDaVez);
+}
+
+async function carregarBibliotecaLeitorQr() {
+  if (typeof window.Html5Qrcode === "function") return true;
+  if (qrLibraryPromise) return qrLibraryPromise;
+  qrLibraryPromise = new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.src = "https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js";
+    script.async = true;
+    script.onload = () => {
+      const disponivel = typeof window.Html5Qrcode === "function";
+      if (!disponivel) qrLibraryPromise = null;
+      resolve(disponivel);
+    };
+    script.onerror = () => {
+      qrLibraryPromise = null;
+      resolve(false);
+    };
+    document.head.appendChild(script);
+  });
+  return qrLibraryPromise;
+}
+
+async function pararLeitorQr() {
+  const scanner = leitorQr;
+  leitorQr = null;
+  if (!scanner) {
+    if (qrReader) qrReader.replaceChildren();
+    return;
+  }
+  try {
+    if (scanner.isScanning) await scanner.stop();
+  } catch (erro) {
+    console.warn("N\u00e3o foi poss\u00edvel encerrar a c\u00e2mera do leitor QR:", erro);
+  }
+  try {
+    await scanner.clear();
+  } catch (erro) {
+    console.warn("N\u00e3o foi poss\u00edvel limpar o leitor QR:", erro);
+  }
+  if (qrReader) qrReader.replaceChildren();
+}
+
+async function iniciarLeitorQr(statusInicial = "") {
+  if (!telaLeitorQr) return;
+  const tokenDaLeitura = qrTentativaToken;
+  await pararLeitorQr();
+  qrCameraArea.hidden = false;
+  qrManualForm.hidden = false;
+  qrIniciarAudio.hidden = true;
+  qrIniciarAudio.disabled = false;
+  const bibliotecaDisponivel = await carregarBibliotecaLeitorQr();
+  if (tokenDaLeitura !== qrTentativaToken || telaLeitorQr.hidden) return;
+  if (!bibliotecaDisponivel) {
+    qrCameraArea.hidden = true;
+    qrScannerStatus.textContent = `${statusInicial ? `${statusInicial} ` : ""}O leitor de c\u00e2mera n\u00e3o carregou. Digite o ID num\u00e9rico da m\u00fasica abaixo.`;
+    return;
+  }
+  const scanner = new window.Html5Qrcode("qrReader");
+  leitorQr = scanner;
+  try {
+    await scanner.start(
+      { facingMode: "environment" },
+      { fps: 10, qrbox: (largura, altura) => {
+        const tamanho = Math.max(100, Math.min(230, Math.floor(Math.min(largura, altura) * 0.75)));
+        return { width: tamanho, height: tamanho };
+      }, aspectRatio: 1.0, disableFlip: false },
+      (textoDecodificado) => { void processarCodigoQr(textoDecodificado); },
+      () => {}
+    );
+    if (tokenDaLeitura !== qrTentativaToken || telaLeitorQr.hidden) {
+      try { if (scanner.isScanning) await scanner.stop(); } catch (erro) {}
+      try { await scanner.clear(); } catch (erro) {}
+      if (leitorQr === scanner) leitorQr = null;
+      return;
+    }
+    qrCameraArea.hidden = false;
+    qrScannerStatus.textContent = statusInicial || "Aponte a c\u00e2mera para o QR Code da m\u00fasica.";
+  } catch (erro) {
+    console.warn("N\u00e3o foi poss\u00edvel iniciar a c\u00e2mera para ler QR Code:", erro);
+    try { await scanner.clear(); } catch (erroLimpeza) {}
+    if (leitorQr === scanner) leitorQr = null;
+    if (tokenDaLeitura !== qrTentativaToken || telaLeitorQr.hidden) return;
+    qrCameraArea.hidden = true;
+    qrScannerStatus.textContent = `${statusInicial ? `${statusInicial} ` : ""}N\u00e3o foi poss\u00edvel acessar a c\u00e2mera. Permita o uso da c\u00e2mera ou digite o ID num\u00e9rico abaixo.`;
+  }
+}
+
+async function abrirTelaLeitorQr() {
+  qrTentativaToken += 1;
+  qrEquipeDaVez.textContent = nomeEquipeDaVez.textContent || "Equipe da vez";
+  qrRodadaDaVez.textContent = rodadaPrevista.textContent || `RODADA ${numeroRodada + 1}`;
+  qrManualId.value = "";
+  qrResolucaoEmAndamento = false;
+  qrMusicaPendente = null;
+  qrAudioUrlPendente = null;
+  qrAudioPronto = false;
+  qrCameraArea.hidden = false;
+  qrManualForm.hidden = false;
+  qrIniciarAudio.hidden = true;
+  qrScannerStatus.textContent = "Preparando a c\u00e2mera...";
+  mostrarTela(telaLeitorQr);
+  await iniciarLeitorQr();
+}
+
+function extrairIdDoQr(texto) {
+  const match = String(texto == null ? "" : texto).trim().match(/^(?:ID\s*[:#-]?\s*)?(\d+)$/i);
+  if (!match) return null;
+  const id = Number(match[1]);
+  return Number.isSafeInteger(id) && id > 0 ? id : null;
+}
+
+async function processarCodigoQr(texto) {
+  if (qrResolucaoEmAndamento || qrMusicaPendente) return;
+  const id = extrairIdDoQr(texto);
+  if (id == null) {
+    qrScannerStatus.textContent = "QR Code inv\u00e1lido. Use um c\u00f3digo que contenha somente o ID num\u00e9rico da m\u00fasica.";
+    return;
+  }
+  const musicasDoTema = obterMusicasDoTema(temaSelecionado);
+  if (musicasDoTema.length && musicasUsadasQr.size + musicasFalhasQr.size >= musicasDoTema.length) {
+    musicasUsadasQr.clear();
+    musicasFalhasQr.clear();
+  }
+  if (musicasFalhasQr.has(String(id))) {
+    qrScannerStatus.textContent = `O \u00e1udio do ID ${id} j\u00e1 falhou nesta partida. Escolha outro QR Code.`;
+    return;
+  }
+  const faixa = musicasDoTema.find((item) => Number(item.id) === id);
+  if (!faixa) {
+    qrScannerStatus.textContent = `O ID ${id} n\u00e3o pertence ao tema escolhido ou n\u00e3o existe no cat\u00e1logo. Escaneie outro QR Code.`;
+    return;
+  }
+  if (musicasUsadasQr.has(String(faixa.id))) {
+    qrScannerStatus.textContent = `A m\u00fasica de ID ${id} j\u00e1 foi usada nesta partida. Escaneie outro QR Code.`;
+    return;
+  }
+  if (!faixa.arquivo) {
+    qrScannerStatus.textContent = `A musica de ID ${id} n\u00e3o possui arquivo de \u00e1udio cadastrado. Escaneie outro QR Code.`;
+    return;
+  }
+  qrResolucaoEmAndamento = true;
+  qrScannerStatus.textContent = `ID ${id} reconhecido. Verificando o arquivo de \u00e1udio...`;
+  await pararLeitorQr();
+  await prepararAudioQr(faixa);
+}
+
+async function prepararAudioQr(faixa) {
+  qrTentativaToken += 1;
+  const token = qrTentativaToken;
+  if (qrAudioTimeoutId) clearTimeout(qrAudioTimeoutId);
+  if (qrPlaybackTimeoutId) clearTimeout(qrPlaybackTimeoutId);
+  qrAudioTimeoutId = null;
+  qrPlaybackTimeoutId = null;
+  qrAudioPronto = false;
+  qrMusicaPendente = null;
+  qrAudioUrlPendente = null;
+  qrIniciarAudio.hidden = true;
+  qrCameraArea.hidden = true;
+  qrManualForm.hidden = true;
+  tokenReproducaoAudio += 1;
+  musica.pause();
+  musica.removeAttribute("src");
+  musica.load();
+  qrMusicaPendente = faixa;
+  qrScannerStatus.textContent = `ID ${faixa.id} localizado. Carregando o \u00e1udio para validar a m\u00fasica...`;
+  try {
+    qrAudioUrlPendente = window.somNaMesaMediaUrl(faixa.arquivo);
+    musica.src = qrAudioUrlPendente;
+    musica.load();
+  } catch (erro) {
+    await falhaQrPendente("N\u00e3o foi poss\u00edvel localizar o arquivo de \u00e1udio desta m\u00fasica.", token);
+    return;
+  }
+  qrAudioTimeoutId = setTimeout(() => {
+    if (token === qrTentativaToken && qrMusicaPendente) {
+      void falhaQrPendente("O \u00e1udio n\u00e3o carregou dentro do tempo esperado.", token);
+    }
+  }, 18000);
+}
+
+async function tentarIniciarAudioQr() {
+  if (!qrMusicaPendente || !qrAudioPronto) return;
+  const token = qrTentativaToken;
+  if (qrPlaybackTimeoutId) clearTimeout(qrPlaybackTimeoutId);
+  qrIniciarAudio.disabled = true;
+  qrScannerStatus.textContent = "\u00c1udio carregado. Iniciando a m\u00fasica...";
+  qrPlaybackTimeoutId = setTimeout(() => {
+    if (token === qrTentativaToken && qrMusicaPendente) {
+      void falhaQrPendente("O arquivo foi carregado, mas a m\u00fasica n\u00e3o iniciou.", token);
+    }
+  }, 10000);
+  try {
+    await musica.play();
+  } catch (erro) {
+    if (!qrMusicaPendente || token !== qrTentativaToken) return;
+    if (erro && (erro.name === "NotAllowedError" || erro.name === "SecurityError")) {
+      if (qrPlaybackTimeoutId) clearTimeout(qrPlaybackTimeoutId);
+      qrPlaybackTimeoutId = null;
+      qrIniciarAudio.hidden = false;
+      qrIniciarAudio.disabled = false;
+      qrScannerStatus.textContent = "O \u00e1udio est\u00e1 v\u00e1lido, mas o navegador bloqueou o in\u00edcio autom\u00e1tico. Toque no bot\u00e3o abaixo para iniciar.";
+      return;
+    }
+    await falhaQrPendente("N\u00e3o foi poss\u00edvel reproduzir o \u00e1udio desta m\u00fasica.", token);
+  }
+}
+
+async function falhaQrPendente(mensagem, token = qrTentativaToken) {
+  if (token !== qrTentativaToken || !qrMusicaPendente) return;
+  musicasFalhasQr.add(String(qrMusicaPendente.id));
+  qrMusicaPendente = null;
+  qrAudioUrlPendente = null;
+  qrAudioPronto = false;
+  qrResolucaoEmAndamento = false;
+  qrTentativaToken += 1;
+  if (qrAudioTimeoutId) clearTimeout(qrAudioTimeoutId);
+  if (qrPlaybackTimeoutId) clearTimeout(qrPlaybackTimeoutId);
+  qrAudioTimeoutId = null;
+  qrPlaybackTimeoutId = null;
+  qrIniciarAudio.hidden = true;
+  qrIniciarAudio.disabled = false;
+  musica.pause();
+  musica.removeAttribute("src");
+  musica.load();
+  qrManualId.value = "";
+  qrCameraArea.hidden = false;
+  qrManualForm.hidden = false;
+  const aviso = `${mensagem} Nenhuma rodada foi iniciada e nenhum ponto foi registrado. Escaneie outro QR Code.`;
+  await iniciarLeitorQr(aviso);
+}
+
+function confirmarRodadaQr() {
+  if (!qrMusicaPendente || !qrAudioPronto || musica.paused) return;
+  const faixa = qrMusicaPendente;
+  if (qrAudioTimeoutId) clearTimeout(qrAudioTimeoutId);
+  if (qrPlaybackTimeoutId) clearTimeout(qrPlaybackTimeoutId);
+  qrAudioTimeoutId = null;
+  qrPlaybackTimeoutId = null;
+  qrMusicaPendente = null;
+  qrAudioUrlPendente = null;
+  qrAudioPronto = false;
+  qrResolucaoEmAndamento = false;
+  musicasUsadasQr.add(String(faixa.id));
+  qrManualId.value = "";
+  qrScannerStatus.textContent = "";
+  iniciarRodadaComMusica(faixa, { audioJaConfigurado: true, audioJaTocando: true });
+}
+
+async function cancelarLeituraQr() {
+  qrTentativaToken += 1;
+  if (qrAudioTimeoutId) clearTimeout(qrAudioTimeoutId);
+  if (qrPlaybackTimeoutId) clearTimeout(qrPlaybackTimeoutId);
+  qrAudioTimeoutId = null;
+  qrPlaybackTimeoutId = null;
+  qrMusicaPendente = null;
+  qrAudioUrlPendente = null;
+  qrAudioPronto = false;
+  qrResolucaoEmAndamento = false;
+  qrIniciarAudio.hidden = true;
+  await pararLeitorQr();
+  musica.pause();
+  musica.removeAttribute("src");
+  musica.load();
   mostrarTela(telaEquipeDaVez);
 }
 
 function iniciarNovaRodada() {
+  if (!equipesAtivasDaPartida().length) return;
+  if (fonteMusicaSelecionada === "qr") {
+    void abrirTelaLeitorQr();
+    return;
+  }
   if (!filaMusicas.length) prepararFila();
   if (!filaMusicas.length) {
-    statusAudio.textContent = "Não há músicas disponíveis neste tema. Confira as categorias no catálogo.";
+    statusAudio.textContent = "N\u00e3o h\u00e1 m\u00fasicas dispon\u00edveis neste tema. Confira as categorias no cat\u00e1logo.";
     mostrarTela(telaJogo);
     return;
   }
+  const faixa = filaMusicas.pop();
+  iniciarRodadaComMusica(faixa);
+}
+
+function iniciarRodadaComMusica(faixa, opcoes = {}) {
   const equipesAtivas = equipesAtivasDaPartida();
-  if (!equipesAtivas.length) return;
+  if (!equipesAtivas.length || !faixa) return;
   pararTemporizador(false);
-  musica.pause();
-  musicaAtual = filaMusicas.pop();
+  if (!opcoes.audioJaConfigurado) {
+    musica.pause();
+    musica.src = window.somNaMesaMediaUrl(faixa.arquivo);
+    musica.load();
+  }
+  musica.volume = 1;
+  musicaAtual = faixa;
   ultimaMusicaId = musicaAtual.id;
   numeroRodada += 1;
   rodada = {
@@ -892,7 +1210,6 @@ function iniciarNovaRodada() {
     indiceDesafioDanca: 0,
     tipoTodasPassaram: false,
     resultado: null,
-    // Estado adicional, usado somente pelo modo Desafio Musical.
     desafiosResolvidos: new Set(),
     equipesQueResponderam: new Set(),
     equipesSemDireitoVoto: new Set(),
@@ -908,9 +1225,6 @@ function iniciarNovaRodada() {
   };
   indiceEquipeInicial = (indiceEquipeInicial + 1) % equipesAtivas.length;
 
-  musica.src = window.somNaMesaMediaUrl(musicaAtual.arquivo);
-  musica.load();
-  musica.volume = 1;
   capaAlbum.src = "img/capa-oficial.jpg";
   modoAtual.textContent = modoDesempate
     ? `${modoSelecionado === "desafio-musical" ? "DESAFIO MUSICAL" : "CANTE E DANCE"} · DESEMPATE`
@@ -920,23 +1234,22 @@ function iniciarNovaRodada() {
   metaAtual.textContent = modoDesempate ? "RODADA DE DESEMPATE" : `META: ${metaPontos} PONTOS`;
   rodadaAtual.textContent = `RODADA ${numeroRodada}`;
   carta.textContent = `Rodada ${numeroRodada} · Carta #${String(musicaAtual.codigo || musicaAtual.id).padStart(3, "0")}`;
-  document.getElementById("titulo").textContent = "Música sorteada";
-  nome.textContent = musicaAtual.nome || "Título não informado";
-  artista.textContent = musicaAtual.artista || "Artista não informado";
-  ano.textContent = musicaAtual.ano == null ? "Ano não informado" : `Ano: ${musicaAtual.ano}`;
+  document.getElementById("titulo").textContent = fonteMusicaSelecionada === "qr" ? "M\u00fasica da rodada" : "M\u00fasica sorteada";
+  nome.textContent = musicaAtual.nome || "T\u00edtulo n\u00e3o informado";
+  artista.textContent = musicaAtual.artista || "Artista n\u00e3o informado";
+  ano.textContent = musicaAtual.ano == null ? "Ano nao informado" : `Ano: ${musicaAtual.ano}`;
   resposta.hidden = true;
-  // O anfitrião pode consultar título, artista e ano a qualquer momento durante a música.
   revelar.disabled = false;
   revelar.textContent = "👁 Revelar resposta";
-  progresso.value = 0;
-  inicio.textContent = "00:00";
-  fim.textContent = "00:00";
+  progresso.value = musica.duration ? (musica.currentTime / musica.duration) * 100 : 0;
+  inicio.textContent = converterTempo(musica.currentTime);
+  fim.textContent = converterTempo(musica.duration);
   statusAudio.textContent = "";
-  definirEstadoPlayer("carregado");
+  definirEstadoPlayer(opcoes.audioJaTocando ? "tocando" : "carregado");
   renderizarPlacar();
   renderizarEstadoRodada();
   mostrarTela(telaJogo);
-  tocarMusica();
+  if (!opcoes.audioJaTocando) tocarMusica();
 }
 
 function nomeDificuldade(id) {
@@ -1226,7 +1539,7 @@ function confirmarRevancheComEquipesEditadas() {
   // A meta e as equipes editadas ficam; apenas os placares da partida anterior são zerados.
   prepararEquipesParaPartida();
   ultimaMusicaId = ultimaMusicaIdJugada ?? null;
-  if (!filaMusicas.length) prepararFila();
+  if (fonteMusicaSelecionada === "aleatorio" && !filaMusicas.length) prepararFila();
   resposta.hidden = true;
   revelar.disabled = true;
   revelar.textContent = "👁 Revelar resposta";
@@ -2010,6 +2323,20 @@ function atualizarRodadaDepoisDeAcao() {
 }
 
 function limparSessaoDeJogo() {
+  qrTentativaToken += 1;
+  if (qrAudioTimeoutId) clearTimeout(qrAudioTimeoutId);
+  if (qrPlaybackTimeoutId) clearTimeout(qrPlaybackTimeoutId);
+  qrAudioTimeoutId = null;
+  qrPlaybackTimeoutId = null;
+  qrMusicaPendente = null;
+  qrAudioUrlPendente = null;
+  qrAudioPronto = false;
+  qrResolucaoEmAndamento = false;
+  void pararLeitorQr();
+  musicasUsadasQr.clear();
+  musicasFalhasQr.clear();
+  fonteMusicaSelecionada = "aleatorio";
+  modoPendenteFonteMusica = null;
   tokenReproducaoAudio += 1;
   pararTemporizador(false);
   musica.pause();
@@ -2046,6 +2373,31 @@ function limparSessaoDeJogo() {
   revelar.disabled = true;
   revelar.textContent = "👁 Revelar resposta";
   statusAudio.textContent = "";
+}
+
+function abrirEscolhaFonteMusica(modo) {
+  modoPendenteFonteMusica = modo;
+  modalEscolhaFonteMusica.hidden = false;
+  document.body.classList.add("modal-open");
+  fonteMusicaAleatoria.focus();
+}
+
+function fecharEscolhaFonteMusica() {
+  modalEscolhaFonteMusica.hidden = true;
+  document.body.classList.remove("modal-open");
+  modoPendenteFonteMusica = null;
+}
+
+function selecionarFonteMusica(fonte) {
+  const modo = modoPendenteFonteMusica;
+  if (!modo || !["aleatorio", "qr"].includes(fonte)) return;
+  fonteMusicaSelecionada = fonte;
+  if (fonte === "qr") void carregarBibliotecaLeitorQr();
+  musicasUsadasQr.clear();
+  musicasFalhasQr.clear();
+  filaMusicas = [];
+  fecharEscolhaFonteMusica();
+  abrirResumoRegrasModo(modo);
 }
 
 iniciarJogo.addEventListener("click", () => mostrarTela(telaModos));
@@ -2086,8 +2438,14 @@ modalAcaoPersonalizada.addEventListener("click", (evento) => {
   }
 });
 
-modoCanteDance.addEventListener("click", () => abrirResumoRegrasModo("cante-dance"));
-modoDesafioMusical.addEventListener("click", () => abrirResumoRegrasModo("desafio-musical"));
+modoCanteDance.addEventListener("click", () => abrirEscolhaFonteMusica("cante-dance"));
+modoDesafioMusical.addEventListener("click", () => abrirEscolhaFonteMusica("desafio-musical"));
+fonteMusicaAleatoria.addEventListener("click", () => selecionarFonteMusica("aleatorio"));
+fonteMusicaQr.addEventListener("click", () => selecionarFonteMusica("qr"));
+fecharModalFonteMusica.addEventListener("click", fecharEscolhaFonteMusica);
+modalEscolhaFonteMusica.addEventListener("click", (evento) => {
+  if (evento.target === modalEscolhaFonteMusica || evento.target?.dataset?.fecharFonteMusica === "true") fecharEscolhaFonteMusica();
+});
 fecharModalRegras.addEventListener("click", fecharResumoRegrasModo);
 continuarRegrasModo.addEventListener("click", fecharResumoRegrasModo);
 modalRegrasModo.addEventListener("click", (evento) => {
@@ -2095,6 +2453,14 @@ modalRegrasModo.addEventListener("click", (evento) => {
 });
 document.addEventListener("keydown", (evento) => {
   if (evento.key !== "Escape") return;
+  if (!modalEscolhaFonteMusica.hidden) {
+    fecharEscolhaFonteMusica();
+    return;
+  }
+  if (telaLeitorQr && !telaLeitorQr.hidden) {
+    void cancelarLeituraQr();
+    return;
+  }
   if (!modalAcaoPersonalizada.hidden) {
     fecharModalAcaoPersonalizada(false);
     return;
@@ -2104,6 +2470,8 @@ document.addEventListener("keydown", (evento) => {
 });
 voltarTelaInicial.addEventListener("click", () => {
   modoSelecionado = null;
+  fonteMusicaSelecionada = "aleatorio";
+  modoPendenteFonteMusica = null;
   mostrarTela(telaInicial);
 });
 voltarModos.addEventListener("click", () => {
@@ -2125,6 +2493,12 @@ adicionarEquipe.addEventListener("click", () => {
 });
 confirmarEquipes.addEventListener("click", selecionarEquipeParaTema);
 continuarEquipeDaVez.addEventListener("click", iniciarNovaRodada);
+qrManualForm.addEventListener("submit", (evento) => {
+  evento.preventDefault();
+  void processarCodigoQr(qrManualId.value);
+});
+qrIniciarAudio.addEventListener("click", () => { void tentarIniciarAudioQr(); });
+qrCancelarLeitura.addEventListener("click", () => { void cancelarLeituraQr(); });
 togglePlacar.addEventListener("click", () => {
   placarExpandido = !placarExpandido;
   renderizarPlacar();
@@ -2143,6 +2517,8 @@ voltarInicioVitoria.addEventListener("click", voltarParaInicioDepoisDaVitoria);
 
 iniciarDesempateButton.addEventListener("click", () => {
   if (vencedoresEquipeIds.length < 2) return;
+  musicasUsadasQr.clear();
+  musicasFalhasQr.clear();
   modoDesempate = true;
   equipesDesempateIds = [...vencedoresEquipeIds];
   pontuacaoBaseDesempate = Object.fromEntries(equipesConfiguradas
@@ -2249,6 +2625,18 @@ voltarAoInicio.addEventListener("click", async () => {
 });
 
 musica.addEventListener("loadedmetadata", () => { fim.textContent = converterTempo(musica.duration); });
+musica.addEventListener("canplay", () => {
+  if (!qrMusicaPendente || qrAudioPronto) return;
+  const fonteAtual = musica.currentSrc || musica.src;
+  if (qrAudioUrlPendente && fonteAtual !== qrAudioUrlPendente) return;
+  qrAudioPronto = true;
+  if (qrAudioTimeoutId) clearTimeout(qrAudioTimeoutId);
+  qrAudioTimeoutId = null;
+  void tentarIniciarAudioQr();
+});
+musica.addEventListener("playing", () => {
+  if (qrMusicaPendente && qrAudioPronto && !musica.paused) confirmarRodadaQr();
+});
 musica.addEventListener("timeupdate", () => {
   if (!musica.duration) return;
   progresso.value = (musica.currentTime / musica.duration) * 100;
@@ -2263,8 +2651,18 @@ musica.addEventListener("ended", () => {
   definirEstadoPlayer("fim");
 });
 musica.addEventListener("error", () => {
+  if (qrMusicaPendente) {
+    const fonteAtual = musica.currentSrc || musica.src;
+    if (qrAudioUrlPendente && fonteAtual && fonteAtual !== qrAudioUrlPendente) return;
+    const codigoErro = musica.error ? Number(musica.error.code) : 0;
+    const detalhe = codigoErro === 2
+      ? "O arquivo n\u00e3o foi encontrado ou n\u00e3o pode ser baixado."
+      : "O arquivo n\u00e3o pode ser decodificado ou reproduzido neste navegador.";
+    void falhaQrPendente(detalhe, qrTentativaToken);
+    return;
+  }
   if (!musicaAtual) return;
-  statusAudio.textContent = `Não foi possível carregar o áudio: ${musicaAtual.arquivo}. Confira o caminho do arquivo.`;
+  statusAudio.textContent = `N\u00e3o foi poss\u00edvel carregar o \u00e1udio: ${musicaAtual.arquivo}. Confira o caminho do arquivo.`;
   definirEstadoPlayer("carregado");
 });
 

@@ -156,3 +156,36 @@ body.draft-blocked .admin-shell { pointer-events:none; user-select:none; filter:
   .karaoke-video-row-actions .button { flex:1 1 120px; }
   .karaoke-video-preview-heading { flex-direction:column; align-items:flex-start; }
 }
+
+/* Geracao e impressao dos QR Codes das musicas */
+.qr-codes-panel { border-color: rgba(110,231,183,.3); }
+.qr-code-toolbar { flex-wrap: wrap; align-items: flex-end; }
+.qr-code-toolbar > .field { flex: 1 1 190px; }
+.qr-code-toolbar > .button { flex: 0 1 auto; white-space: nowrap; }
+.qr-code-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; margin-top: 16px; }
+.qr-code-card { min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 14px 10px; border: 1px solid var(--border); border-radius: 14px; background: rgba(15,23,42,.52); text-align: center; break-inside: avoid; }
+.qr-code-image { width: 136px; height: 136px; display: flex; align-items: center; justify-content: center; padding: 4px; border-radius: 8px; background: #fff; }
+.qr-code-image img, .qr-code-image canvas { display: block; width: 128px !important; height: 128px !important; max-width: 100%; }
+.qr-code-id { display: block; margin-top: 9px; color: #e9d5ff; font-size: 14px; font-weight: 900; letter-spacing: .5px; }
+.qr-code-song-meta { display: block; margin-top: 5px; color: #aebbd0; font-size: 11px; line-height: 1.4; overflow-wrap: anywhere; }
+@media(max-width:760px) {
+  .qr-code-toolbar { flex-direction: column; align-items: stretch; }
+  .qr-code-toolbar > .button { width: 100%; }
+  .qr-code-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media print {
+  @page { size: A4; margin: 10mm; }
+  body { display: block !important; min-height: 0 !important; padding: 0 !important; background: #fff !important; color: #000 !important; }
+  .admin-shell { width: 100% !important; max-width: none !important; margin: 0 !important; }
+  .admin-shell > *:not(.qr-codes-panel) { display: none !important; }
+  .qr-codes-panel { display: block !important; margin: 0 !important; padding: 0 !important; border: 0 !important; border-radius: 0 !important; background: #fff !important; box-shadow: none !important; color: #000 !important; }
+  .qr-codes-panel h2 { margin: 0 0 5mm !important; color: #000 !important; font-size: 16pt !important; }
+  .qr-codes-panel .section-intro, .qr-code-toolbar, #qrCodeStatus { display: none !important; }
+  .qr-code-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 5mm !important; margin: 0 !important; }
+  .qr-code-card { min-height: 42mm !important; padding: 3mm !important; border: 1px solid #222 !important; border-radius: 3mm !important; background: #fff !important; color: #000 !important; page-break-inside: avoid; break-inside: avoid; }
+  .qr-code-image { width: 30mm !important; height: 30mm !important; padding: 0 !important; background: #fff !important; }
+  .qr-code-image img, .qr-code-image canvas { width: 30mm !important; height: 30mm !important; }
+  .qr-code-id { margin-top: 2mm !important; color: #000 !important; font-size: 10pt !important; }
+  .qr-code-song-meta { display: none !important; }
+}
